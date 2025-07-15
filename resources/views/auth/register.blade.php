@@ -46,6 +46,12 @@
                                     <form method="POST" action="{{ route('register') }}" class="my-4">
                                         @csrf
 
+                                        @if (session('error'))
+                                            <div class="alert alert-danger">
+                                                {{ session('error') }}
+                                            </div>
+                                        @endif
+
                                         {{-- Name --}}
                                         <div class="form-group mb-3">
                                             <label for="name" class="form-label">Nombre</label>
@@ -56,6 +62,9 @@
                                         <div class="form-group mb-3">
                                             <label for="emailaddress" class="form-label">Correo Electrónico</label>
                                             <input class="form-control" type="email" id="email" name="email" required :value="old('email')" placeholder="Entra tu correo electrónico">
+                                            @error('email')
+                                                <small class="text-danger">{{ $message }}</small>
+                                            @enderror
                                         </div>
 
                                         {{-- Password --}}

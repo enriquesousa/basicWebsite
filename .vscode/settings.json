@@ -19,7 +19,13 @@
         "titleBar.inactiveForeground": "#e7e7e799"
     },
 
+    // Peacock
     "peacock.color": "#587c34",
-    "cSpell.language": "en,es"
+
+    // Spellcheck abilitar en español
+    "cSpell.language": "en,es",
+
+    // Bookmarks Que se guarden en este proyecto
+    "bookmarks.saveBookmarksInProject": true,
 
 }
