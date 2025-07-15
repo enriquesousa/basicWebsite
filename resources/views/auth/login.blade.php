@@ -36,7 +36,7 @@
                                 {{-- Logo --}}
                                 <div class="mb-4 p-0">
                                     <a href="index.html" class="auth-logo">
-                                        <img src="{{ asset('backend/assets/images/logo-dark.png') }}" alt="logo-dark" class="mx-auto"
+                                        <img src="{{ asset('backend/assets/images/logoTJweb.png') }}" alt="logo-dark" class="mx-auto"
                                             height="28" />
                                     </a>
                                 </div>
