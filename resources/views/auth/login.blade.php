@@ -43,7 +43,7 @@
 
                                 <div class="pt-0">
 
-                                    <form method="POST" action="{{ route('login') }}" class="my-4">
+                                    <form method="POST" action="{{ route('admin.login') }}" class="my-4">
                                         @csrf
 
                                         @if (session('error'))
@@ -54,7 +54,7 @@
 
                                         {{-- Email --}}
                                         <div class="form-group mb-3">
-                                            <label for="emailaddress" class="form-label">Correo Electrónico</label>
+                                            <label for="emailaddress" class="form-label">{{ __('Email') }}</label>
                                             <input class="form-control" type="email" id="email" name="email" required="" placeholder="Entra tu correo electrónico">
                                             @error('email')
                                                 <small class="text-danger">{{ $message }}</small>
@@ -63,7 +63,7 @@
 
                                         {{-- Password --}}
                                         <div class="form-group mb-3">
-                                            <label for="password" class="form-label">Contraseña</label>
+                                            <label for="password" class="form-label">{{ __('Password') }}</label>
                                             <input class="form-control" type="password" required="" id="password" name="password" placeholder="Enter your password">
                                             @error('password')
                                                 <small class="text-danger">{{ $message }}</small>
@@ -73,7 +73,7 @@
                                         {{-- Olvidaste tu contraseña --}}
                                         <div class="form-group d-flex mb-3">
                                             <div class="col-sm-6 text-end">
-                                                <a class='text-muted fs-14' href='{{ route('password.request') }}'>Olvidaste tu contraseña?</a>
+                                                <a class='text-muted fs-14' href='{{ route('password.request') }}'>{{ __('Forgot your password?') }}</a>
                                             </div>
                                         </div>
 
@@ -81,7 +81,7 @@
                                         <div class="form-group mb-0 row">
                                             <div class="col-12">
                                                 <div class="d-grid">
-                                                    <button class="btn btn-primary" type="submit"> Iniciar Sesión </button>
+                                                    <button class="btn btn-primary" type="submit"> {{ __('Log In') }} </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -93,9 +93,9 @@
 
                                     {{-- Register --}}
                                     <div class="text-center text-muted mb-4">
-                                        <p class="mb-0">No tienes una cuenta ?
+                                        <p class="mb-0">{{ __('Don\'t have an account?') }}
                                             <a class='text-primary ms-2 fw-medium' href='{{ route('register') }}'>
-                                                Regístrate
+                                                {{ __('Register') }}
                                             </a>
                                         </p>
                                     </div>
