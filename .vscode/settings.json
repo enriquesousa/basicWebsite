@@ -28,4 +28,18 @@
     // Bookmarks Que se guarden en este proyecto
     "bookmarks.saveBookmarksInProject": true,
 
+    // Editor Font Size
+    "editor.fontSize": 13,
+    
+    // Editor Line Height
+    "editor.lineHeight": 1.3,
+
+    // Editor Tab Size
+    "editor.tabSize": 4,
+
+    // Intelephense, para que no se muestre el error de undefinedMethods
+    // En el caso de hasPermissionTo que no esta definida en el User Model pero si esta en el Trait con usando HasRoles de Spatie
+    "intelephense.diagnostics.undefinedMethods": false,
+    
+
 }
