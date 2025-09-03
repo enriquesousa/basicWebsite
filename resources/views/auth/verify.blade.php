@@ -39,6 +39,22 @@
 
                                 <div class="pt-0">
 
+                                    @if (session('status'))
+                                    <div class="alert alert-success">
+                                        {{ session('status') }}
+                                    </div> 
+                                    @endif
+
+                                    @if ($errors->any())
+                                        <div class="alert alert-danger mt-3">
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>        
+                                    @endif
+
                                     <form method="POST" action="{{ route('custom.verification.verify') }}"
                                         class="my-4">
                                         @csrf
@@ -50,7 +66,7 @@
                                         @endif
 
                                         <div class="form-group mb-3">
-                                            <label for="emailaddress" class="form-label">{{ __('Enter Code') }}</label>
+                                            <label for="emailaddress" class="form-label">{{ __('Enter Verification Code') }}</label>
                                             <input class="form-control" type="text" id="code" name="code" required="" placeholder="{{ __('Enter Code') }}">
                                             @error('code')
                                                 <small class="text-danger">{{ $message }}</small>
@@ -69,8 +85,9 @@
                                     <div class="saprator my-4"><span>{{ __('or') }}</span></div>
 
                                     <div class="text-center text-muted mb-4">
-                                        <p class="mb-0">{{ __('Don\'t have an account?') }}<a class='text-primary ms-2 fw-medium'
-                                                href='{{ route('register') }}'>{{ __('Sign Up') }}</a></p>
+                                        <p class="mb-0">{{ __('Don\'t have an account?') }}
+                                            <a class='text-primary ms-2 fw-medium' href='{{ route('register') }}'>{{ __('Sign Up') }}</a>
+                                        </p>
                                     </div>
 
 

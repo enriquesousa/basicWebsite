@@ -4,7 +4,7 @@
 			"path": "resources/views/auth/login.blade.php",
 			"bookmarks": [
 				{
-					"line": 48,
+					"line": 49,
 					"column": 62,
 					"label": "mostrar error de sesion"
 				}
