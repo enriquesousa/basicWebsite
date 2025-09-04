@@ -112,7 +112,51 @@
                 </li>
 
                 <!-- User Profile Menu -->
+                @php
+                    $id = Auth::user()->id;
+                    $profileData = App\Models\User::find($id);
+                @endphp 
                 <li class="dropdown notification-list topbar-dropdown">
+
+                    <!-- User Profile Photo -->
+                    <a class="nav-link dropdown-toggle nav-user me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <img src="{{ (!empty($profileData->photo)) ? url('upload/user_images/'.$profileData->photo) : url('upload/no_image.jpg') }}" alt="user-image" class="rounded-circle">
+                        <span class="pro-user-name ms-1">
+                            {{ $profileData->name }} <i class="mdi mdi-chevron-down"></i>
+                        </span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
+                        <!-- item-->
+                        <div class="dropdown-header noti-title">
+                            <h6 class="text-overflow m-0">{{ __('Welcome') }} !</h6>
+                        </div>
+
+                        <!-- Mi Cuenta -->
+                        <a href="{{ route('admin.profile') }}" class="dropdown-item notify-item">
+                            <i class="mdi mdi-account-circle-outline fs-16 align-middle"></i>
+                            <span>{{ __('My Account') }}</span>
+                        </a>
+
+                        <!-- item-->
+                        <a href="auth-lock-screen.html" class="dropdown-item notify-item">
+                            <i class="mdi mdi-lock-outline fs-16 align-middle"></i>
+                            <span>Lock Screen</span>
+                        </a>
+
+                        <div class="dropdown-divider"></div>
+
+                        <!-- item-->
+                        <a href="{{ route('admin.logout') }}" class="dropdown-item notify-item">
+                            <i class="mdi mdi-location-exit fs-16 align-middle"></i>
+                            <span>{{ __('Logout') }}</span>
+                        </a>
+
+                    </div>
+                </li>
+
+                <!-- User Profile Menu -->
+                {{-- <li class="dropdown notification-list topbar-dropdown">
                     <a class="nav-link dropdown-toggle nav-user me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                         <img src="{{ asset('backend/assets/images/users/user-11.jpg') }}" alt="user-image" class="rounded-circle">
                         <span class="pro-user-name ms-1">
@@ -120,6 +164,7 @@
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
+
                         <!-- item-->
                         <div class="dropdown-header noti-title">
                             <h6 class="text-overflow m-0">Welcome !</h6>
@@ -146,7 +191,7 @@
                         </a>
 
                     </div>
-                </li>
+                </li> --}}
 
             </ul>
 
