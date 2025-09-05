@@ -86,7 +86,7 @@
                                                         <div class="form-group mb-3 row">
                                                             <label class="form-label">{{ __('Address') }}</label>
                                                             <div class="col-lg-12 col-xl-12">
-                                                                <textarea name="address" class="form-control" placeholder="Add your address">{{ $profileData->address }}</textarea>
+                                                                <textarea name="address" class="form-control" placeholder="{{ __('Address') }}">{{ $profileData->address }}</textarea>
                                                             </div>
                                                         </div>
 
