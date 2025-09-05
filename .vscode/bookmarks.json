@@ -9,6 +9,16 @@
 					"label": "mostrar error de sesion"
 				}
 			]
+		},
+		{
+			"path": "app/Http/Controllers/AdminController.php",
+			"bookmarks": [
+				{
+					"line": 92,
+					"column": 53,
+					"label": "eliminar old photo img"
+				}
+			]
 		}
 	]
 }

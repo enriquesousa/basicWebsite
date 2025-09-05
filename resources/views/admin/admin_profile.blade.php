@@ -54,8 +54,7 @@
                                                 </div>
 
                                                 <div class="card-body">
-                                                    {{-- <form action="{{ route('profile.store') }}" method="POST" enctype="multipart/form-data"> --}}
-                                                    <form action="" method="POST" enctype="multipart/form-data">
+                                                    <form action="{{ route('profile.store') }}" method="POST" enctype="multipart/form-data">
                                                         @csrf
                                                     
                                                         <!-- Nombre -->
