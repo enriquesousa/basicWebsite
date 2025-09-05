@@ -133,8 +133,7 @@
                                                 <!-- Contenido Cambiar Contraseña -->
                                                 <div class="card-body mb-0">
 
-                                                    {{-- <form action="{{ route('admin.password.update') }}" method="post"> --}}
-                                                    <form action="" method="post">    
+                                                    <form action="{{ route('admin.password.update') }}" method="post">
                                                         @csrf
 
                                                         <div class="form-group mb-3 row">

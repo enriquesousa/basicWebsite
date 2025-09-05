@@ -7,6 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
 class AdminController extends Controller
@@ -109,6 +110,39 @@ class AdminController extends Controller
         if (file_exists($fullPath)) {
             unlink($fullPath);
         }
+    }
+
+    public function AdminPasswordUpdate(Request $request)
+    {
+        dd($request->all());
+
+        // $user = Auth::user();
+        // $request->validate([
+        //     'old_password' => 'required',
+        //     'new_password' => 'required|confirmed|min:8',
+        // ]);
+
+        // if (!Hash::check($request->old_password, $user->password)) {
+            
+        //     $notification = array(
+        //         'message' => __('Old Password Does not Match!'),
+        //         'alert-type' => 'error'
+        //         ); 
+        //         return back()->with($notification);
+        // }
+
+        // User::whereId($user->id)->update([
+        //     'password' => Hash::make($request->new_password) 
+        // ]);
+
+        // Auth::logout();
+
+        // $notification = array(
+        //     'message' => __('Password Updated Successfully'),
+        //     'alert-type' => 'success'
+        // ); 
+
+        // return redirect()->route('login')->with($notification); 
     }
 
 
