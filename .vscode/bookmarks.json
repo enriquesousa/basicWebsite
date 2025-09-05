@@ -4,7 +4,7 @@
 			"path": "resources/views/auth/login.blade.php",
 			"bookmarks": [
 				{
-					"line": 49,
+					"line": 52,
 					"column": 62,
 					"label": "mostrar error de sesion"
 				}
@@ -17,6 +17,11 @@
 					"line": 93,
 					"column": 53,
 					"label": "eliminar old photo img"
+				},
+				{
+					"line": 137,
+					"column": 8,
+					"label": "Auth user is logout"
 				}
 			]
 		}

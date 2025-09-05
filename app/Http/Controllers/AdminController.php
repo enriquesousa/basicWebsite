@@ -114,35 +114,35 @@ class AdminController extends Controller
 
     public function AdminPasswordUpdate(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
 
-        // $user = Auth::user();
-        // $request->validate([
-        //     'old_password' => 'required',
-        //     'new_password' => 'required|confirmed|min:8',
-        // ]);
+        $user = Auth::user();
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|confirmed|min:8',
+        ]);
 
-        // if (!Hash::check($request->old_password, $user->password)) {
+        if (!Hash::check($request->old_password, $user->password)) {
             
-        //     $notification = array(
-        //         'message' => __('Old Password Does not Match!'),
-        //         'alert-type' => 'error'
-        //         ); 
-        //         return back()->with($notification);
-        // }
+            $notification = array(
+                'message' => __('Old Password Does not Match!'),
+                'alert-type' => 'error'
+                ); 
+                return back()->with($notification);
+        }
 
-        // User::whereId($user->id)->update([
-        //     'password' => Hash::make($request->new_password) 
-        // ]);
+        User::whereId($user->id)->update([
+            'password' => Hash::make($request->new_password) 
+        ]);
 
-        // Auth::logout();
+        Auth::logout();
 
-        // $notification = array(
-        //     'message' => __('Password Updated Successfully'),
-        //     'alert-type' => 'success'
-        // ); 
+        $notification = array(
+            'message' => __('Password Updated Successfully'),
+            'alert-type' => 'success'
+        ); 
 
-        // return redirect()->route('login')->with($notification); 
+        return redirect()->route('login')->with($notification); 
     }
 
 
