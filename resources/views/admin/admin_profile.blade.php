@@ -194,8 +194,8 @@
         <!-- container-fluid -->
     </div>
 
+    // Mostrar imagen seleccionada
     <script type="text/javascript">
-
         // Mostrar imagen seleccionada
         $(document).ready(function(){
             $('#image').change(function(e){
@@ -206,7 +206,6 @@
                 reader.readAsDataURL(e.target.files['0']);
             })
         })
-
     </script>
 
 @endsection
