@@ -24,6 +24,16 @@
 					"label": "Auth user is logout"
 				}
 			]
+		},
+		{
+			"path": "resources/views/home/body/header.blade.php",
+			"bookmarks": [
+				{
+					"line": 9,
+					"column": 24,
+					"label": "logo"
+				}
+			]
 		}
 	]
 }
