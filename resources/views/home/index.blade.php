@@ -9,7 +9,7 @@
 
     @include('home.home_layout.financial')
     
-    @include('home.home_layout.usability')
+    @include('home.home_layout.video')
     
     @include('home.home_layout.testimonial')
     

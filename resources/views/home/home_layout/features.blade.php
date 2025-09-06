@@ -24,7 +24,7 @@
                 <div class="lonyo-service-wrap light-bg" data-aos="fade-up" data-aos-duration="700">
                     <div class="lonyo-service-title">
                         <h4>Budgeting Tools</h4>
-                        <img src="assets/images/v1/feature2.svg" alt="">
+                        <img src="{{ asset('frontend/assets/images/v1/feature2.svg') }}" alt="">
                     </div>
                     <div class="lonyo-service-data">
                         <p>Provides visual insights like graphs or pie charts to show how much is spent versus the
@@ -36,7 +36,7 @@
                 <div class="lonyo-service-wrap light-bg" data-aos="fade-up" data-aos-duration="900">
                     <div class="lonyo-service-title">
                         <h4>Investment Tracking</h4>
-                        <img src="assets/images/v1/feature3.svg" alt="">
+                        <img src="{{ asset('frontend/assets/images/v1/feature3.svg') }}" alt="">
                     </div>
                     <div class="lonyo-service-data">
                         <p>For users interested in investing, finance apps often provide tools to track stocks,
@@ -48,7 +48,7 @@
                 <div class="lonyo-service-wrap light-bg" data-aos="fade-up" data-aos-duration="500">
                     <div class="lonyo-service-title">
                         <h4>Tax Management</h4>
-                        <img src="assets/images/v1/feature4.svg" alt="">
+                        <img src="{{ asset('frontend/assets/images/v1/feature4.svg') }}" alt="">
                     </div>
                     <div class="lonyo-service-data">
                         <p>This tool integrate with tax software to help users prepare for tax season, deduct
@@ -60,7 +60,7 @@
                 <div class="lonyo-service-wrap light-bg" data-aos="fade-up" data-aos-duration="700">
                     <div class="lonyo-service-title">
                         <h4>Bill Management</h4>
-                        <img src="assets/images/v1/feature5.svg" alt="">
+                        <img src="{{ asset('frontend/assets/images/v1/feature5.svg') }}" alt="">
                     </div>
                     <div class="lonyo-service-data">
                         <p>Tracks upcoming bills, sets reminders for due dates, and enables easy payments via
@@ -72,7 +72,7 @@
                 <div class="lonyo-service-wrap light-bg" data-aos="fade-up" data-aos-duration="900">
                     <div class="lonyo-service-title">
                         <h4>Security Features</h4>
-                        <img src="assets/images/v1/feature6.svg" alt="">
+                        <img src="{{ asset('frontend/assets/images/v1/feature6.svg') }}" alt="">
                     </div>
                     <div class="lonyo-service-data">
                         <p>Provides bank-level encryption to ensure user data and financial information remain safe,
