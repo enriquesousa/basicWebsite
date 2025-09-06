@@ -6,8 +6,9 @@
             <!-- Logo -->
             <div class="col-8 col-sm-auto ">
                 <div class="header-logo1 ">
-                    <a href="index.html">
-                        <img src="{{ asset('frontend/assets/images/logo/logo-dark.svg') }}" alt="logo">
+                    <a href="{{ route('home') }}">
+                        {{-- <img src="{{ asset('frontend/assets/images/logo/logo-dark.svg') }}" alt="logo"> --}}
+                        <img src="{{ asset('backend/assets/images/logoTJweb.png') }}" alt="logo-dark" height="40" width="140">
                     </a>
                 </div>
             </div>
@@ -65,9 +66,17 @@
             <div class="col-auto d-flex align-items-center">
                 <div class="lonyo-header-info-wraper2">
                     <div class="lonyo-header-info-content">
-                        <ul>
-                            <li><a href="sign-in.html">{{ __('Log in') }}</a></li>
-                        </ul>
+
+                        @auth
+                            <ul>
+                                <li><a href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a></li>
+                            </ul>
+                        @else
+                            <ul>
+                                <li><a href="{{ route('login') }}">{{ __('Log in') }}</a></li>
+                            </ul>
+                        @endauth
+
                     </div>
                     <a class="lonyo-default-btn lonyo-header-btn" href="conact-us.html">{{ __('Book a demo') }}</a>
                 </div>

@@ -34,6 +34,26 @@
 					"label": "logo"
 				}
 			]
+		},
+		{
+			"path": "resources/views/home/body/mobile_menu.blade.php",
+			"bookmarks": [
+				{
+					"line": 6,
+					"column": 20,
+					"label": "logo mobile"
+				}
+			]
+		},
+		{
+			"path": "resources/views/admin/body/sidebar.blade.php",
+			"bookmarks": [
+				{
+					"line": 26,
+					"column": 24,
+					"label": "logo en admin"
+				}
+			]
 		}
 	]
 }

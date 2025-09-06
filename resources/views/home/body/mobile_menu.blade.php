@@ -3,8 +3,9 @@
     <div class="lonyo-menu-area text-center">
         <div class="lonyo-menu-mobile-top">
             <div class="mobile-logo">
-                <a href="index.html">
-                    <img src="{{ asset('frontend/assets/images/logo/logo-dark.svg') }}" alt="logo">
+                <a href="{{ route('home') }}">
+                    {{-- <img src="{{ asset('frontend/assets/images/logo/logo-dark.svg') }}" alt="logo"> --}}
+                    <img src="{{ asset('backend/assets/images/logoTJweb.png') }}" alt="logo-dark" height="30" width="140">
                 </a>
             </div>
             <button class="lonyo-menu-toggle mobile">
