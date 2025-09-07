@@ -13,6 +13,10 @@ class ReviewController extends Controller
         return view('admin.backend.review.all_review', compact('review'));
     }
 
+    public function AddReview(){
+        return view('admin.backend.review.add_review');
+    }
+
 
     
 }
