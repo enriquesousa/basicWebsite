@@ -54,6 +54,21 @@
 					"label": "logo en admin"
 				}
 			]
+		},
+		{
+			"path": "resources/views/admin/backend/review/all_review.blade.php",
+			"bookmarks": [
+				{
+					"line": 30,
+					"column": 67,
+					"label": "incrementar key en loop table"
+				},
+				{
+					"line": 33,
+					"column": 44,
+					"label": "altura y ancho de imagen en table"
+				}
+			]
 		}
 	]
 }

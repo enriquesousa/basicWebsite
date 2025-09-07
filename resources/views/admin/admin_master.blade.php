@@ -13,6 +13,13 @@
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico') }}">
 
+    <!-- Datatables css -->
+    <link href="{{ asset('backend/assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/assets/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/assets/libs/datatables.net-keytable-bs5/css/keyTable.bootstrap5.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/assets/libs/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/assets/libs/datatables.net-select-bs5/css/select.bootstrap5.min.css')}}" rel="stylesheet" type="text/css" />
+
     <!-- App css -->
     <link href="{{ asset('backend/assets/css/app.min.css') }}" rel="stylesheet" type="text/css" id="app-style" />
 
@@ -75,6 +82,40 @@
 
     <!-- App js-->
     <script src="{{ asset('backend/assets/js/app.js') }}"></script>
+
+    <!-- Datatables js -->
+    <script src="{{ asset('backend/assets/libs/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+    <!-- dataTables.bootstrap5 -->
+    <script src="{{ asset('backend/assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js')}}"></script>
+    <script src="{{ asset('backend/assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js')}}"></script>
+    <!-- If app local is es traducir datatable a español, la posición de este código es importante -->
+    @if(App::getLocale() == 'es')
+        <!-- Para traducir Data Table a español -->
+        <script type="text/javascript">
+            // Para implementar el datatables en donde tengamos la clase de table y de una vez traducir Data Tables a español
+            $(".table").DataTable({
+                "language": {
+                    "sSearch": "Buscar:",
+                    "sEmptyTable": "No hay datos en la Tabla",
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sInfo": "Mostrando registros del _START_ al _END_ de un total _TOTAL_",
+                    "SInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0",
+                    "sInfoFiltered": "(filtrando de un total de _MAX_ registros)",
+                    "oPaginate": 
+                        {
+                            "sFirst": "Primero",
+                            "sLast": "Último",
+                            "sNext": "Siguiente",
+                            "sPrevious": "Anterior"
+                        },
+                    "sLoadingRecords": "Cargando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros"
+                }
+            });
+        </script>
+    @endif
+    <!-- Datatable Demo App Js -->
+    <script src="{{ asset('backend/assets/js/pages/datatable.init.js')}}"></script>
 
 
     <!-- Toastr JS -->
