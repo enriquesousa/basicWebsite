@@ -52,7 +52,7 @@
                     <div class="collapse" id="reviews">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="auth-login.html" class="tp-link">{{ __('All Reviews') }}</a>
+                                <a href="{{ route('all.review') }}" class="tp-link">{{ __('All Reviews') }}</a>
                             </li>
                             <li>
                                 <a href="auth-register.html" class="tp-link">{{ __('Add Review') }}</a>
