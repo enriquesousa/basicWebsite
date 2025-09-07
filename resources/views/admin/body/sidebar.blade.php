@@ -41,42 +41,27 @@
                     </a>
                 </li>
 
-                <li class="menu-title">Pages</li>
+                <li class="menu-title">{{ __('Sections') }}</li>
 
                 <li>
-                    <a href="#sidebarAuth" data-bs-toggle="collapse">
-                        <i data-feather="users"></i>
-                        <span> Authentication </span>
+                    <a href="#reviews" data-bs-toggle="collapse">
+                        <span class="mdi mdi-comment-arrow-left-outline"></span>
+                        <span> {{ __('Reviews') }} </span>
                         <span class="menu-arrow"></span>
                     </a>
-                    <div class="collapse" id="sidebarAuth">
+                    <div class="collapse" id="reviews">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="auth-login.html" class="tp-link">Log In</a>
+                                <a href="auth-login.html" class="tp-link">{{ __('All Reviews') }}</a>
                             </li>
                             <li>
-                                <a href="auth-register.html" class="tp-link">Register</a>
-                            </li>
-                            <li>
-                                <a href="auth-recoverpw.html" class="tp-link">Recover Password</a>
-                            </li>
-                            <li>
-                                <a href="auth-lock-screen.html" class="tp-link">Lock Screen</a>
-                            </li>
-                            <li>
-                                <a href="auth-confirm-mail.html" class="tp-link">Confirm Mail</a>
-                            </li>
-                            <li>
-                                <a href="email-verification.html" class="tp-link">Email Verification</a>
-                            </li>
-                            <li>
-                                <a href="auth-logout.html" class="tp-link">Logout</a>
+                                <a href="auth-register.html" class="tp-link">{{ __('Add Review') }}</a>
                             </li>
                         </ul>
                     </div>
                 </li>
 
-                <li>
+                {{-- <li>
                     <a href="#sidebarError" data-bs-toggle="collapse">
                         <i data-feather="alert-octagon"></i>
                         <span> Error Pages </span>
@@ -101,19 +86,21 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
                 <!-- Calendar -->
-                <li>
+                {{-- <li>
                     <a href="calendar.html" class="tp-link">
                         <i data-feather="calendar"></i>
                         <span> Calendar </span>
                     </a>
-                </li>
+                </li> --}}
 
-                <li class="menu-title">General</li>
 
-                <li>
+
+                {{-- <li class="menu-title">General</li> --}}
+
+                {{-- <li>
                     <a href="#sidebarAuth" data-bs-toggle="collapse">
                         <i data-feather="users"></i>
                         <span> Authentication </span>
@@ -144,34 +131,8 @@
                             </li>
                         </ul>
                     </div>
-                </li>
-
-                <li>
-                    <a href="#sidebarError" data-bs-toggle="collapse">
-                        <i data-feather="alert-octagon"></i>
-                        <span> Error Pages </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                    <div class="collapse" id="sidebarError">
-                        <ul class="nav-second-level">
-                            <li>
-                                <a href="error-404.html" class="tp-link">Error 404</a>
-                            </li>
-                            <li>
-                                <a href="error-500.html" class="tp-link">Error 500</a>
-                            </li>
-                            <li>
-                                <a href="error-503.html" class="tp-link">Error 503</a>
-                            </li>
-                            <li>
-                                <a href="error-429.html" class="tp-link">Error 429</a>
-                            </li>
-                            <li>
-                                <a href="offline-page.html" class="tp-link">Offline Page</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+                </li> --}}
+                
 
             </ul>
 

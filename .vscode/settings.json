@@ -28,8 +28,11 @@
     // Bookmarks Que se guarden en este proyecto
     "bookmarks.saveBookmarksInProject": true,
 
+    // Editor Font
+    "editor.fontFamily": "Fira Code",
+
     // Editor Font Size
-    "editor.fontSize": 13,
+    "editor.fontSize": 15,
     
     // Editor Line Height
     "editor.lineHeight": 1.3,
