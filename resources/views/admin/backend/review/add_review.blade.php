@@ -34,8 +34,7 @@
                                                     </div>
                                                 </div>
 
-                                                <form action="{{ route('profile.store') }}" method="post"
-                                                    enctype="multipart/form-data">
+                                                <form action="{{ route('store.review') }}" method="post" enctype="multipart/form-data">
                                                     @csrf
 
                                                     <div class="card-body">
@@ -64,7 +63,7 @@
                                                         <div class="form-group mb-3 row">
                                                             <label class="form-label">{{ __('User Photo') }}</label>
                                                             <div class="col-lg-12 col-xl-12">
-                                                                <input class="form-control" type="file" name="photo" id="image">
+                                                                <input class="form-control" type="file" name="image" id="image">
                                                             </div>
                                                         </div>
 

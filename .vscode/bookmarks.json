@@ -67,6 +67,21 @@
 					"line": 33,
 					"column": 44,
 					"label": "altura y ancho de imagen en table"
+				},
+				{
+					"line": 35,
+					"column": 44,
+					"label": "string limit en blade"
+				}
+			]
+		},
+		{
+			"path": "app/Http/Controllers/Backend/ReviewController.php",
+			"bookmarks": [
+				{
+					"line": 29,
+					"column": 12,
+					"label": "usar image intervention para resize image"
 				}
 			]
 		}

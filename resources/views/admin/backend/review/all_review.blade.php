@@ -14,7 +14,7 @@
                         </div><!-- end card header -->
 
                         <div class="card-body">
-                            <table id="datatable" class="table table-bordered dt-responsive table-responsive nowrap">
+                            <table id="datatable" class="table table-bordered dt-responsive table-responsive wrap">
                                 <thead>
                                     <tr>
                                         <th>#</th>
@@ -22,7 +22,7 @@
                                         <th>{{ __('Position') }}</th>
                                         <th>{{ __('Image') }}</th>
                                         <th>{{ __('Message') }}</th>
-                                        <th>{{ __('Action') }}</th>
+                                        <th style="width: 120px">{{ __('Action') }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -33,7 +33,7 @@
                                             <td>{{ $item->position }}</td>
                                             <td> <img src="{{ asset($item->image) }}" style="width:70px; height:40px;">
                                             </td>
-                                            <td>{{ $item->message }}</td>
+                                            <td>{{ Str::limit($item->message, 70) }}</td>
 
                                             <td>
                                                 <a href="" class="btn btn-success btn-sm" title="{{ __('Edit') }}">{{ __('Edit') }}</a>
