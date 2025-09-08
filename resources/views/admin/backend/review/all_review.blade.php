@@ -31,7 +31,7 @@
                                             <td>{{ $key + 1 }}</td>
                                             <td>{{ $item->name }}</td>
                                             <td>{{ $item->position }}</td>
-                                            <td> <img src="{{ asset($item->image) }}" style="width:60px; height:60px;">
+                                            <td> <img src="{{ !empty($item->image) ? asset($item->image) : asset('upload/no_image.jpg') }}" style="width:60px; height:60px;">
                                             </td>
                                             <td>{{ Str::limit($item->message, 70) }}</td>
 

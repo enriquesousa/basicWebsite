@@ -66,7 +66,7 @@
 				{
 					"line": 33,
 					"column": 44,
-					"label": "altura y ancho de imagen en table"
+					"label": "display image in blade"
 				},
 				{
 					"line": 35,
@@ -79,7 +79,7 @@
 			"path": "app/Http/Controllers/Backend/ReviewController.php",
 			"bookmarks": [
 				{
-					"line": 29,
+					"line": 35,
 					"column": 12,
 					"label": "usar image intervention para resize image"
 				}

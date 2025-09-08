@@ -24,6 +24,12 @@ class ReviewController extends Controller
     public function StoreReview(Request $request){
 
         // dd($request->all());
+        $validate = $request->validate([
+            'name' => 'required',
+            'position' => 'required',
+            'message' => 'nullable',
+            'image' => 'nullable|mimes:jpg,jpeg,png',
+        ]);
 
         if ($request->file('image')) {
             $image = $request->file('image');
@@ -38,6 +44,12 @@ class ReviewController extends Controller
                 'position' => $request->position,
                 'message' => $request->message,
                 'image' => $save_url,
+            ]);
+        }else{
+            Review::create([
+                'name' => $request->name,
+                'position' => $request->position,
+                'message' => $request->message,
             ]);
         }
 
