@@ -31,13 +31,13 @@
                                             <td>{{ $key + 1 }}</td>
                                             <td>{{ $item->name }}</td>
                                             <td>{{ $item->position }}</td>
-                                            <td> <img src="{{ asset($item->image) }}" style="width:70px; height:40px;">
+                                            <td> <img src="{{ asset($item->image) }}" style="width:60px; height:60px;">
                                             </td>
                                             <td>{{ Str::limit($item->message, 70) }}</td>
 
                                             <td>
                                                 <a href="{{ route('edit.review', $item->id) }}" class="btn btn-success btn-sm" title="{{ __('Edit') }}">{{ __('Edit') }}</a>
-                                                <a href="" class="btn btn-danger btn-sm" title="{{ __('Delete') }}">{{ __('Delete') }}</a>
+                                                <a href="{{ route('delete.review', $item->id) }}" class="btn btn-danger btn-sm" id="delete" title="{{ __('Delete') }}">{{ __('Delete') }}</a>
                                             </td>
                                         </tr>
                                     @endforeach

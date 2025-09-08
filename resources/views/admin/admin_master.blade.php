@@ -117,10 +117,45 @@
     <!-- Datatable Demo App Js -->
     <script src="{{ asset('backend/assets/js/pages/datatable.init.js')}}"></script>
 
+    <!-- Sweet Alert 2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Mensaje de Confirmación Para Botón con id delete Sweet Alert 2, lo pongo mejor  aquí para poder hacer las transiciones con laravel -->
+    <script>
+        $(document).ready(function() {
+        
+            // Botón Delete Sweet Alert 2
+            $('body').on('click', '#delete', function(e) {
+                e.preventDefault();
+
+                let url = $(this).attr('href');
+                // console.log(url);
+
+                Swal.fire({
+                    title: "{{ __('Are you sure?') }}",
+                    text: "{{ __('Delete This Data?') }}",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: "{{ __('Yes, delete it!') }}",
+                    // timer: 2000,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = url
+                        Swal.fire(
+                            "{{ __('Deleted!') }}",
+                            "{{ __('Your file has been deleted.') }}",
+                            'success'
+                        )
+                    }
+                })
+            })
+
+        });
+    </script>    
 
     <!-- Toastr JS -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
     <!-- Toastr JS Display Message -->
     <script>
         @if(Session::has('message'))
