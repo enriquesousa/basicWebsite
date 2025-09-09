@@ -84,6 +84,21 @@
 					"label": "usar image intervention para resize image"
 				}
 			]
+		},
+		{
+			"path": "resources/views/home/home_layout/slider.blade.php",
+			"bookmarks": [
+				{
+					"line": 30,
+					"column": 54,
+					"label": "csrf token solo para esta pagina"
+				},
+				{
+					"line": 46,
+					"column": 12,
+					"label": "llamar controller desde js method post"
+				}
+			]
 		}
 	]
 }
