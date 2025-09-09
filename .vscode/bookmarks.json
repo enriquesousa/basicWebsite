@@ -4,6 +4,11 @@
 			"path": "resources/views/auth/login.blade.php",
 			"bookmarks": [
 				{
+					"line": 41,
+					"column": 40,
+					"label": "logo login"
+				},
+				{
 					"line": 52,
 					"column": 62,
 					"label": "mostrar error de sesion"
@@ -94,9 +99,9 @@
 					"label": "csrf token solo para esta pagina"
 				},
 				{
-					"line": 46,
+					"line": 47,
 					"column": 12,
-					"label": "llamar controller desde js method post"
+					"label": "llamar controller desde js method post fetch"
 				}
 			]
 		}

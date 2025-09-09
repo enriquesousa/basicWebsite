@@ -37,6 +37,7 @@
         const titleElement = document.getElementById("slider-title");
         const descElement = document.getElementById("slider-description");
 
+        // Función para guardar los cambios en la base de datos
         function saveChanges(element) {
 
             let sliderId = element.dataset.id;
@@ -60,6 +61,24 @@
             })
             .catch(error => console.error("Error:", error)); 
         }
+
+        // Auto save on Enter Key
+        document.addEventListener("keydown", function(e){
+            if (e.key === "Enter") {
+                e.preventDefault(); // para que no refresque la página
+                saveChanges(e.target);
+            }
+        });
+
+        // Auto save on losing focus on title
+        titleElement.addEventListener("blur", function () {
+            saveChanges(titleElement);
+        });
+
+        // Auto save on losing focus on description
+        descElement.addEventListener("blur", function() {
+            saveChanges(descElement);
+        });
 
     });
 

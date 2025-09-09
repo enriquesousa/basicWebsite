@@ -64,6 +64,21 @@ class SliderController extends Controller
         } 
     }
 
+    public function EditSlider(Request $request, $id){
+
+        $slider = Slider::findOrFail($id);
+
+        if ($request->has('title')) {
+            $slider->title = $request->title;
+        }
+        if ($request->has('description')) {
+            $slider->description = $request->description;
+        }
+
+        $slider->save();
+        return response()->json(['success' => true]);
+    }
+
 
     
 }
