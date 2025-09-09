@@ -33,7 +33,7 @@
                                                     </div>
                                                 </div>
 
-                                                <form action="{{ route('update.review') }}" method="post"
+                                                <form action="{{ route('update.slider') }}" method="post"
                                                     enctype="multipart/form-data">
                                                     @csrf
 
