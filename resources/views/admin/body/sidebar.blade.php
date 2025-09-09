@@ -43,6 +43,23 @@
 
                 <li class="menu-title">{{ __('Sections') }}</li>
 
+                <!-- Slider (Hero Section tiene una sola imagen) es un solo record -->
+                <li>
+                    <a href="#slider" data-bs-toggle="collapse">
+                        <span class="mdi mdi-presentation"></span>
+                        <span> {{ __('Hero') }} </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="slider">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('get.slider') }}" class="tp-link">{{ __('Hero') }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Reviews -->
                 <li>
                     <a href="#reviews" data-bs-toggle="collapse">
                         <span class="mdi mdi-comment-arrow-left-outline"></span>
