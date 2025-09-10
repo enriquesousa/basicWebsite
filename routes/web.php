@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\ReviewController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\ProfileController;
@@ -56,6 +57,12 @@ Route::middleware('auth')->group(function () {
         Route::post('/edit-features/{id}', 'EditFeatures');
         Route::post('/edit-reviews/{id}', 'EditReviews');
         Route::post('/edit-answers/{id}', 'EditAnswers');
+    });
+
+    // All Features
+    Route::controller(HomeController::class)->group(function(){
+        Route::get('/all/features', 'AllFeatures')->name('all.features'); 
+        
     });
    
     

@@ -2,7 +2,7 @@
 <div class="app-sidebar-menu">
     <div class="h-100" data-simplebar>
 
-        <!--- Sidemenu -->
+        <!--- Side Menu -->
         <div id="sidebar-menu">
 
             {{-- Logo --}}
@@ -78,40 +78,32 @@
                     </div>
                 </li>
 
-                {{-- <li>
-                    <a href="#sidebarError" data-bs-toggle="collapse">
-                        <i data-feather="alert-octagon"></i>
-                        <span> Error Pages </span>
+                <!-- Features -->
+                <li>
+                    <a href="#features" data-bs-toggle="collapse">
+                        <span class="mdi mdi-apache-kafka"></span>
+                        <span> {{ __('Features') }} </span>
                         <span class="menu-arrow"></span>
                     </a>
-                    <div class="collapse" id="sidebarError">
+                    <div class="collapse" id="features">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="error-404.html" class="tp-link">Error 404</a>
+                                <a href="{{ route('all.features') }}" class="tp-link">{{ __('All Features') }}</a>
                             </li>
                             <li>
-                                <a href="error-500.html" class="tp-link">Error 500</a>
-                            </li>
-                            <li>
-                                <a href="error-503.html" class="tp-link">Error 503</a>
-                            </li>
-                            <li>
-                                <a href="error-429.html" class="tp-link">Error 429</a>
-                            </li>
-                            <li>
-                                <a href="offline-page.html" class="tp-link">Offline Page</a>
+                                {{-- <a href="{{ route('add.feature') }}" class="tp-link">{{ __('Add Feature') }}</a> --}}
+                                <a href="" class="tp-link">{{ __('Add Feature') }}</a>
                             </li>
                         </ul>
                     </div>
-                </li> --}}
+                </li>
 
-                <!-- Calendar -->
-                {{-- <li>
-                    <a href="calendar.html" class="tp-link">
-                        <i data-feather="calendar"></i>
-                        <span> Calendar </span>
-                    </a>
-                </li> --}}
+                
+
+
+
+
+
 
 
 

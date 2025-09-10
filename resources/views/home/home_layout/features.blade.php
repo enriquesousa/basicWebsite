@@ -11,7 +11,9 @@
             {{-- <h2>Features that make spending smarter</h2> --}}
             <h2 id="features-title" contenteditable="{{ auth()->check() ? 'true' : 'false' }}" data-id="{{ $title->id }}">{{ __($title->features) }}</h2>
         </div>
+
         <div class="row">
+
             <div class="col-xl-4 col-lg-6 col-md-6">
                 <div class="lonyo-service-wrap light-bg" data-aos="fade-up" data-aos-duration="500">
                     <div class="lonyo-service-title">
@@ -24,6 +26,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-xl-4 col-lg-6 col-md-6">
                 <div class="lonyo-service-wrap light-bg" data-aos="fade-up" data-aos-duration="700">
                     <div class="lonyo-service-title">
@@ -36,6 +39,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-xl-4 col-lg-6 col-md-6">
                 <div class="lonyo-service-wrap light-bg" data-aos="fade-up" data-aos-duration="900">
                     <div class="lonyo-service-title">
@@ -48,6 +52,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-xl-4 col-lg-6 col-md-6">
                 <div class="lonyo-service-wrap light-bg" data-aos="fade-up" data-aos-duration="500">
                     <div class="lonyo-service-title">
@@ -60,6 +65,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-xl-4 col-lg-6 col-md-6">
                 <div class="lonyo-service-wrap light-bg" data-aos="fade-up" data-aos-duration="700">
                     <div class="lonyo-service-title">
@@ -72,6 +78,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-xl-4 col-lg-6 col-md-6">
                 <div class="lonyo-service-wrap light-bg" data-aos="fade-up" data-aos-duration="900">
                     <div class="lonyo-service-title">
@@ -84,7 +91,9 @@
                     </div>
                 </div>
             </div>
+            
         </div>
+
     </div>
     <div class="lonyo-feature-shape"></div>
 </div>
