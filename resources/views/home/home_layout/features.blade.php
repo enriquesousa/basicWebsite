@@ -12,21 +12,24 @@
             <h2 id="features-title" contenteditable="{{ auth()->check() ? 'true' : 'false' }}" data-id="{{ $title->id }}">{{ __($title->features) }}</h2>
         </div>
 
+        <!-- Para desplegar solo 6 features -->
+        @php
+            $features = App\Models\Feature::latest()->limit(6)->get();
+        @endphp
         <div class="row">
-
-            <div class="col-xl-4 col-lg-6 col-md-6">
-                <div class="lonyo-service-wrap light-bg" data-aos="fade-up" data-aos-duration="500">
-                    <div class="lonyo-service-title">
-                        <h4>Expense Tracking</h4>
-                        <img src="{{ asset('frontend/assets/images/v1/feature1.svg') }}" alt="">
-                    </div>
-                    <div class="lonyo-service-data">
-                        <p>Allows users to record and categorize daily transactions such as income, expenses, bills,
-                            and savings.</p>
+            @foreach ($features as $item)
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                    <div class="lonyo-service-wrap light-bg" data-aos="fade-up" data-aos-duration="500">
+                        <div class="lonyo-service-title">
+                            <h4>{{ __($item->title) }}</h4>
+                            <img src="{{ asset('frontend/assets/images/v1/'.$item->icon.'.svg') }}" alt="">
+                        </div>
+                        <div class="lonyo-service-data">
+                            <p>{{ __($item->description) }}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-
+            @endforeach
         </div>
 
     </div>
