@@ -33,8 +33,8 @@
                                             <td>{{ Str::limit($item->description, 70) }}</td>                                            
 
                                             <td>
-                                                <a href="{{ route('edit.review', $item->id) }}" class="btn btn-success btn-sm" title="{{ __('Edit') }}">{{ __('Edit') }}</a>
-                                                <a href="{{ route('delete.review', $item->id) }}" class="btn btn-danger btn-sm" id="delete" title="{{ __('Delete') }}">{{ __('Delete') }}</a>
+                                                <a href="{{ route('edit.feature', $item->id) }}" class="btn btn-success btn-sm" title="{{ __('Edit') }}">{{ __('Edit') }}</a>
+                                                <a href="{{ route('delete.feature', $item->id) }}" class="btn btn-danger btn-sm" id="delete" title="{{ __('Delete') }}">{{ __('Delete') }}</a>
                                             </td>
                                         </tr>
                                     @endforeach
