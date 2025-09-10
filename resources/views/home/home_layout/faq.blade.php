@@ -98,12 +98,12 @@
         // Función para guardar los cambios en la base de datos
         function saveChanges(element) {
 
-            let answersId = element.dataset.id;
+            let elementsId = element.dataset.id;
             let field = element.id === "answers-title" ? "answers" : "";
             let newValue = element.innerText.trim();
 
             // llamar nuestro controlador
-            fetch(`/edit-answers/${answersId}`,{
+            fetch(`/edit-answers/${elementsId}`,{
                 method: "POST",
                 headers: {
                     "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute("content"),
