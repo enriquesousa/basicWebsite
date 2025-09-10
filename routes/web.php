@@ -61,7 +61,9 @@ Route::middleware('auth')->group(function () {
 
     // All Features
     Route::controller(HomeController::class)->group(function(){
-        Route::get('/all/features', 'AllFeatures')->name('all.features'); 
+        Route::get('/all/features', 'AllFeatures')->name('all.features');
+        Route::get('/add/feature', 'AddFeature')->name('add.feature');
+        Route::post('/store/feature', 'StoreFeature')->name('store.feature');
         
     });
    

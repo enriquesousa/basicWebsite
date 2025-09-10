@@ -91,8 +91,7 @@
                                 <a href="{{ route('all.features') }}" class="tp-link">{{ __('All Features') }}</a>
                             </li>
                             <li>
-                                {{-- <a href="{{ route('add.feature') }}" class="tp-link">{{ __('Add Feature') }}</a> --}}
-                                <a href="" class="tp-link">{{ __('Add Feature') }}</a>
+                                <a href="{{ route('add.feature') }}" class="tp-link">{{ __('Add Feature') }}</a>
                             </li>
                         </ul>
                     </div>
