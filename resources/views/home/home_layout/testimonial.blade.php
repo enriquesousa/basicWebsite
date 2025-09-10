@@ -4,8 +4,12 @@
     <div class="container">
         <div class="lonyo-section-title">
             <div class="row">
+                @php
+                    $title = App\Models\Title::find(1);
+                @endphp
                 <div class="col-xl-8 col-lg-8">
-                    <h2>{{ __('Don\'t take our word for it, check user reviews') }}</h2>
+                    {{-- <h2>{{ __('Don\'t take our word for it, check user reviews') }}</h2> --}}
+                    <h2 id="reviews-title" contenteditable="{{ auth()->check() ? 'true' : 'false' }}" data-id="{{ $title->id }}">{{ __($title->reviews) }}</h2>
                 </div>
                 <div class="col-xl-4 col-lg-4 d-flex align-items-center justify-content-end">
                     <div class="lonyo-title-btn">
@@ -50,3 +54,55 @@
 
 </div>
 <!-- end testimonial -->
+
+{{-- CSRF Token  --}}
+<meta name="csrf-token" content="{{ csrf_token() }}" >
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function(){
+
+        const titleElement = document.getElementById("reviews-title");
+
+        // Función para guardar los cambios en la base de datos
+        function saveChanges(element) {
+
+            let reviewsId = element.dataset.id;
+            let field = element.id === "reviews-title" ? "reviews" : "";
+            let newValue = element.innerText.trim();
+
+            // llamar nuestro controlador
+            fetch(`/edit-reviews/${reviewsId}`,{
+                method: "POST",
+                headers: {
+                    "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute("content"),
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ [field]:newValue })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.success) {
+                    console.log(`${field} updated successfully`);
+                }
+            })
+            .catch(error => console.error("Error:", error)); 
+        }
+
+        // Auto save on Enter Key
+        document.addEventListener("keydown", function(e){
+            if (e.key === "Enter") {
+                e.preventDefault(); // para que no refresque la página
+                saveChanges(e.target);
+            }
+        });
+
+        // Auto save on losing focus on title
+        titleElement.addEventListener("blur", function () {
+            saveChanges(titleElement);
+        });
+        
+
+    });
+
+</script>
