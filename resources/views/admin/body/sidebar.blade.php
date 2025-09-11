@@ -112,6 +112,22 @@
                         </ul>
                     </div>
                 </li>
+
+                <!-- Financial Section -->
+                <li>
+                    <a href="#financial" data-bs-toggle="collapse">
+                        <span class="mdi mdi-view-compact-outline"></span>
+                        <span> {{ __('Financial') }} </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="financial">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('get.financial') }}" class="tp-link">{{ __('Financial') }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
                 
 
 

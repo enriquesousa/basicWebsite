@@ -69,11 +69,16 @@ Route::middleware('auth')->group(function () {
         Route::get('/delete/feature/{id}', 'DeleteFeature')->name('delete.feature');
     });
 
-    // All Clarifies
+    // Section Clarifie
     Route::controller(HomeController::class)->group(function(){
-        Route::get('/all/clarifies', 'GetClarifie')->name('get.clarifies');
+        Route::get('/get/clarifies', 'GetClarifie')->name('get.clarifies');
         Route::post('/update/clarifie', 'UpdateClarifie')->name('update.clarifie');
-        
+    });
+
+    // Section Financial
+    Route::controller(HomeController::class)->group(function(){
+        Route::get('/get/financial', 'GetFinancial')->name('get.financial');
+        Route::post('/update/financial', 'UpdateFinancial')->name('update.financial');
     });
    
     
