@@ -128,6 +128,22 @@
                         </ul>
                     </div>
                 </li>
+
+                <!-- Video Section -->
+                <li>
+                    <a href="#video" data-bs-toggle="collapse">
+                        <span class="mdi mdi-youtube"></span>
+                        <span> {{ __('Video Section') }} </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="video">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('get.video') }}" class="tp-link">{{ __('Video') }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
                 
 
 

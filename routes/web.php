@@ -80,6 +80,13 @@ Route::middleware('auth')->group(function () {
         Route::get('/get/financial', 'GetFinancial')->name('get.financial');
         Route::post('/update/financial', 'UpdateFinancial')->name('update.financial');
     });
+
+    // Section Video
+    Route::controller(HomeController::class)->group(function(){
+        Route::get('/get/video', 'GetVideo')->name('get.video');
+        Route::post('/update/video', 'UpdateVideo')->name('update.video');
+    });
    
+    
     
 });
