@@ -97,6 +97,21 @@
                     </div>
                 </li>
 
+                <!-- Clarifies Section -->
+                <li>
+                    <a href="#clarifies" data-bs-toggle="collapse">
+                        <span class="mdi mdi-view-compact-outline"></span>
+                        <span> {{ __('Clarifies') }} </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="clarifies">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('get.clarifies') }}" class="tp-link">{{ __('Clarifies') }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
                 
 
 
