@@ -141,12 +141,15 @@
                             <li>
                                 <a href="{{ route('get.video') }}" class="tp-link">{{ __('Video') }}</a>
                             </li>
+                            <li>
+                                <a href="{{ route('all.connect') }}" class="tp-link">{{ __('All Connect') }}</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.connect') }}" class="tp-link">{{ __('Add Connect') }}</a>
+                            </li>
                         </ul>
                     </div>
                 </li>
-                
-
-
 
 
 

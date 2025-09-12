@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Clarifie;
+use App\Models\Connect;
 use App\Models\Feature;
 use App\Models\Financial;
 use App\Models\Video;
@@ -261,6 +262,16 @@ class HomeController extends Controller
     
             return redirect()->back()->with($notification); 
         } 
+    }
+
+    public function AllConnect(){
+        $connect = Connect::latest()->get();
+        return view('admin.backend.connect.all_connect', compact('connect'));
+    }
+    // End Method 
+
+    public function AddConnect(){
+        return view('admin.backend.connect.add_connect');
     }
 
 

@@ -85,6 +85,8 @@ Route::middleware('auth')->group(function () {
     Route::controller(HomeController::class)->group(function(){
         Route::get('/get/video', 'GetVideo')->name('get.video');
         Route::post('/update/video', 'UpdateVideo')->name('update.video');
+        Route::get('/all/connect', 'AllConnect')->name('all.connect');
+        Route::get('/add/connect', 'AddConnect')->name('add.connect'); 
     });
    
     
