@@ -8,11 +8,7 @@
             <div class="col-lg-5">
 
                 <div class="lonyo-video-thumb">
-
-                    {{-- <img src="{{ asset('frontend/assets/images/v1/video-thumb.png') }}" alt=""> --}}
                     <img src="{{ asset($video->image) }}" alt="">
-
-                    {{-- <a class="play-btn video-init" href="https://www.youtube.com/watch?v=fgZc7mAYIY8"> --}}
                     <a class="play-btn video-init" href="{{ asset($video->youtube) }}">
                         <img src="{{ asset('frontend/assets/images/v1/play-icon.svg') }}" alt="">
                         <div class="waves wave-1"></div>
