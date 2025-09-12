@@ -4,12 +4,7 @@
 			"path": "resources/views/auth/login.blade.php",
 			"bookmarks": [
 				{
-					"line": 41,
-					"column": 40,
-					"label": "logo login"
-				},
-				{
-					"line": 52,
+					"line": 51,
 					"column": 62,
 					"label": "mostrar error de sesion"
 				}

@@ -80,7 +80,7 @@
 
                                                         <!-- Image and show image -->
                                                         <div class="form-group mb-3 row">
-                                                            <label class="form-label">{{ __('Financial Image') }} <small>(307x619)</small></label>
+                                                            <label class="form-label">{{ __('Financial Image') }} <small>(560x400)</small></label>
                                                             <div class="col-lg-12 col-xl-12">
                                                                 <input class="form-control" type="file" name="image" id="image">
                                                             </div>

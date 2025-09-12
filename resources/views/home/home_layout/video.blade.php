@@ -1,30 +1,41 @@
 <!-- usability video Section -->
+@php
+    $video = App\Models\Video::find(1);
+@endphp
 <div class="lonyo-section-padding bg-heading position-relative sectionn">
     <div class="container">
         <div class="row">
             <div class="col-lg-5">
+
                 <div class="lonyo-video-thumb">
-                    <img src="{{ asset('frontend/assets/images/v1/video-thumb.png') }}" alt="">
-                    <a class="play-btn video-init" href="https://www.youtube.com/watch?v=fgZc7mAYIY8">
+
+                    {{-- <img src="{{ asset('frontend/assets/images/v1/video-thumb.png') }}" alt=""> --}}
+                    <img src="{{ asset($video->image) }}" alt="">
+
+                    {{-- <a class="play-btn video-init" href="https://www.youtube.com/watch?v=fgZc7mAYIY8"> --}}
+                    <a class="play-btn video-init" href="{{ asset($video->youtube) }}">
                         <img src="{{ asset('frontend/assets/images/v1/play-icon.svg') }}" alt="">
                         <div class="waves wave-1"></div>
                         <div class="waves wave-2"></div>
                         <div class="waves wave-3"></div>
                     </a>
                 </div>
+
             </div>
             <div class="col-lg-7 d-flex align-items-center">
                 <div class="lonyo-default-content lonyo-video-section pl-50" data-aos="fade-up" data-aos-duration="500">
-                    <h2>Its usability is simple and intuitive for users</h2>
-                    <p>It's a cloud-based accounting tool ideal for individuals & businesses to easily manage
-                        finances, invoices & payroll. Unlock the 3-step path to enhanced financial control. </p>
+                    <h2>{{ $video->title }}</h2>
+                    <p>{{ $video->description }}</p>
                     <div class="mt-50" data-aos="fade-up" data-aos-duration="700">
-                        <a class="lonyo-default-btn video-btn" href="contact-us.html">Download the app</a>
+                        <a class="lonyo-default-btn video-btn" href="{{ $video->link }}" target="_blank">{{ __('Download the app') }}</a>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="row">
+
+            <!-- one -->
             <div class="col-xl-4 col-md-6">
                 <div class="lonyo-process-wrap" data-aos="fade-up" data-aos-duration="500">
                     <div class="lonyo-process-number">
@@ -39,6 +50,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- two -->
             <div class="col-xl-4 col-md-6">
                 <div class="lonyo-process-wrap" data-aos="fade-up" data-aos-duration="700">
                     <div class="lonyo-process-number">
@@ -53,6 +66,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- three -->
             <div class="col-xl-4 col-md-6">
                 <div class="lonyo-process-wrap" data-aos="fade-up" data-aos-duration="900">
                     <div class="lonyo-process-number">
@@ -67,8 +82,11 @@
                     </div>
                 </div>
             </div>
+
             <div class="border-bottom" data-aos="fade-up" data-aos-duration="500"></div>
+
         </div>
+
     </div>
 </div>
 <div class="lonyo-content-shape1">

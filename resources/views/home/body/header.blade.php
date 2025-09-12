@@ -8,7 +8,7 @@
                 <div class="header-logo1 ">
                     <a href="{{ route('home') }}">
                         {{-- <img src="{{ asset('frontend/assets/images/logo/logo-dark.svg') }}" alt="logo"> --}}
-                        <img src="{{ asset('backend/assets/images/logoTJweb.png') }}" alt="logo-dark" height="40" width="140">
+                        <img src="{{ asset('backend/assets/images/logoTJweb.png') }}" alt="logo-dark" height="40">
                     </a>
                 </div>
             </div>

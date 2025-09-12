@@ -32,7 +32,7 @@
     "All rights reserved.":  "Todos los derechos reservados.",
 
     "Profile": "Perfil",
-    "Dashboard": "Panel de control",
+    "Dashboard": "Panel",
     "My Profile": "Mi perfil",
     "Users": "Usuarios",
     "Components": "Componentes",
@@ -473,6 +473,9 @@
     "Video Section": "Sección de Video",
     "YouTube Link": "Enlace de YouTube",
     "Download App Link": "Enlace de Descarga de App",
+    "Video Section Updated With image Successfully": "Sección de Video actualizada con imagen correctamente",
+    "Video Section Updated Without image Successfully": "Sección de Video actualizada sin imagen correctamente",
+    "Download the app": "Descarga la app",
     
     
 

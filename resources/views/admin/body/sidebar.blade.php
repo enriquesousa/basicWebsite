@@ -24,7 +24,7 @@
                     </span>
                     <span class="logo-lg">
                         {{-- <img src="{{ asset('backend/assets/images/logo-dark.png') }}" alt="logo-dark" height="24"> --}}
-                        <img src="{{ asset('backend/assets/images/logoTJweb.png') }}" alt="logo-dark" height="24">
+                        <img src="{{ asset('backend/assets/images/logoTJweb.png') }}" alt="logo-dark" height="34">
                     </span>
                 </a>
             </div>

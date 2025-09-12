@@ -212,10 +212,10 @@ class HomeController extends Controller
 
     public function UpdateVideo(Request $request){
 
-        dd($request->all());
+        // dd($request->all());
 
-        $financial_id = $request->id;
-        $financial = Financial::find($financial_id);
+        $video_id = $request->id;
+        $video = Video::find($video_id);
 
         if ($request->file('image')) {
 
@@ -223,25 +223,23 @@ class HomeController extends Controller
             $manager = new ImageManager(new Driver());
             $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
             $img = $manager->read($image);
-            $img->resize(307,619)->save(public_path('upload/financial/'.$name_gen));
-            $save_url = 'upload/financial/'.$name_gen;
+            $img->resize(560,400)->save(public_path('upload/video/'.$name_gen));
+            $save_url = 'upload/video/'.$name_gen;
 
-            if (file_exists(public_path($financial->image ))) {
-                @unlink(public_path($financial->image ));
+            if (file_exists(public_path($video->image ))) {
+                @unlink(public_path($video->image ));
             }
             
-            Financial::find($financial_id)->update([
+            Video::find($video_id)->update([
                 'title' => $request->title,
                 'description' => $request->description,
                 'image' => $save_url,
-                'title_tab1' => $request->title_tab1,
-                'description_tab1' => $request->description_tab1,
-                'title_tab2' => $request->title_tab2,
-                'description_tab2' => $request->description_tab2,
+                'youtube' => $request->youtube,
+                'link' => $request->link,
             ]);
 
             $notification = array(
-                'message' => __('Financial Updated With image Successfully'),
+                'message' => __('Video Section Updated With image Successfully'),
                 'alert-type' => 'success'
             );
     
@@ -249,17 +247,15 @@ class HomeController extends Controller
         
         } else {
 
-            Financial::find($financial_id)->update([
+            Video::find($video_id)->update([
                 'title' => $request->title,
                 'description' => $request->description,
-                'title_tab1' => $request->title_tab1,
-                'description_tab1' => $request->description_tab1,
-                'title_tab2' => $request->title_tab2,
-                'description_tab2' => $request->description_tab2,
+                'youtube' => $request->youtube,
+                'link' => $request->link,
             ]);
 
             $notification = array(
-                'message' => __('Financial Updated Without image Successfully'),
+                'message' => __('Video Section Updated Without image Successfully'),
                 'alert-type' => 'success'
             );
     
