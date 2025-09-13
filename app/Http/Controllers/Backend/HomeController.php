@@ -327,6 +327,14 @@ class HomeController extends Controller
         return redirect()->back()->with($notification); 
     }
 
+    public function UpdateEditableConnect(Request $request, $id){
+
+        $connect = Connect::findOrFail($id);
+        $connect->update($request->only(['title', 'description']));
+        
+        return response()->json(['success' => true, 'message' => __('Updated successfully')]);
+    }
+
 
 
 }

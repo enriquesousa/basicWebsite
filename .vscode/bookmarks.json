@@ -107,6 +107,11 @@
 					"line": 38,
 					"column": 16,
 					"label": "get tomar solo tres elementos de la tabla en blade"
+				},
+				{
+					"line": 84,
+					"column": 12,
+					"label": "class list en js"
 				}
 			]
 		}
