@@ -366,8 +366,44 @@ class HomeController extends Controller
         return redirect()->route('all.faqs')->with($notification); 
     }
 
+    public function EditFaq($id){
+        $faq = Faq::find($id);
+        return view('admin.backend.faqs.edit_faq',compact('faq'));
+    } 
 
+    public function UpdateFaq(Request $request){
 
+        $faq_id  = $request->id;
+
+        $request->validate([
+            'title' => 'required',
+            'description' => 'nullable',
+        ]);
+
+        Faq::find($faq_id)->update([
+            'title' => $request->title,
+            'description' => $request->description, 
+        ]);
+
+        $notification = array(
+            'message' => __('Faq Updated Successfully'),
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.faqs')->with($notification); 
+    }
+
+    public function DeleteFaq($id){
+
+        Faq::find($id)->delete();
+
+        $notification = array(
+            'message' => __('Faq Deleted Successfully'),
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+    }
 
 
 

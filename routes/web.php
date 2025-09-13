@@ -99,6 +99,9 @@ Route::middleware('auth')->group(function () {
         Route::get('/all/faqs', 'AllFaqs')->name('all.faqs');
         Route::get('/add/faqs', 'AddFaqs')->name('add.faqs');
         Route::post('/store/faqs', 'StoreFaqs')->name('store.faqs');
+        Route::get('/edit/faq/{id}', 'EditFaq')->name('edit.faq');
+        Route::post('/update/faq', 'UpdateFaq')->name('update.faq');
+        Route::get('/delete/faq/{id}', 'DeleteFaq')->name('delete.faq');
     });
    
     
