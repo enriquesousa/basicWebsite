@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Clarifie;
 use App\Models\Connect;
+use App\Models\Faq;
 use App\Models\Feature;
 use App\Models\Financial;
 use App\Models\Video;
@@ -35,10 +36,10 @@ class HomeController extends Controller
         ]);
 
         Feature::create([
-                'title' => $request->title,
-                'icon' => $request->icon,
-                'description' => $request->description, 
-            ]);
+            'title' => $request->title,
+            'icon' => $request->icon,
+            'description' => $request->description, 
+        ]);
         
         $notification = array(
             'message' => __('Feature Inserted Successfully'),
@@ -334,6 +335,40 @@ class HomeController extends Controller
         
         return response()->json(['success' => true, 'message' => __('Updated successfully')]);
     }
+
+    // *** FAQ Section *** //
+    public function AllFaqs(){
+        $features = Faq::latest()->get();
+        return view('admin.backend.faqs.all_faqs', compact('features'));
+    }
+
+    public function AddFaqs(){ 
+        return view('admin.backend.faqs.add_faqs');
+    }
+
+    public function StoreFaqs(Request $request){ 
+    
+        $request->validate([
+            'title' => 'required',
+            'description' => 'nullable',
+        ]);
+
+        Faq::create([
+            'title' => $request->title,
+            'description' => $request->description, 
+        ]);
+        
+        $notification = array(
+            'message' => __('Faq Inserted Successfully'),
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.faqs')->with($notification); 
+    }
+
+
+
+
 
 
 

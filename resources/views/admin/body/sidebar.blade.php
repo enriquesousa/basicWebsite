@@ -151,6 +151,25 @@
                     </div>
                 </li>
 
+                <!-- FAQ Section -->
+                <li>
+                    <a href="#faq" data-bs-toggle="collapse">
+                        <span class="mdi mdi-chat-question-outline"></span>
+                        <span> {{ __('FAQ') }} </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="faq">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.faqs') }}" class="tp-link">{{ __('All FAQs') }}</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.faqs') }}" class="tp-link">{{ __('Add FAQ') }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
 
 
 

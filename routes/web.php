@@ -93,6 +93,13 @@ Route::middleware('auth')->group(function () {
         Route::get('/delete/connect/{id}', 'DeleteConnect')->name('delete.connect');
         Route::post('/update-editable-connect/{id}', 'UpdateEditableConnect');
     });
+
+    // Section Faqs
+    Route::controller(HomeController::class)->group(function(){
+        Route::get('/all/faqs', 'AllFaqs')->name('all.faqs');
+        Route::get('/add/faqs', 'AddFaqs')->name('add.faqs');
+        Route::post('/store/faqs', 'StoreFaqs')->name('store.faqs');
+    });
    
     
     
