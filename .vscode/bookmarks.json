@@ -99,6 +99,16 @@
 					"label": "llamar controller desde js method post fetch"
 				}
 			]
+		},
+		{
+			"path": "resources/views/home/home_layout/video.blade.php",
+			"bookmarks": [
+				{
+					"line": 38,
+					"column": 16,
+					"label": "get tomar solo tres elementos de la tabla en blade"
+				}
+			]
 		}
 	]
 }
