@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\App;
 use App\Models\Clarifie;
 use App\Models\Connect;
 use App\Models\Faq;
@@ -17,7 +18,9 @@ use Intervention\Image\Drivers\Gd\Driver;
 
 class HomeController extends Controller
 {
+    // ************************ //
     // *** Features Section *** //
+    // ************************ //
     public function AllFeatures(){
         $features = Feature::latest()->get();
         return view('admin.backend.feature.all_feature', compact('features'));
@@ -90,7 +93,9 @@ class HomeController extends Controller
         return redirect()->back()->with($notification); 
     }
 
+    // ************************ //
     // *** Clarifies Section *** //
+    // ************************ //
     public function GetClarifie(){
         $clarifie = Clarifie::find(1);
         return view('admin.backend.clarifie.get_clarifie', compact('clarifie'));
@@ -143,7 +148,9 @@ class HomeController extends Controller
         } 
     }
 
+    // ************************ //
     // *** Financial Section *** //
+    // ************************ //
     public function GetFinancial(){
         $financial = Financial::find(1);
         return view('admin.backend.financial.get_financial', compact('financial'));
@@ -206,7 +213,9 @@ class HomeController extends Controller
         } 
     }
 
+    // ************************ //
     // *** Video Section *** //
+    // ************************ //
     public function GetVideo(){
         $video = Video::find(1);
         return view('admin.backend.video.get_video', compact('video'));
@@ -336,7 +345,9 @@ class HomeController extends Controller
         return response()->json(['success' => true, 'message' => __('Updated successfully')]);
     }
 
+    // ************************ //
     // *** FAQ Section *** //
+    // ************************ //
     public function AllFaqs(){
         $features = Faq::latest()->get();
         return view('admin.backend.faqs.all_faqs', compact('features'));
@@ -406,6 +417,16 @@ class HomeController extends Controller
     }
 
 
+    // ************************ //
+    // *** App Mobile Section *** //
+    // ************************ //
+    public function UpdateEditableApp(Request $request, $id){
+
+        $app = App::findOrFail($id);
+        $app->update($request->only(['title', 'description']));
+        
+        return response()->json(['success' => true, 'message' => __('Updated successfully')]);
+    }
 
 
 }

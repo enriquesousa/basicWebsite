@@ -103,6 +103,13 @@ Route::middleware('auth')->group(function () {
         Route::post('/update/faq', 'UpdateFaq')->name('update.faq');
         Route::get('/delete/faq/{id}', 'DeleteFaq')->name('delete.faq');
     });
+
+    // Section Mobile App
+    Route::controller(HomeController::class)->group(function(){
+        Route::post('/update-editable-app/{id}', 'UpdateEditableApp');
+        Route::post('/update-editable-app-image/{id}', 'UpdateEditableAppImage');
+        
+    });
    
     
     

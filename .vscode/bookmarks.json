@@ -114,6 +114,16 @@
 					"label": "class list en js"
 				}
 			]
+		},
+		{
+			"path": "resources/views/home/home_layout/mobile.blade.php",
+			"bookmarks": [
+				{
+					"line": 96,
+					"column": 24,
+					"label": "image upload en el frontend con JS"
+				}
+			]
 		}
 	]
 }

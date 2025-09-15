@@ -43,3 +43,93 @@
     </div>
 </section>
 <!-- end cta -->
+
+{{-- CSRF Token  --}}
+<meta name="csrf-token" content="{{ csrf_token() }}" >
+<script>
+
+    document.addEventListener("DOMContentLoaded", function(){
+
+        //  Ahora hacemos a identificación por clase porque estamos en una lista.
+
+        // Función para guardar los cambios en la base de datos
+        function saveChanges(element) {
+
+            let appId = element.dataset.id;
+            // title y description son los nombres con los cuales pasamos los datos al controlador (El controller los recoge con el request)
+            let field = element.classList.contains("editable-title") ? "title" : "description";
+            let newValue = element.innerText.trim();
+
+            // llamar nuestro controlador
+            fetch(`/update-editable-app/${appId}`,{
+                method: "POST",
+                headers: {
+                    "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute("content"),
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ [field]:newValue })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.success) {
+                    console.log(`${field} updated successfully`);
+                }
+            })
+            .catch(error => console.error("Error:", error)); 
+        }
+
+        // Auto save on Enter Key
+        document.addEventListener("keydown", function(e){
+            if (e.key === "Enter") {
+                e.preventDefault(); // para que no refresque la página
+                saveChanges(e.target);
+            }
+        });
+
+        // Auto save on losing focus
+        document.querySelectorAll(".editable-title, .editable-description").forEach(el => {
+            el.addEventListener("blur", function() {
+                saveChanges(el);
+            });
+        });
+
+
+        /// IMAGE UPLOADED FUNCTION START
+        let imageElement = document.getElementById("appImage");
+        let uploadInput = document.getElementById("uploadImage");
+
+        imageElement.addEventListener("click", function(){
+            @if (auth()->check())
+                uploadInput.click();        
+            @endif
+        });
+
+        uploadInput.addEventListener("change", function(){
+
+            let file = this.files[0];
+            if (!file) return;
+
+            let formData = new FormData();
+            formData.append("image",file);
+            formData.append("_token", document.querySelector('meta[name="csrf-token"]').getAttribute("content"));
+
+            fetch("/update-editable-app-image/1",{
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.success) {
+                    imageElement.src = data.image_url;
+                    console.log(`Image updated successfully`);
+                }
+            })
+            .catch(error => console.error("Error:", error)); 
+
+        }); 
+
+
+
+    });
+
+</script>
