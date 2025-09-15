@@ -11,7 +11,8 @@
                 <div class="lonyo-cta-thumb" data-aos="fade-up" data-aos-duration="500">
                     <img id="appImage" src="{{ asset($apps->image) }}" alt="" style="cursor: pointer; width:100%; max-width:300px;">
                     @if (auth()->check())
-                        <input type="file" id="uploadImage" style="display: none">              
+                        <input type="file" id="uploadImage" style="display: none">
+                        {{-- <input type="file" id="uploadImage"> --}}
                     @endif
                 </div>
 

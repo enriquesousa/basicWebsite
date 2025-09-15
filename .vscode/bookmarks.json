@@ -119,7 +119,7 @@
 			"path": "resources/views/home/home_layout/mobile.blade.php",
 			"bookmarks": [
 				{
-					"line": 96,
+					"line": 97,
 					"column": 24,
 					"label": "image upload en el frontend con JS"
 				}
