@@ -170,6 +170,22 @@
                     </div>
                 </li>
 
+                <!-- Mobile Section -->
+                <li>
+                    <a href="#mobile" data-bs-toggle="collapse">
+                        <span class="mdi mdi-cellphone"></span>
+                        <span> {{ __('Mobile App') }} </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="mobile">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('get.mobile') }}" class="tp-link">{{ __('Mobile App') }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
 
 
 

@@ -108,7 +108,8 @@ Route::middleware('auth')->group(function () {
     Route::controller(HomeController::class)->group(function(){
         Route::post('/update-editable-app/{id}', 'UpdateEditableApp');
         Route::post('/update-editable-app-image/{id}', 'UpdateEditableAppImage');
-        
+        Route::get('/get/mobile', 'GetMobile')->name('get.mobile');
+        Route::post('/update/mobile', 'UpdateMobile')->name('update.mobile');
     });
    
     

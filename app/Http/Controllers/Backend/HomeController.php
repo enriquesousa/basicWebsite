@@ -459,5 +459,59 @@ class HomeController extends Controller
         return response()->json(['success' => false, 'message' => __('Image Upload Failed')],400);
     }
 
+    public function GetMobile(){
+        $mobile = App::find(1);
+        return view('admin.backend.mobile.get_mobile', compact('mobile'));
+    }
+
+    public function UpdateMobile(Request $request){
+
+        // dd($request->all());
+
+        $mobile_id = $request->id;
+        $mobile = Financial::find($mobile_id);
+
+        if ($request->file('image')) {
+
+            $image = $request->file('image');
+            $manager = new ImageManager(new Driver());
+            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $img = $manager->read($image);
+            $img->resize(306,481)->save(public_path('upload/apps/'.$name_gen));
+            $save_url = 'upload/apps/'.$name_gen;
+
+            if (file_exists(public_path($mobile->image ))) {
+                @unlink(public_path($mobile->image ));
+            }
+            
+            App::find($mobile_id)->update([
+                'title' => $request->title,
+                'description' => $request->description,
+                'image' => $save_url,
+            ]);
+
+            $notification = array(
+                'message' => __('Mobile Updated With image Successfully'),
+                'alert-type' => 'success'
+            );
+    
+            return redirect()->back()->with($notification); 
+        
+        } else {
+
+            App::find($mobile_id)->update([
+                'title' => $request->title,
+                'description' => $request->description,
+            ]);
+
+            $notification = array(
+                'message' => __('Mobile Updated Without image Successfully'),
+                'alert-type' => 'success'
+            );
+    
+            return redirect()->back()->with($notification); 
+        } 
+    }
+
 
 }
