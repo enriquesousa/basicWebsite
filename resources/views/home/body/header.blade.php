@@ -21,7 +21,7 @@
 
                             <!-- Home -->
                             <li>
-                                <a href="contact-us.html">{{ __('Home') }}</a>
+                                <a href="{{ route('home') }}">{{ __('Home') }}</a>
                             </li>
 
                             <!-- About -->
@@ -32,7 +32,7 @@
                                         <a href="about-us.html">{{ __('Company Profile') }}</a>
                                     </li>
                                     <li>
-                                        <a href="pricing.html">{{ __('Team') }}</a>
+                                        <a href="{{ route('our.team') }}">{{ __('Team') }}</a>
                                     </li>
                                 </ul>
                             </li>
