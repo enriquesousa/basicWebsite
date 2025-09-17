@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\ReviewController;
 use App\Http\Controllers\Backend\SliderController;
+use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -114,6 +115,16 @@ Route::middleware('auth')->group(function () {
         Route::post('/update-editable-app-image/{id}', 'UpdateEditableAppImage');
         Route::get('/get/mobile', 'GetMobile')->name('get.mobile');
         Route::post('/update/mobile', 'UpdateMobile')->name('update.mobile');
+    });
+
+    // Team Members Routes
+    Route::controller(TeamController::class)->group(function(){
+        Route::get('/all/team', 'AllTeam')->name('all.team');
+        Route::get('/add/team', 'AddTeam')->name('add.team');
+        // Route::post('/store/review', 'StoreReview')->name('store.review');
+        // Route::get('/edit/review/{id}', 'EditReview')->name('edit.review');
+        // Route::post('/update/review', 'UpdateReview')->name('update.review');
+        // Route::get('/delete/review/{id}', 'DeleteReview')->name('delete.review');
     });
    
     

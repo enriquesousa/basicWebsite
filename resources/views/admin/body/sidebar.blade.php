@@ -186,6 +186,24 @@
                     </div>
                 </li>
 
+                <!-- Our Team -->
+                <li>
+                    <a href="#our_team" data-bs-toggle="collapse">
+                        <span class="mdi mdi-account-group-outline"></span>
+                        <span> {{ __('Our Team') }} </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="our_team">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.team') }}" class="tp-link">{{ __('List All') }}</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.team') }}" class="tp-link">{{ __('Add') }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
 
 
 
