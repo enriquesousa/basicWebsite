@@ -154,6 +154,9 @@
         });
     </script>    
 
+    <!-- Form Validation Js -->
+    <script src="{{ asset('backend/assets/js/validate.min.js')}}"></script>
+
     <!-- Toastr JS -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <!-- Toastr JS Display Message -->

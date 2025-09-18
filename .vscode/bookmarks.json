@@ -134,6 +134,21 @@
 					"label": "If $item->image == null then no image delete"
 				}
 			]
+		},
+		{
+			"path": "resources/views/admin/backend/team/add_team.blade.php",
+			"bookmarks": [
+				{
+					"line": 94,
+					"column": 44,
+					"label": "Scrip JS para validar el formulario"
+				},
+				{
+					"line": 98,
+					"column": 69,
+					"label": "validate traducir en js Mensajes de Validation traducir dependiendo del idioma"
+				}
+			]
 		}
 	]
 }

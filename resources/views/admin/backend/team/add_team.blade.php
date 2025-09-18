@@ -34,7 +34,7 @@
                                                     </div>
                                                 </div>
 
-                                                <form action="{{ route('store.team') }}" method="post" enctype="multipart/form-data">
+                                                <form id="myForm" action="{{ route('store.team') }}" method="post" enctype="multipart/form-data">
                                                     @csrf
 
                                                     <div class="card-body">
@@ -42,23 +42,23 @@
                                                         <!-- Name -->
                                                         <div class="form-group mb-3 row">
                                                             <label class="form-label">{{ __('Name') }}</label>
-                                                            <div class="col-lg-12 col-xl-12">
-                                                                <input class="form-control" type="text" name="name" required>
+                                                            <div class="form-group col-lg-12 col-xl-12">
+                                                                <input class="form-control" type="text" name="name">
                                                             </div>
                                                         </div>
 
                                                         <!-- Position -->
                                                         <div class="form-group mb-3 row">
                                                             <label class="form-label">{{ __('Position') }}</label>
-                                                            <div class="col-lg-12 col-xl-12">
-                                                                <input class="form-control" type="text" name="position" required>
+                                                            <div class="form-group col-lg-12 col-xl-12">
+                                                                <input class="form-control" type="text" name="position">
                                                             </div>
                                                         </div>
 
                                                         <!-- User Photo -->
                                                         <div class="form-group mb-3 row">
                                                             <label class="form-label">{{ __('User Photo') }} <small>(306x400)</small></label>
-                                                            <div class="col-lg-12 col-xl-12">
+                                                            <div class="form-group col-lg-12 col-xl-12">
                                                                 <input class="form-control" type="file" name="image" id="image">
                                                             </div>
                                                         </div>
@@ -92,6 +92,69 @@
         </div>
     </div>
 
+    <!-- Scrip JS para validar el formulario -->
+    <script type="text/javascript">
+        $(document).ready(function (){
+
+            // Mensajes de Validation traducir dependiendo del idioma
+            const currentLocale = "{{ app()->getLocale() }}";
+            if(currentLocale == 'es') {
+                var name_str = "Por favor ingrese el nombre, el campo es obligatorio";
+                var position_str = "Por favor ingrese el cargo, el campo es obligatorio";
+                var image_str = "Por favor ingrese una foto, el campo es obligatorio";
+            }
+            if(currentLocale == 'en') {
+                var name_str = "Please enter team member name, this field is required";
+                var position_str = "Please enter position, this field is required";
+                var image_str = "Please enter photo, this field is required";
+            }
+
+            $('#myForm').validate({
+
+                rules: {
+
+                    name: {
+                        required : true,
+                    },
+                    position: {
+                        required : true,
+                    },
+                    image: {
+                        required : true,
+                    },
+                    
+                },
+
+                messages :{
+
+                    name: {
+                        required : name_str,
+                    },
+                    position: {
+                        required : position_str,
+                    }, 
+                    image: {
+                        required : image_str,
+                    }, 
+
+                },
+
+                errorElement : 'span', 
+                errorPlacement: function (error,element) {
+                    error.addClass('invalid-feedback');
+                    element.closest('.form-group').append(error);
+                },
+                highlight : function(element, errorClass, validClass){
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight : function(element, errorClass, validClass){
+                    $(element).removeClass('is-invalid');
+                },
+
+            });
+
+        });
+    </script>
 
     <!-- Scrip para manejar la imagen -->
     <script type="text/javascript">
