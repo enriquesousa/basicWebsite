@@ -113,8 +113,14 @@ class ReviewController extends Controller
     public function DeleteReview($id){
 
         $item = Review::find($id);
-        $img = $item->image;
-        unlink($img);
+
+        // If $item->image == null then no image
+        if (file_exists(public_path($item->image ))) {
+            @unlink(public_path($item->image ));
+        }
+
+        // $img = $item->image;
+        // unlink($img);
 
         Review::find($id)->delete();
 

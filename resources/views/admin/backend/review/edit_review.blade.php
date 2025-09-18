@@ -68,7 +68,6 @@
                                                                 <input class="form-control" type="file" name="image" id="image">
                                                             </div>
                                                         </div>
-
                                                         <div class="form-group mb-3 row">
                                                             <label class="form-label"> </label>
                                                             <div class="col-lg-12 col-xl-12">

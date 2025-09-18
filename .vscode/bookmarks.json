@@ -124,6 +124,16 @@
 					"label": "image upload en el frontend con JS"
 				}
 			]
+		},
+		{
+			"path": "app/Http/Controllers/Backend/TeamController.php",
+			"bookmarks": [
+				{
+					"line": 111,
+					"column": 48,
+					"label": "If $item->image == null then no image delete"
+				}
+			]
 		}
 	]
 }
