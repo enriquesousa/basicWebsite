@@ -26,13 +26,13 @@
 
                             <!-- About -->
                             <li class="menu-item-has-children">
-                                <a href="#">{{ __('About Us') }}</a>
+                                <a href="{{ route('about.us') }}">{{ __('About Us') }}</a>
                                 <ul class="sub-menu">
                                     <li>
-                                        <a href="about-us.html">{{ __('Company Profile') }}</a>
+                                        <a href="{{ route('our.team') }}">{{ __('Team') }}</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('our.team') }}">{{ __('Team') }}</a>
+                                        <a href="">{{ __('Details') }}</a>
                                     </li>
                                 </ul>
                             </li>

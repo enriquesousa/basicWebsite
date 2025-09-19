@@ -39,7 +39,6 @@
                         <div class="lonyo-team-wrap" data-aos="fade-up" data-aos-duration="500">
                             <div class="lonyo-team-thumb">
                                 <a href="single-team.html">
-                                    {{-- <img src="{{ asset('frontend/assets/images/about-us/t1.png') }}" alt=""> --}}
                                     <img src="{{ asset($item->image) }}" alt="">
                                 </a>
                             </div>
@@ -68,6 +67,7 @@
         <img src="{{ asset('frontend/assets/images/shape/shape2.svg') }}" alt="">
     </div>
 
+    {{-- section de mobile en la pagina --}}
     @include('home.home_layout.mobile')
     
 

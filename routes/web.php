@@ -135,5 +135,7 @@ Route::middleware('auth')->group(function () {
 // Routes general users
 // ********************
 Route::get('/team', [FrontendController::class, 'OurTeam'])->name('our.team');
+Route::get('/about', [FrontendController::class, 'AboutUs'])->name('about.us');
+
 
 
