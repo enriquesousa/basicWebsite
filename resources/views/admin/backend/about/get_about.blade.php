@@ -53,7 +53,10 @@
                                                         <div class="form-group mb-3 row">
                                                             <label class="form-label">{{ __('Description') }}</label>
                                                             <div class="col-lg-12 col-xl-12">
-                                                                <textarea name="description" class="form-control">{{ $about->description }}</textarea>
+                                                                <textarea name="description" id="description" style="display: none;"></textarea>
+                                                                <div name="description" id="quill-editor" style="height: 200px;">
+                                                                    <p>{!! $about->description !!}</p>
+                                                                </div>
                                                             </div>
                                                         </div>
 
@@ -89,6 +92,14 @@
         </div>
     </div>
 
+
+    <!-- JS Script Quill para manejar el editor de texto y mandar el campo description al request -->
+    <script>  
+        document.querySelector('form').onsubmit = function() {
+            var description = document.querySelector('#description');
+            description.value = quill.root.innerHTML;  
+        };
+    </script>
 
     <!-- Scrip para manejar la imagen -->
     <script type="text/javascript">

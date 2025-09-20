@@ -149,6 +149,36 @@
 					"label": "validate traducir en js Mensajes de Validation traducir dependiendo del idioma"
 				}
 			]
+		},
+		{
+			"path": "resources/views/admin/backend/about/get_about.blade.php",
+			"bookmarks": [
+				{
+					"line": 56,
+					"column": 64,
+					"label": "quill editor"
+				},
+				{
+					"line": 95,
+					"column": 97,
+					"label": "JS Script Quill para manejar el editor de texto y mandar el campo description al request"
+				}
+			]
+		},
+		{
+			"path": "resources/views/admin/admin_master.blade.php",
+			"bookmarks": [
+				{
+					"line": 15,
+					"column": 18,
+					"label": "Quill css"
+				},
+				{
+					"line": 124,
+					"column": 24,
+					"label": "Quill Editor Js"
+				}
+			]
 		}
 	]
 }

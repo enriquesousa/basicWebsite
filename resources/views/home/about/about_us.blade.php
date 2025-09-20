@@ -39,7 +39,7 @@
                 <div class="col-lg-7 d-flex align-items-center">
                     <div class="lonyo-default-content pl-32" data-aos="fade-up" data-aos-duration="900">
                         <h2>{{ __($about->title) }}</h2>
-                        <p>{{ __($about->description) }}</p>
+                        <p>{!! __($about->description) !!}</p>
                     </div>
                 </div>
             </div>
