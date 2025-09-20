@@ -151,6 +151,16 @@
 			]
 		},
 		{
+			"path": "resources/views/home/about/about_us.blade.php",
+			"bookmarks": [
+				{
+					"line": 41,
+					"column": 62,
+					"label": "Desplegar description en el frontend sin las etiquetas html"
+				}
+			]
+		},
+		{
 			"path": "resources/views/admin/backend/about/get_about.blade.php",
 			"bookmarks": [
 				{
