@@ -205,6 +205,31 @@
                     </div>
                 </li>
 
+                <!-- About Page -->
+                <li>
+                    <a href="#about" data-bs-toggle="collapse">
+                        <span class="mdi mdi-information-outline"></span>
+                        <span> {{ __('About Page') }} </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="about">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('get.about') }}" class="tp-link">{{ __('About') }}</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('get.core') }}" class="tp-link">{{ __('Core Values') }}</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('all.centric') }}" class="tp-link">{{ __('All Centrics') }}</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.centric') }}" class="tp-link">{{ __('Add Centric') }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
 
 
 

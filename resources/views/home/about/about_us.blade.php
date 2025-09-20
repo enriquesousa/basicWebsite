@@ -24,23 +24,22 @@
     </div>
     <!-- End breadcrumb -->
 
+    <!-- About Us Sección Principal. Title, Description and Image -->
+    @php
+        $about = App\Models\About::find(1);
+    @endphp
     <div class="lonyo-section-padding3">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5">
                     <div class="lonyo-about-us-thumb2 pr-51" data-aos="fade-up" data-aos-duration="700">
-                        <img src="{{ asset('frontend/assets/images/about-us/img7.png') }}" alt="">
+                        <img src="{{ asset($about->image) }}" alt="">
                     </div>
                 </div>
                 <div class="col-lg-7 d-flex align-items-center">
                     <div class="lonyo-default-content pl-32" data-aos="fade-up" data-aos-duration="900">
-                        <h2>Our mission is to bring financial wellness</h2>
-                        <p>We believe financial wellness is key to a better life. Our mission is to empower individuals and
-                            businesses with the tools they need to understand, manage, and grow their financial health.</p>
-                        <p>With our app, you can easily track spending, set budgets, automate savings, and get real-time
-                            insights into your financial world. </p>
-                        <p>For businesses, our software offers seamless integration with your existing tools to ensure that
-                            your accounting, invoicing, and financial reporting are effortless and organized.</p>
+                        <h2>{{ __($about->title) }}</h2>
+                        <p>{{ __($about->description) }}</p>
                     </div>
                 </div>
             </div>
@@ -48,31 +47,43 @@
     </div>
     <!-- end -->
 
+    <!-- Section Core Values y User Centric Innovation -->
     <section class="lonyo-section-padding3 position-relative">
         <div class="container">
             <div class="row">
+
+                @php
+                    $core = App\Models\Core::find(1);
+                @endphp     
                 <div class="col-lg-7">
                     <div class="lonyo-default-content pr-50 feature-wrap">
-                        <h2>Our core values ​​serve as our driving force</h2>
-                        <p class="max-w616">Our core values ​​are at the core of everything we do. Ensuring the integrity,
-                            security and privacy of your data. Innovation, providing cutting-edge tools to simplify
-                            financial management. </p>
+                        <h2>{{ __($core->title) }}</h2>
+                        <p class="max-w616">{{ __($core->description) }}</p>
                     </div>
                 </div>
+
                 <div class="col-lg-5">
-                    <div class="lonyo-about-us-feature-wrap one" data-aos="fade-up" data-aos-duration="500">
-                        <div class="lonyo-about-us-feature-icon">
-                            <img src="assets/images/about-us/icon1.svg" alt="">
+
+                    @php
+                        $centrics = App\Models\Centric::whereIn('id',[1,2,3,4])->get()->keyBy('id');
+                    @endphp
+
+                    @foreach ($centrics as $centric) 
+                        <div class="lonyo-about-us-feature-wrap one" data-aos="fade-up" data-aos-duration="500">
+                            <div class="lonyo-about-us-feature-icon">
+                                {{-- <img src="{{ asset('frontend/assets/images/about-us/icon1.svg') }}" alt=""> --}}
+                                <img src="{{ asset('frontend/assets/images/about-us/icon'.$centric->id. '.svg') }}" alt="">
+                            </div>
+                            <div class="lonyo-about-us-feature-content">
+                                <h4 class="editable-title" contenteditable="{{ auth()->check() ? 'true' : 'false' }}" data-id="{{ $centric->id }}">{{ __($centric->title) }}</h4>
+                                <p class="editable-description" contenteditable="{{ auth()->check() ? 'true' : 'false' }}" data-id="{{ $centric->id }}">{{ __($centric->description) }}</p>
+                            </div>
                         </div>
-                        <div class="lonyo-about-us-feature-content">
-                            <h4>User-Centric Innovation</h4>
-                            <p>We design our apps and software with our users in mind, constantly evolving to meet their
-                                financial needs and solutions.</p>
-                        </div>
-                    </div>
-                    <div class="lonyo-about-us-feature-wrap two" data-aos="fade-up" data-aos-duration="700">
+                    @endforeach
+
+                    {{-- <div class="lonyo-about-us-feature-wrap two" data-aos="fade-up" data-aos-duration="700">
                         <div class="lonyo-about-us-feature-icon">
-                            <img src="assets/images/about-us/icon2.svg" alt="">
+                            <img src="{{ asset('frontend/assets/images/about-us/icon2.svg') }}" alt="">
                         </div>
                         <div class="lonyo-about-us-feature-content">
                             <h4>Transparency</h4>
@@ -80,9 +91,10 @@
                                 with accurate financial insights.</p>
                         </div>
                     </div>
+
                     <div class="lonyo-about-us-feature-wrap three" data-aos="fade-up" data-aos-duration="900">
                         <div class="lonyo-about-us-feature-icon">
-                            <img src="assets/images/about-us/icon3.svg" alt="">
+                            <img src="{{ asset('frontend/assets/images/about-us/icon3.svg') }}" alt="">
                         </div>
                         <div class="lonyo-about-us-feature-content">
                             <h4>Integrity & Trust</h4>
@@ -90,24 +102,27 @@
                                 and also trustworthy services.</p>
                         </div>
                     </div>
+                    
                     <div class="lonyo-about-us-feature-wrap mb-0 four" data-aos="fade-up" data-aos-duration="1100">
                         <div class="lonyo-about-us-feature-icon">
-                            <img src="assets/images/about-us/icon4.svg" alt="">
+                            <img src="{{ asset('frontend/assets/images/about-us/icon4.svg') }}" alt="">
                         </div>
                         <div class="lonyo-about-us-feature-content">
                             <h4>Security You Can Trust</h4>
                             <p>Your financial data is protected with top-level encryption and security protocols to ensure
                                 your information is always secure.</p>
                         </div>
-                    </div>
+                    </div> --}}
+
                 </div>
+
             </div>
         </div>
         <div class="lonyo-feature-shape shape2"></div>
     </section>
     <!-- end feature -->
 
-    <!-- Section team -->
+    <!-- Section Team -->
     <div class="lonyo-section-padding10 team-section mb-5">
         <div class="shape">
             <img src="{{ asset('frontend/assets/images/about-us/shape1.svg') }}" alt="">
@@ -181,3 +196,57 @@
     <!-- end cta -->
 
 @endsection
+
+{{-- CSRF Token  --}}
+<meta name="csrf-token" content="{{ csrf_token() }}" >
+{{-- JavaScript para hacer editable la sección de centric --}}
+<script>
+
+    document.addEventListener("DOMContentLoaded", function(){
+
+        //  Ahora hacemos a identificación por clase porque estamos en una lista.
+
+        // Función para guardar los cambios en la base de datos
+        function saveChanges(element) {
+
+            let centricId = element.dataset.id;
+            // title y description son los nombres con los cuales pasamos los datos al controlador (El controller los recoge con el request)
+            let field = element.classList.contains("editable-title") ? "title" : "description";
+            let newValue = element.innerText.trim();
+
+            // llamar nuestro controlador
+            fetch(`/update-editable-centric/${centricId}`,{
+                method: "POST",
+                headers: {
+                    "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute("content"),
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ [field]:newValue })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.success) {
+                    console.log(`${field} updated successfully`);
+                }
+            })
+            .catch(error => console.error("Error:", error)); 
+        }
+
+        // Auto save on Enter Key
+        document.addEventListener("keydown", function(e){
+            if (e.key === "Enter") {
+                e.preventDefault(); // para que no refresque la página
+                saveChanges(e.target);
+            }
+        });
+
+        // Auto save on losing foucs
+        document.querySelectorAll(".editable-title, .editable-description").forEach(el => {
+            el.addEventListener("blur", function() {
+                saveChanges(el);
+            });
+        });
+
+    });
+
+</script>

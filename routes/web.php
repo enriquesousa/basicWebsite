@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\ReviewController;
 use App\Http\Controllers\Backend\SliderController;
@@ -125,6 +126,24 @@ Route::middleware('auth')->group(function () {
         Route::get('/edit/team/{id}', 'EditTeam')->name('edit.team');
         Route::post('/update/team', 'UpdateTeam')->name('update.team');
         Route::get('/delete/team/{id}', 'DeleteTeam')->name('delete.team');
+    });
+
+    // Section Page About
+    Route::controller(AboutController::class)->group(function(){
+
+        Route::get('/get/about', 'GetAbout')->name('get.about');
+        Route::post('/update/about', 'UpdateAbout')->name('update.about');
+
+        Route::get('/get/core', 'GetCore')->name('get.core');
+        Route::post('/update/core', 'UpdateCore')->name('update.core');
+
+        Route::get('/all/centric', 'AllCentric')->name('all.centric');
+        Route::get('/add/centric', 'AddCentric')->name('add.centric');
+        Route::post('/store/centric', 'StoreCentric')->name('store.centric');
+        Route::get('/edit/centric/{id}', 'EditCentric')->name('edit.centric');
+        Route::post('/update/centric', 'UpdateCentric')->name('update.centric');
+        Route::get('/delete/centric/{id}', 'DeleteCentric')->name('delete.centric');
+        Route::post('/update-editable-centric/{id}', 'UpdateEditableCentric');
     });
    
     
