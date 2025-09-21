@@ -199,7 +199,7 @@
 			"path": "app/Http/Controllers/Backend/HomeController.php",
 			"bookmarks": [
 				{
-					"line": 161,
+					"line": 162,
 					"column": 77,
 					"label": "operador ternario"
 				}

@@ -9,6 +9,7 @@ use App\Models\Connect;
 use App\Models\Faq;
 use App\Models\Feature;
 use App\Models\Financial;
+use App\Models\Title;
 use App\Models\Video;
 use Illuminate\Http\Request;
 
@@ -448,9 +449,9 @@ class HomeController extends Controller
     }
 
 
-    // ************************ //
-    // *** App Mobile Section *** //
-    // ************************ //
+    // *************************** //
+    // *** App Mobile Section **** //
+    // ************************** //
     public function UpdateEditableApp(Request $request, $id){
 
         $app = App::findOrFail($id);
@@ -543,6 +544,36 @@ class HomeController extends Controller
             return redirect()->back()->with($notification); 
         } 
     }
+
+    // **************************************************************** //
+    // *** Títulos de las secciones features, reviews and answers **** //
+    // **************************************************************** //
+    public function GetSectionTitles(){
+        $titles = Title::find(1);
+        return view('admin.backend.titles.get_titles', compact('titles'));
+    }
+
+    public function UpdateSectionTitles(Request $request){
+
+        // dd($request->all());
+
+        $titles_id = $request->id;
+        $titles = Title::find($titles_id);
+
+        Title::find($titles_id)->update([
+            'features' => $request->features,
+            'reviews' => $request->reviews,
+            'answers' => $request->answers,
+        ]);
+
+        $notification = array(
+            'message' => __('Titles Updated Successfully'),
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+    }
+
 
 
 }

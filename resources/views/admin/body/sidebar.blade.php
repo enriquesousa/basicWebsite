@@ -59,25 +59,6 @@
                     </div>
                 </li>
 
-                <!-- Reviews -->
-                <li>
-                    <a href="#reviews" data-bs-toggle="collapse">
-                        <span class="mdi mdi-comment-arrow-left-outline"></span>
-                        <span> {{ __('Reviews') }} </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                    <div class="collapse" id="reviews">
-                        <ul class="nav-second-level">
-                            <li>
-                                <a href="{{ route('all.review') }}" class="tp-link">{{ __('All Reviews') }}</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('add.review') }}" class="tp-link">{{ __('Add Review') }}</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-
                 <!-- Features -->
                 <li>
                     <a href="#features" data-bs-toggle="collapse">
@@ -149,6 +130,41 @@
                             </li>
                             <li>
                                 <a href="{{ route('add.connect') }}" class="tp-link">{{ __('Add Connect') }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Reviews -->
+                <li>
+                    <a href="#reviews" data-bs-toggle="collapse">
+                        <span class="mdi mdi-comment-arrow-left-outline"></span>
+                        <span> {{ __('Reviews') }} </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="reviews">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.review') }}" class="tp-link">{{ __('All Reviews') }}</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.review') }}" class="tp-link">{{ __('Add Review') }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Títulos de las secciones features, reviews and answers -->
+                <li>
+                    <a href="#titles" data-bs-toggle="collapse">
+                        <span class="mdi mdi-format-title"></span>
+                        <span> {{ __('Titles') }} </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="titles">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('get.section.titles') }}" class="tp-link">{{ __('Titles') }}</a>
                             </li>
                         </ul>
                     </div>

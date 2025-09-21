@@ -147,6 +147,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/delete/centric/{id}', 'DeleteCentric')->name('delete.centric');
         Route::post('/update-editable-centric/{id}', 'UpdateEditableCentric');
     });
+
+    // Títulos de las secciones features, reviews and answers
+    Route::controller(HomeController::class)->group(function(){
+        Route::get('/get/section/titles', 'GetSectionTitles')->name('get.section.titles');
+        Route::post('/update/section/titles', 'UpdateSectionTitles')->name('update.section.titles');
+    });
    
     
     
