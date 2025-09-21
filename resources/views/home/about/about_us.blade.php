@@ -122,6 +122,11 @@
     </section>
     <!-- end feature -->
 
+    <!-- Section Divider -->
+    <div class="lonyo-content-shape3">
+        <img src="{{ asset('frontend/assets/images/shape/shape2.svg') }}" alt="">
+    </div>
+
     <!-- Section Team -->
     <div class="lonyo-section-padding10 team-section mb-5">
         <div class="shape">
@@ -140,7 +145,9 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="lonyo-team-wrap" data-aos="fade-up" data-aos-duration="500">
                             <div class="lonyo-team-thumb">
-                                <a href="single-team.html"><img src="{{ asset($item->image) }}" alt=""></a>
+                                <a href="single-team.html">
+                                    <img src="{{ asset($item->image) }}" alt="" style="width: 300px; height: 300px;">
+                                </a>
                             </div>
                             <div class="lonyo-team-content">
                                 <a href="single-team.html">
@@ -163,12 +170,18 @@
     <!-- Section mobile app -->
     @include('home.home_layout.mobile')
 
-    <section class="lonyo-cta-section bg-heading">
+    <!-- Section Divider -->
+    {{-- <div class="lonyo-content-shape3">
+        <img src="{{ asset('frontend/assets/images/shape/shape2.svg') }}" alt="">
+    </div> --}}
+
+    <!-- Start a new level of money management -->
+    {{-- <section class="lonyo-cta-section bg-heading">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="lonyo-cta-thumb" data-aos="fade-up" data-aos-duration="500">
-                        <img src="assets/images/v1/cta-thumb.png" alt="">
+                        <img src="{{ asset('frontend/assets/images/v1/cta-thumb.png') }}" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -192,8 +205,8 @@
                 </div>
             </div>
         </div>
-    </section>
-    <!-- end cta -->
+    </section> --}}
+
 
 @endsection
 

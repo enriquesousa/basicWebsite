@@ -148,6 +148,37 @@ class HomeController extends Controller
         } 
     }
 
+    public function GetClarifieQuestions(){
+        $clarifie = Clarifie::find(1);
+        return view('admin.backend.clarifie.get_clarifie_questions', compact('clarifie'));
+    }
+
+    public function UpdateClarifieQuestions(Request $request){
+
+        $clarifie_id = $request->id;
+        $clarifie = Clarifie::find($clarifie_id);
+
+        Clarifie::find($clarifie_id)->update([
+            'question_1' => $request->question_1 ? $request->question_1 : '',
+            'answer_1' => $request->answer_1 ? $request->answer_1 : '',
+
+            'question_2' => $request->question_2 ? $request->question_2 : '',
+            'answer_2' => $request->answer_2 ? $request->answer_2 : '',
+
+            'question_3' => $request->question_3 ? $request->question_3 : '',
+            'answer_3' => $request->answer_3 ? $request->answer_3 : '',
+        ]);
+
+        $notification = array(
+            'message' => __('Clarifie Questions Updated Successfully'),
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+    }
+
+
+
     // ************************ //
     // *** Financial Section *** //
     // ************************ //

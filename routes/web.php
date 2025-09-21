@@ -79,6 +79,8 @@ Route::middleware('auth')->group(function () {
     Route::controller(HomeController::class)->group(function(){
         Route::get('/get/clarifies', 'GetClarifie')->name('get.clarifies');
         Route::post('/update/clarifie', 'UpdateClarifie')->name('update.clarifie');
+        Route::get('/get/clarifies/questions', 'GetClarifieQuestions')->name('get.clarifie.questions');
+        Route::post('/update/clarifie/questions', 'UpdateClarifieQuestions')->name('update.clarifie.questions');
     });
 
     // Section Financial

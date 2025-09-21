@@ -109,6 +109,9 @@
                             <li>
                                 <a href="{{ route('get.clarifies') }}" class="tp-link">{{ __('Clarifies') }}</a>
                             </li>
+                            <li>
+                                <a href="{{ route('get.clarifie.questions') }}" class="tp-link">{{ __('Clarifie Questions') }}</a>
+                            </li>
                         </ul>
                     </div>
                 </li>

@@ -16,6 +16,7 @@
 
             <div class="col-lg-7 d-flex align-items-center">
                 <div class="lonyo-default-content pr-50" data-aos="fade-right" data-aos-duration="700">
+                    
                     <h2>{{ __($financial->title) }}</h2>
                     <p class="data">{{ __($financial->description) }}</p>
 
