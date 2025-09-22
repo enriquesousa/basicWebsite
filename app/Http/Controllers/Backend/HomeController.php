@@ -9,6 +9,7 @@ use App\Models\Connect;
 use App\Models\Faq;
 use App\Models\Feature;
 use App\Models\Financial;
+use App\Models\ThreeFeatures;
 use App\Models\Title;
 use App\Models\Video;
 use Illuminate\Http\Request;
@@ -148,37 +149,6 @@ class HomeController extends Controller
             return redirect()->back()->with($notification); 
         } 
     }
-
-    public function GetClarifieQuestions(){
-        $clarifie = Clarifie::find(1);
-        return view('admin.backend.clarifie.get_clarifie_questions', compact('clarifie'));
-    }
-
-    public function UpdateClarifieQuestions(Request $request){
-
-        $clarifie_id = $request->id;
-        $clarifie = Clarifie::find($clarifie_id);
-
-        Clarifie::find($clarifie_id)->update([
-            'question_1' => $request->question_1 ? $request->question_1 : '',
-            'answer_1' => $request->answer_1 ? $request->answer_1 : '',
-
-            'question_2' => $request->question_2 ? $request->question_2 : '',
-            'answer_2' => $request->answer_2 ? $request->answer_2 : '',
-
-            'question_3' => $request->question_3 ? $request->question_3 : '',
-            'answer_3' => $request->answer_3 ? $request->answer_3 : '',
-        ]);
-
-        $notification = array(
-            'message' => __('Clarifie Questions Updated Successfully'),
-            'alert-type' => 'success'
-        );
-
-        return redirect()->back()->with($notification); 
-    }
-
-
 
     // ************************ //
     // *** Financial Section *** //
@@ -573,6 +543,41 @@ class HomeController extends Controller
 
         return redirect()->back()->with($notification); 
     }
+
+
+    // *********************************************************** //
+    // *** Three Features, usadas frecuentemente en el sitio **** //
+    // ********************************************************** //
+    public function GetThreeFeatures(){
+        $features = ThreeFeatures::find(1);
+        return view('admin.backend.three_features.get_three_features', compact('features'));
+    }
+
+    public function UpdateThreeFeatures(Request $request){
+
+        $features_id = $request->id;
+        $features = ThreeFeatures::find($features_id);
+
+        ThreeFeatures::find($features_id)->update([
+
+            'question_1' => $request->question_1 ? $request->question_1 : '',
+            'answer_1' => $request->answer_1 ? $request->answer_1 : '',
+
+            'question_2' => $request->question_2 ? $request->question_2 : '',
+            'answer_2' => $request->answer_2 ? $request->answer_2 : '',
+
+            'question_3' => $request->question_3 ? $request->question_3 : '',
+            'answer_3' => $request->answer_3 ? $request->answer_3 : '',
+        ]);
+
+        $notification = array(
+            'message' => __('Features Updated Successfully'),
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+    }
+
 
 
 

@@ -79,8 +79,6 @@ Route::middleware('auth')->group(function () {
     Route::controller(HomeController::class)->group(function(){
         Route::get('/get/clarifies', 'GetClarifie')->name('get.clarifies');
         Route::post('/update/clarifie', 'UpdateClarifie')->name('update.clarifie');
-        Route::get('/get/clarifies/questions', 'GetClarifieQuestions')->name('get.clarifie.questions');
-        Route::post('/update/clarifie/questions', 'UpdateClarifieQuestions')->name('update.clarifie.questions');
     });
 
     // Section Financial
@@ -152,6 +150,12 @@ Route::middleware('auth')->group(function () {
     Route::controller(HomeController::class)->group(function(){
         Route::get('/get/section/titles', 'GetSectionTitles')->name('get.section.titles');
         Route::post('/update/section/titles', 'UpdateSectionTitles')->name('update.section.titles');
+    });
+
+    // Three Features Get Routes
+    Route::controller(HomeController::class)->group(function(){
+        Route::get('/get/three/features', 'GetThreeFeatures')->name('get.three.features');
+        Route::post('/update/three/features', 'UpdateThreeFeatures')->name('update.three.features');
     });
    
     

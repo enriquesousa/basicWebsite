@@ -194,16 +194,6 @@
 					"label": "Quill Editor Js"
 				}
 			]
-		},
-		{
-			"path": "app/Http/Controllers/Backend/HomeController.php",
-			"bookmarks": [
-				{
-					"line": 162,
-					"column": 77,
-					"label": "operador ternario"
-				}
-			]
 		}
 	]
 }

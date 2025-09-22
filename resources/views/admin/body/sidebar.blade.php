@@ -90,12 +90,11 @@
                             <li>
                                 <a href="{{ route('get.clarifies') }}" class="tp-link">{{ __('Clarifies') }}</a>
                             </li>
-                            <li>
-                                <a href="{{ route('get.clarifie.questions') }}" class="tp-link">{{ __('Clarifie Questions') }}</a>
-                            </li>
                         </ul>
                     </div>
                 </li>
+
+                
 
                 <!-- Financial Section -->
                 <li>
@@ -184,6 +183,9 @@
                             </li>
                             <li>
                                 <a href="{{ route('add.faqs') }}" class="tp-link">{{ __('Add FAQ') }}</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('get.three.features') }}" class="tp-link">{{ __('Three Features') }}</a>
                             </li>
                         </ul>
                     </div>
