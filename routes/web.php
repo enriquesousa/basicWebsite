@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -157,6 +158,14 @@ Route::middleware('auth')->group(function () {
         Route::get('/get/three/features', 'GetThreeFeatures')->name('get.three.features');
         Route::post('/update/three/features', 'UpdateThreeFeatures')->name('update.three.features');
     });
+
+    // Page Services
+    Route::controller(ServiceController::class)->group(function(){
+        Route::get('/get/page/services', 'GetPageServices')->name('get.page.services');
+        Route::post('/update/page/services', 'UpdatePageServices')->name('update.page.services');
+        Route::get('/get/page/services/mobile', 'GetPageServicesMobile')->name('get.page.services.mobile');
+        Route::post('/update/page/services/mobile', 'UpdatePageServicesMobile')->name('update.page.services.mobile');
+    });
    
     
     
@@ -167,6 +176,7 @@ Route::middleware('auth')->group(function () {
 // ********************
 Route::get('/team', [FrontendController::class, 'OurTeam'])->name('our.team');
 Route::get('/about', [FrontendController::class, 'AboutUs'])->name('about.us');
+Route::get('/services', [FrontendController::class, 'Services'])->name('services.page');
 
 
 

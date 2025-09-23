@@ -44,7 +44,7 @@
                                         <a href="">{{ __('Portfolio Details') }}</a>
                                     </li>
                                     <li>
-                                        <a href="">{{ __('Services') }}</a>
+                                        <a href="{{ route('services.page') }}">{{ __('Services') }}</a>
                                     </li>
                                     <li>
                                         <a href="">{{ __('Services Details') }}</a>

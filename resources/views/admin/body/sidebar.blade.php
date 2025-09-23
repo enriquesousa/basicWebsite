@@ -94,8 +94,6 @@
                     </div>
                 </li>
 
-                
-
                 <!-- Financial Section -->
                 <li>
                     <a href="#financial" data-bs-toggle="collapse">
@@ -207,6 +205,8 @@
                     </div>
                 </li>
 
+                <li class="menu-title">{{ __('Pages') }}</li>
+
                 <!-- Our Team -->
                 <li>
                     <a href="#our_team" data-bs-toggle="collapse">
@@ -230,13 +230,13 @@
                 <li>
                     <a href="#about" data-bs-toggle="collapse">
                         <span class="mdi mdi-information-outline"></span>
-                        <span> {{ __('About Page') }} </span>
+                        <span> {{ __('About Us') }} </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="about">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="{{ route('get.about') }}" class="tp-link">{{ __('About') }}</a>
+                                <a href="{{ route('get.about') }}" class="tp-link">{{ __('About Us') }}</a>
                             </li>
                             <li>
                                 <a href="{{ route('get.core') }}" class="tp-link">{{ __('Core Values') }}</a>
@@ -246,6 +246,25 @@
                             </li>
                             <li>
                                 <a href="{{ route('add.centric') }}" class="tp-link">{{ __('Add Centric') }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Pagina de Servicios -->
+                <li>
+                    <a href="#services" data-bs-toggle="collapse">
+                        <span class="mdi mdi-view-compact-outline"></span>
+                        <span> {{ __('Services') }} </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="services">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('get.page.services') }}" class="tp-link">{{ __('Services') }}</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('get.page.services.mobile') }}" class="tp-link">{{ __('Service Mobile Banner') }}</a>
                             </li>
                         </ul>
                     </div>

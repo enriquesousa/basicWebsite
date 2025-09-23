@@ -5,7 +5,6 @@
             $title = App\Models\Title::find(1);
         @endphp
         <div class="lonyo-section-title center">
-            {{-- <h2>Find answers to all questions below</h2> --}}
             <h2 id="answers-title" contenteditable="{{ auth()->check() ? 'true' : 'false' }}" data-id="{{ $title->id }}">{{ __($title->answers) }}</h2>
         </div>
 
@@ -19,7 +18,7 @@
         <div class="lonyo-faq-wrap1">
 
             @foreach ($faqs as $faq)
-                <div class="lonyo-faq-item item2 open" data-aos="fade-up" data-aos-duration="500">
+                <div class="lonyo-faq-item item2 close" data-aos="fade-up" data-aos-duration="500">
                     <div class="lonyo-faq-header">
                         <h4>{{ __($faq->title) }}</h4>
                         <div class="lonyo-active-icon">
@@ -41,10 +40,6 @@
         </div>
 
     </div>
-</div>
-
-<div class="lonyo-content-shape3">
-    <img src="{{ asset('frontend/assets/images/shape/shape2.svg') }}" alt="">
 </div>
 <!-- end faq -->
 

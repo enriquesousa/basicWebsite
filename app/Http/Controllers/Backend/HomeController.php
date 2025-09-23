@@ -95,9 +95,9 @@ class HomeController extends Controller
         return redirect()->back()->with($notification); 
     }
 
-    // ************************ //
+    // ************************* //
     // *** Clarifies Section *** //
-    // ************************ //
+    // ************************* //
     public function GetClarifie(){
         $clarifie = Clarifie::find(1);
         return view('admin.backend.clarifie.get_clarifie', compact('clarifie'));

@@ -560,6 +560,17 @@
     "Description 1": "Descripción 1",
     "Description 2": "Descripción 2",
     "Description 3": "Descripción 3",
+
+    "Pages": "Páginas",
+    "Edit Services": "Editar Servicios",
+    "Service Image": "Imagen de Servicios",
+    "Service Updated With image Successfully": "Servicios actualizados con imagen correctamente",
+    "Service Updated Without image Successfully": "Servicios actualizados sin imagen correctamente",
+    "Service Mobile Banner": "Banner Móvil Servicios",
+    "Edit Service Mobile Banner": "Editar Banner Móvil Servicios",
+    "Mobile Banner Updated With image Successfully": "Banner Móvil actualizado con imagen correctamente",
+    "Mobile Banner Updated Without image Successfully": "Banner Móvil actualizado sin imagen correctamente",
+    
     
     
     

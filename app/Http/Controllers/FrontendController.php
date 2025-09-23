@@ -12,7 +12,12 @@ class FrontendController extends Controller
 
     public function AboutUs(){
         return view('home.about.about_us');
-    } 
+    }
+    
+    public function Services(){
+        return view('home.services.services_page');
+    }
+
 
 
 }
