@@ -28,27 +28,23 @@
                             <li class="menu-item-has-children">
                                 <a href="{{ route('about.us') }}">{{ __('About Us') }}</a>
                                 <ul class="sub-menu">
+
                                     <li>
                                         <a href="{{ route('about.us') }}">{{ __('About Us') }}</a>
                                     </li>
+
                                     <li>
                                         <a href="{{ route('our.team') }}">{{ __('Team') }}</a>
                                     </li>
-                                    <li>
-                                        <a href="">{{ __('Team Details') }}</a>
-                                    </li>
+                                    
                                     <li>
                                         <a href="">{{ __('Portfolio') }}</a>
                                     </li>
-                                    <li>
-                                        <a href="">{{ __('Portfolio Details') }}</a>
-                                    </li>
+
                                     <li>
                                         <a href="{{ route('services.page') }}">{{ __('Services') }}</a>
                                     </li>
-                                    <li>
-                                        <a href="">{{ __('Services Details') }}</a>
-                                    </li>
+                                    
                                 </ul>
                             </li>
                             

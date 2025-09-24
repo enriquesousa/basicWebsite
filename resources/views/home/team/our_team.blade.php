@@ -43,7 +43,7 @@
                                 </a>
                             </div>
                             <div class="lonyo-team-content2">
-                                <a href="single-team.html">
+                                <a href="{{ route('team.details', $item->id) }}">
                                     <h6>{{ $item->name }}</h6>
                                 </a>
                                 <p>{{ $item->position }}</p>
