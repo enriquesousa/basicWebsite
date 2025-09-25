@@ -129,7 +129,7 @@
 			"path": "app/Http/Controllers/Backend/TeamController.php",
 			"bookmarks": [
 				{
-					"line": 111,
+					"line": 116,
 					"column": 48,
 					"label": "If $item->image == null then no image delete"
 				}
@@ -192,6 +192,16 @@
 					"line": 124,
 					"column": 24,
 					"label": "Quill Editor Js"
+				}
+			]
+		},
+		{
+			"path": "resources/views/admin/backend/team/all_team.blade.php",
+			"bookmarks": [
+				{
+					"line": 13,
+					"column": 38,
+					"label": "agregar add boton a la derecha"
 				}
 			]
 		}

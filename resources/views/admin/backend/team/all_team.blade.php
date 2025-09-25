@@ -4,13 +4,30 @@
     <div class="content">
         <!-- Start Content-->
         <div class="container-xxl">
-            <div class="py-3 d-flex align-items-sm-center flex-sm-row flex-column"></div>
+
+            <div class="py-3 d-flex align-items-sm-center flex-sm-row flex-column">
+
+                <div class="flex-grow-1">
+                    <h4 class="fs-18 fw-semibold m-0">{{ __('All Team') }}</h4>
+                </div>
+
+                <div class="text-end">
+                    <ol class="breadcrumb m-0 py-0">
+                        <a href="{{ route('add.team') }}" class="btn btn-secondary">
+                            <span class="mdi mdi-plus-circle-outline"></span>
+                            {{ __('Add') }}
+                        </a>
+                    </ol>
+                </div>
+
+            </div>
+
             <div class="row">
                 <div class="col-12">
                     <div class="card">
 
                         <div class="card-header">
-                            <h5 class="card-title mb-0">{{ __('All Team') }}</h5>
+                            <h5 class="card-title mb-0">{{ __('Add data for the all team page') }} - <a href="{{ route('our.team') }}" class="btn btn-primary btn-sm" target="_blank">{{ __('See page here') }}</a></h5>
                         </div><!-- end card header -->
 
                         <div class="card-body">
@@ -36,8 +53,22 @@
                                             <td>{{ $item->position }}</td>
 
                                             <td>
-                                                <a href="{{ route('edit.team', $item->id) }}" class="btn btn-success btn-sm" title="{{ __('Edit') }}">{{ __('Edit') }}</a>
-                                                <a href="{{ route('delete.team', $item->id) }}" class="btn btn-danger btn-sm" id="delete" title="{{ __('Delete') }}">{{ __('Delete') }}</a>
+
+                                                <!-- Edit Button -->
+                                                <a href="{{ route('edit.team', $item->id) }}" class="btn btn-success btn-sm" title="{{ __('Edit') }}">
+                                                    <span class="mdi mdi-pencil"></span>
+                                                </a>
+
+                                                <!-- Details Button -->
+                                                <a href="{{ route('details.team', $item->id) }}" class="btn btn-info btn-sm" title="{{ __('Details') }}">
+                                                    <span class="mdi mdi-eye"></span>
+                                                </a>
+
+                                                <!-- Delete Button -->
+                                                <a href="{{ route('delete.team', $item->id) }}" class="btn btn-danger btn-sm" id="delete" title="{{ __('Delete') }}">
+                                                    <span class="mdi mdi-delete-empty"></span>
+                                                </a>
+
                                             </td>
                                         </tr>
                                     @endforeach
@@ -48,6 +79,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 

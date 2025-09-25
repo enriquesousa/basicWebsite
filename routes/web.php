@@ -127,6 +127,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/edit/team/{id}', 'EditTeam')->name('edit.team');
         Route::post('/update/team', 'UpdateTeam')->name('update.team');
         Route::get('/delete/team/{id}', 'DeleteTeam')->name('delete.team');
+        Route::get('/details/team/{id}', 'DetailsTeam')->name('details.team');
     });
 
     // Section Page About

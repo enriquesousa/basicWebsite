@@ -105,6 +105,11 @@ class TeamController extends Controller
         } 
     }
 
+    public function DetailsTeam($id){
+        $team = Team::find($id);
+        return view('admin.backend.team.details_team',compact('team'));
+    }
+
     public function DeleteTeam($id){
 
         $item = Team::find($id);
