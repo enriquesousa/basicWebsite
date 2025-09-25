@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\MemberDetail;
 use App\Models\Team;
 use Illuminate\Http\Request;
 
@@ -106,8 +107,67 @@ class TeamController extends Controller
     }
 
     public function DetailsTeam($id){
+
         $team = Team::find($id);
-        return view('admin.backend.team.details_team',compact('team'));
+
+        $teamDetails = MemberDetail::where('team_id', $team->id)->first();
+        // dd($teamDetails); // Si no encuentra id me regresa null
+        // if ($teamDetails == null) create new record
+        if ($teamDetails == null) {
+            MemberDetail::create([
+                'team_id' => $team->id,
+            ]);
+            $teamDetails = MemberDetail::where('team_id', $team->id)->first();
+        }
+
+        return view('admin.backend.team.details_team',compact('team','teamDetails'));
+    }
+
+    public function UpdateDetailsTeam(Request $request){
+
+        // dd($request->all());
+
+        $member_details_id = $request->id;
+        $member_details = MemberDetail::find($member_details_id);
+
+        if ($request->file('image')) {
+
+            $image = $request->file('image');
+            $manager = new ImageManager(new Driver());
+            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $img = $manager->read($image);
+            $img->resize(526,550)->save(public_path('upload/team/'.$name_gen));
+            $save_url = 'upload/team/'.$name_gen;
+
+            if (file_exists(public_path($member_details->image ))) {
+                @unlink(public_path($member_details->image ));
+            }
+            
+            MemberDetail::find($member_details_id)->update([
+                'description' => $request->description ? $request->description : '',
+                'image' => $save_url,
+            ]);
+
+            $notification = array(
+                'message' => __('Details Page Updated With image Successfully'),
+                'alert-type' => 'success'
+            );
+    
+            return redirect()->back()->with($notification); 
+        
+        } else {
+
+            MemberDetail::find($member_details_id)->update([
+                'description' => $request->description ? $request->description : '',
+            ]);
+
+            $notification = array(
+                'message' => __('Details Page Updated Without image Successfully'),
+                'alert-type' => 'success'
+            );
+    
+            return redirect()->back()->with($notification); 
+        } 
     }
 
     public function DeleteTeam($id){
