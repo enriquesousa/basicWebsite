@@ -109,6 +109,9 @@
     <script src="{{ asset('frontend/assets/js/app.js') }}"></script>
 
 
+    <!-- Iconify para usar iconos de https://icon-sets.iconify.design -->
+    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+
 </body>
 
 </html>

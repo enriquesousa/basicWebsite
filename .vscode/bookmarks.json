@@ -204,6 +204,26 @@
 					"label": "agregar add boton a la derecha"
 				}
 			]
+		},
+		{
+			"path": "resources/views/home/team/team_detail.blade.php",
+			"bookmarks": [
+				{
+					"line": 47,
+					"column": 40,
+					"label": "iconify icon facebook"
+				}
+			]
+		},
+		{
+			"path": "resources/views/home/home_master.blade.php",
+			"bookmarks": [
+				{
+					"line": 111,
+					"column": 36,
+					"label": "Iconify para usar iconos de"
+				}
+			]
 		}
 	]
 }
