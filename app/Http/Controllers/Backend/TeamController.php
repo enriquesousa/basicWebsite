@@ -106,6 +106,26 @@ class TeamController extends Controller
         } 
     }
 
+    public function DeleteTeam($id){
+
+        $item = Team::find($id);
+
+        // If $item->image == null then no image
+        if (file_exists(public_path($item->image ))) {
+            @unlink(public_path($item->image ));
+        }
+
+        Team::find($id)->delete();
+
+        $notification = array(
+            'message' => __('Team Delete Successfully'),
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);   
+    }
+
+
     public function DetailsTeam($id){
 
         $team = Team::find($id);
@@ -170,24 +190,25 @@ class TeamController extends Controller
         } 
     }
 
-    public function DeleteTeam($id){
+    public function UpdateDetailsSocialLinks(Request $request){
 
-        $item = Team::find($id);
+        dd($request->all());
 
-        // If $item->image == null then no image
-        if (file_exists(public_path($item->image ))) {
-            @unlink(public_path($item->image ));
-        }
+        $member_details_id = $request->id;
+        $member_details = MemberDetail::find($member_details_id);
 
-        Team::find($id)->delete();
+        MemberDetail::find($member_details_id)->update([
+            'facebook_url' => $request->facebook_url ? $request->facebook_url : '',
+        ]);
 
         $notification = array(
-            'message' => __('Team Delete Successfully'),
+            'message' => __('Social Links Updated Successfully'),
             'alert-type' => 'success'
         );
 
-        return redirect()->back()->with($notification);   
+        return redirect()->back()->with($notification); 
     }
+
 
 
 }

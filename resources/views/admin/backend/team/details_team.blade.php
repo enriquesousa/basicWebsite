@@ -5,7 +5,6 @@
     {{-- Ya lo puse en el master --}}
 
     <div class="content">
-
         <!-- Start Content-->
         <div class="container-xxl">
 
@@ -13,10 +12,7 @@
                 <div class="flex-grow-1">
                     <h4 class="fs-18 fw-semibold m-0">{{ __('Edit Details') }}</h4>
                 </div>
-                {{-- button link to the right --}}
-                {{-- <div class="flex-shrink-0 ms-3">
-                    <a href="{{ route('all.team') }}" class="btn btn-light"><i class="ri-arrow-left-line align-bottom me-1"></i> {{ __('All Team') }}</a>
-                </div> --}}
+                
                 <div class="text-end">
                     <ol class="breadcrumb m-0 py-0">
                         <a href="{{ route('all.team') }}" class="btn btn-secondary">
@@ -27,18 +23,123 @@
                 </div>
             </div>
 
+            <!-- Tabs Menu -->
             <div class="row">
+                <div class="col-xl-12">
+                    <div class="card">
+
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">{{ __('Edit Details Page') }}, <a href="{{ route('team.details', $team->id) }}" target="_blank">{{ __('See page here') }}</a> <small>({{ __('To change the Name, please go click in the edit button of list page') }})</small> </h5>
+                            <p class="mt-2">
+                                <strong>{{ __('Name: ') }}</strong>{{ $team->name }}<br>
+                                <strong>{{ __('Position: ') }}</strong>{{ $team->position }}
+                            </p>
+                        </div><!-- end card header -->
+
+                        <div class="card-body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#home" role="tab">
+                                        <span class="d-block d-sm-none"><i class="mdi mdi-home-account"></i></span>
+                                        <span class="d-none d-sm-block">{{ __('Description') }}</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#social_links" role="tab">
+                                        <span class="d-block d-sm-none"><i class="mdi mdi-account-outline"></i></span>
+                                        <span class="d-none d-sm-block">{{ __('Social Links') }}</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#capabilities" role="tab">
+                                        <span class="d-block d-sm-none"><i class="mdi mdi-email-outline"></i></span>
+                                        <span class="d-none d-sm-block">{{ __('Capabilities') }}</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#attributes" role="tab">
+                                        <span class="d-block d-sm-none"><i class="mdi mdi-email-outline"></i></span>
+                                        <span class="d-none d-sm-block">{{ __('Attributes') }}</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#professional_skills" role="tab">
+                                        <span class="d-block d-sm-none"><i class="mdi mdi-email-outline"></i></span>
+                                        <span class="d-none d-sm-block">{{ __('Professional Skills') }}</span>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content p-3 text-muted">
+
+                                <!-- Home Tab (Description and Image) -->
+                                <div class="tab-pane active" id="home" role="tabpanel">
+                                    @include('admin.backend.team.details_team_tab_home')
+                                </div>
+
+                                <!-- Social Links Tab -->
+                                <div class="tab-pane" id="social_links" role="tabpanel">
+                                    @include('admin.backend.team.details_team_tab_social_links')
+                                </div>
+
+                                <!-- Capabilities Tab -->
+                                <div class="tab-pane" id="capabilities" role="tabpanel">
+                                    <p class="mb-0">
+                                        Capacidades, ethical wes anderson tofu before they
+                                        sold out mcsweeney's organic lomo retro fanny pack lo-fi
+                                        farm-to-table readymade. Messenger bag gentrify pitchfork
+                                        tattooed craft beer, iphone skateboard locavore carles etsy
+                                        salvia banksy hoodie helvetica. skateboard locavore carles etsy
+                                        salvia banksy hoodie helvetica craving a hearty.
+                                    </p>
+                                </div>
+
+                                <!-- Attributes Tab -->
+                                <div class="tab-pane" id="attributes" role="tabpanel">
+                                    <p class="mb-0">
+                                        Atributos, ethical wes anderson tofu before they
+                                        sold out mcsweeney's organic lomo retro fanny pack lo-fi
+                                        farm-to-table readymade. Messenger bag gentrify pitchfork
+                                        tattooed craft beer, iphone skateboard locavore carles etsy
+                                        salvia banksy hoodie helvetica. skateboard locavore carles etsy
+                                        salvia banksy hoodie helvetica craving a hearty.
+                                    </p>
+                                </div>
+
+                                <!-- Professional Skills Tab -->
+                                <div class="tab-pane" id="professional_skills" role="tabpanel">
+                                    <p class="mb-0">
+                                        professional_skills, ethical wes anderson tofu before they
+                                        sold out mcsweeney's organic lomo retro fanny pack lo-fi
+                                        farm-to-table readymade. Messenger bag gentrify pitchfork
+                                        tattooed craft beer, iphone skateboard locavore carles etsy
+                                        salvia banksy hoodie helvetica. skateboard locavore carles etsy
+                                        salvia banksy hoodie helvetica craving a hearty.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- <div class="row">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
                             <div class="tab-pane pt-4" id="profile_setting" role="tabpanel" aria-labelledby="setting_tab">
                                 <div class="row">
+
                                     <div class="row">
                                         <div class="col-lg-12 col-xl-12">
                                             <div class="card border mb-0">
 
                                                 <div class="card-header">
-                                                    <h5 class="card-title mb-0">{{ __('Edit Details Page') }}, <a href="{{ route('our.team') }}" target="_blank">{{ __('See page here') }}</a> <small>({{ __('To change the Name, please go click in the edit button of list page') }})</small> </h5>
+                                                    <h5 class="card-title mb-0">{{ __('Edit Description and Image') }}</h5>
                                                 </div><!-- end card header -->
 
                                                 <form action="{{ route('update.details.team') }}" method="post"
@@ -104,12 +205,13 @@
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
-                            </div> <!-- end education -->
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
     </div>

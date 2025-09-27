@@ -18,6 +18,25 @@ return new class extends Migration
 
             $table->text('description')->nullable();
             $table->string('image')->nullable();
+
+            $table->text('facebook_url')->nullable();
+            $table->boolean('facebook_status')->default(1);
+
+            $table->text('x_url')->nullable();
+            $table->boolean('x_status')->default(1);
+
+            $table->text('instagram_url')->nullable();
+            $table->boolean('instagram_status')->default(1);
+
+            $table->text('linkedin_url')->nullable();
+            $table->boolean('linkedin_status')->default(1);
+
+            $table->text('whatsapp_url')->nullable();
+            $table->boolean('whatsapp_status')->default(0);
+
+            $table->text('web_url')->nullable();
+            $table->boolean('web_status')->default(0);
+
             
             $table->timestamps();
 
