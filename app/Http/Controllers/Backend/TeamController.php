@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Capability;
 use App\Models\MemberDetail;
 use App\Models\Team;
 use Illuminate\Http\Request;
@@ -125,7 +126,7 @@ class TeamController extends Controller
         return redirect()->back()->with($notification);   
     }
 
-
+    // *** Handle Image, Description, and Social Links *** //
     public function DetailsTeam($id){
 
         $team = Team::find($id);
@@ -220,6 +221,73 @@ class TeamController extends Controller
         return redirect()->back()->with($notification); 
     }
 
+    // *** Handle Capabilities CRUD *** //
+    // public function AllCapabilities($id){
+    //     $capabilities = Capability::latest()->get();
+    //     return view('admin.backend.team.all_capabilities', compact('capabilities'));
+    // }
+
+    // public function AddConnect(){
+    //     return view('admin.backend.connect.add_connect');
+    // }
+
+    // public function StoreConnect(Request $request){ 
+    
+    //     Connect::create([
+    //         'title' => $request->title, 
+    //         'description' => $request->description, 
+    //     ]);
+        
+    //     $notification = array(
+    //         'message' => __('Connect Inserted Successfully'),
+    //         'alert-type' => 'success'
+    //     );
+    //     return redirect()->route('all.connect')->with($notification); 
+    // }
+
+    // public function EditConnect($id){
+    //     $connect = Connect::find($id);
+    //     return view('admin.backend.connect.edit_connect',compact('connect'));
+    // } 
+
+    // public function UpdateConnect(Request $request){
+
+    //     $connect_id  = $request->id;
+
+    //     $request->validate([
+    //         'title' => 'required',
+    //         'description' => 'nullable',
+    //     ]);
+
+    //     Connect::find($connect_id)->update([
+    //         'title' => $request->title,
+    //         'description' => $request->description, 
+    //     ]);
+
+    //     $notification = array(
+    //         'message' => __('Connect Updated Successfully'),
+    //         'alert-type' => 'success'
+    //     );
+
+    //     return redirect()->route('all.connect')->with($notification); 
+    // }
+
+    // public function DeleteConnect($id){
+
+    //     Connect::find($id)->delete();
+
+    //     $notification = array(
+    //         'message' => __('Connect Deleted Successfully'),
+    //         'alert-type' => 'success'
+    //     );
+
+    //     return redirect()->back()->with($notification); 
+    // }
 
 
+
+
+
+
+    
 }

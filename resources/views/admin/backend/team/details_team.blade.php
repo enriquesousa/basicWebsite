@@ -37,6 +37,7 @@
                         </div><!-- end card header -->
 
                         <div class="card-body">
+
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item" role="presentation">
@@ -86,14 +87,7 @@
 
                                 <!-- Capabilities Tab -->
                                 <div class="tab-pane" id="capabilities" role="tabpanel">
-                                    <p class="mb-0">
-                                        Capacidades, ethical wes anderson tofu before they
-                                        sold out mcsweeney's organic lomo retro fanny pack lo-fi
-                                        farm-to-table readymade. Messenger bag gentrify pitchfork
-                                        tattooed craft beer, iphone skateboard locavore carles etsy
-                                        salvia banksy hoodie helvetica. skateboard locavore carles etsy
-                                        salvia banksy hoodie helvetica craving a hearty.
-                                    </p>
+                                    @include('admin.backend.team.all_capabilities')
                                 </div>
 
                                 <!-- Attributes Tab -->

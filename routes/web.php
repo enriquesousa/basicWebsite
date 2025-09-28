@@ -128,10 +128,18 @@ Route::middleware('auth')->group(function () {
         Route::post('/update/team', 'UpdateTeam')->name('update.team');
         Route::get('/delete/team/{id}', 'DeleteTeam')->name('delete.team');
 
+        // Handle Image, Description, and Social Links
         Route::get('/details/team/{id}', 'DetailsTeam')->name('details.team');
         Route::post('/details/team/update', 'UpdateDetailsTeam')->name('update.details.team');
         Route::post('/details/team/update/social-links', 'UpdateDetailsSocialLinks')->name('update.social.links.details.team');
 
+        // Handle Capabilities CRUD
+        // Route::get('/all/capabilities/{id}', 'AllCapabilities')->name('all.capabilities');
+        // Route::get('/add/connect', 'AddConnect')->name('add.connect');
+        // Route::post('/store/connect', 'StoreConnect')->name('store.connect');
+        // Route::get('/edit/connect/{id}', 'EditConnect')->name('edit.connect');
+        // Route::post('/update/connect', 'UpdateConnect')->name('update.connect');
+        // Route::get('/delete/connect/{id}', 'DeleteConnect')->name('delete.connect');
 
     });
 

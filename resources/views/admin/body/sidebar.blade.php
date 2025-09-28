@@ -207,7 +207,7 @@
 
                 <li class="menu-title">{{ __('Pages') }}</li>
 
-                <!-- Our Team -->
+                <!-- Our Team (Nuestro Equipo) -->
                 <li>
                     <a href="#our_team" data-bs-toggle="collapse">
                         <span class="mdi mdi-account-group-outline"></span>
@@ -219,9 +219,9 @@
                             <li>
                                 <a href="{{ route('all.team') }}" class="tp-link">{{ __('List All') }}</a>
                             </li>
-                            <li>
-                                <a href="{{ route('add.team') }}" class="tp-link">{{ __('Add') }}</a>
-                            </li>
+                            {{-- <li>
+                                <a href="{{ route('all.capabilities') }}" class="tp-link">{{ __('Capabilities') }}</a>
+                            </li> --}}
                         </ul>
                     </div>
                 </li>
