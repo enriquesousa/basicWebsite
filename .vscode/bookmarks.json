@@ -206,16 +206,6 @@
 			]
 		},
 		{
-			"path": "resources/views/home/team/team_detail.blade.php",
-			"bookmarks": [
-				{
-					"line": 47,
-					"column": 40,
-					"label": "iconify icon facebook"
-				}
-			]
-		},
-		{
 			"path": "resources/views/home/home_master.blade.php",
 			"bookmarks": [
 				{

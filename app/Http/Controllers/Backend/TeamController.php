@@ -192,13 +192,24 @@ class TeamController extends Controller
 
     public function UpdateDetailsSocialLinks(Request $request){
 
-        dd($request->all());
+        // dd($request->all());
 
         $member_details_id = $request->id;
         $member_details = MemberDetail::find($member_details_id);
 
         MemberDetail::find($member_details_id)->update([
             'facebook_url' => $request->facebook_url ? $request->facebook_url : '',
+            'facebook_status' => $request->facebook_status ? $request->facebook_status : '0',
+            'x_url' => $request->x_url ? $request->x_url : '',
+            'x_status' => $request->x_status ? $request->x_status : '0',
+            'instagram_url' => $request->instagram_url ? $request->instagram_url : '',
+            'instagram_status' => $request->instagram_status ? $request->instagram_status : '0',
+            'linkedin_url' => $request->linkedin_url ? $request->linkedin_url : '',
+            'linkedin_status' => $request->linkedin_status ? $request->linkedin_status : '0',
+            'whatsapp_url' => $request->whatsapp_url ? $request->whatsapp_url : '',
+            'whatsapp_status' => $request->whatsapp_status ? $request->whatsapp_status : '0',
+            'web_url' => $request->web_url ? $request->web_url : '',
+            'web_status' => $request->web_status ? $request->web_status : '0',
         ]);
 
         $notification = array(
