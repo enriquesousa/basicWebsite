@@ -214,6 +214,26 @@
 					"label": "Iconify para usar iconos de"
 				}
 			]
+		},
+		{
+			"path": "resources/views/admin/backend/team/tab_capabilities_all.blade.php",
+			"bookmarks": [
+				{
+					"line": 66,
+					"column": 37,
+					"label": "venatna modal Capability"
+				}
+			]
+		},
+		{
+			"path": "resources/views/admin/backend/team/details_team.blade.php",
+			"bookmarks": [
+				{
+					"line": 45,
+					"column": 131,
+					"label": "display none"
+				}
+			]
 		}
 	]
 }

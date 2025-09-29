@@ -134,9 +134,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/details/team/update/social-links', 'UpdateDetailsSocialLinks')->name('update.social.links.details.team');
 
         // Handle Capabilities CRUD
-        // Route::get('/all/capabilities/{id}', 'AllCapabilities')->name('all.capabilities');
-        // Route::get('/add/connect', 'AddConnect')->name('add.connect');
-        // Route::post('/store/connect', 'StoreConnect')->name('store.connect');
+        Route::post('/store/capability', 'StoreCapability')->name('store.capability');
         // Route::get('/edit/connect/{id}', 'EditConnect')->name('edit.connect');
         // Route::post('/update/connect', 'UpdateConnect')->name('update.connect');
         // Route::get('/delete/connect/{id}', 'DeleteConnect')->name('delete.connect');

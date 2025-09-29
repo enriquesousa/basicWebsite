@@ -227,6 +227,22 @@ class TeamController extends Controller
     //     return view('admin.backend.team.all_capabilities', compact('capabilities'));
     // }
 
+    public function StoreCapability(Request $request){
+        
+        // dd($request->all());
+
+        Capability::insert([
+            'team_id' => $request->id,
+            'description' => $request->description, 
+        ]);
+
+        $notification = array(
+            'message' => __('Capability Inserted Successfully'),
+            'alert-type' => 'success'
+         ); 
+         return redirect()->back()->with($notification);
+    }
+
     // public function AddConnect(){
     //     return view('admin.backend.connect.add_connect');
     // }

@@ -29,11 +29,27 @@
                     <div class="card">
 
                         <div class="card-header">
-                            <h5 class="card-title mb-0">{{ __('Edit Details Page') }}, <a href="{{ route('team.details', $team->id) }}" target="_blank">{{ __('See page here') }}</a> <small>({{ __('To change the Name, please go click in the edit button of list page') }})</small> </h5>
-                            <p class="mt-2">
-                                <strong>{{ __('Name: ') }}</strong>{{ $team->name }}<br>
-                                <strong>{{ __('Position: ') }}</strong>{{ $team->position }}
-                            </p>
+                            <div class="row">
+
+                                <div class="col-md-4">
+                                    <h5 class="card-title mb-0">{{ __('Edit Details Page') }}, <a href="{{ route('team.details', $team->id) }}" target="_blank">{{ __('See page here') }}</a> <small>({{ __('To change the Name, please go click in the edit button of list page') }})</small></h5>
+                                </div>
+
+                                <div class="col-md-4 text-center">
+                                    <p class="mt-2">
+                                        <strong>{{ __('Name: ') }}</strong>{{ $team->name }}<br>
+                                        <strong>{{ __('Position: ') }}</strong>{{ $team->position }}
+                                    </p>
+                                </div>
+
+                                {{-- <div class="col-md-4 text-center">
+                                    <a href="{{ route('add.team') }}" class="btn btn-secondary" id="add-capability-button" style="display: none">
+                                        <span class="mdi mdi-plus-circle-outline"></span>
+                                        {{ __('Add') }}
+                                    </a>
+                                </div> --}}
+
+                            </div>
                         </div><!-- end card header -->
 
                         <div class="card-body">
@@ -77,17 +93,17 @@
 
                                 <!-- Home Tab (Description and Image) -->
                                 <div class="tab-pane active" id="home" role="tabpanel">
-                                    @include('admin.backend.team.details_team_tab_home')
+                                    @include('admin.backend.team.tab_home')
                                 </div>
 
                                 <!-- Social Links Tab -->
                                 <div class="tab-pane" id="social_links" role="tabpanel">
-                                    @include('admin.backend.team.details_team_tab_social_links')
+                                    @include('admin.backend.team.tab_social_links')
                                 </div>
 
                                 <!-- Capabilities Tab -->
                                 <div class="tab-pane" id="capabilities" role="tabpanel">
-                                    @include('admin.backend.team.all_capabilities')
+                                    @include('admin.backend.team.tab_capabilities_all')
                                 </div>
 
                                 <!-- Attributes Tab -->
@@ -231,5 +247,7 @@
             })
         })
     </script>
+
+    
 
 @endsection
