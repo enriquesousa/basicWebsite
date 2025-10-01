@@ -135,8 +135,8 @@ Route::middleware('auth')->group(function () {
 
         // Handle Capabilities CRUD
         Route::post('/store/capability', 'StoreCapability')->name('store.capability');
-        // Route::get('/edit/connect/{id}', 'EditConnect')->name('edit.connect');
-        // Route::post('/update/connect', 'UpdateConnect')->name('update.connect');
+        Route::get('/edit/capability/{id}', 'EditCapability');
+        Route::post('/update/capability', 'UpdateCapability')->name('update.capability');
         // Route::get('/delete/connect/{id}', 'DeleteConnect')->name('delete.connect');
 
     });

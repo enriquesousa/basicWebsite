@@ -219,7 +219,7 @@
 			"path": "resources/views/admin/backend/team/tab_capabilities_all.blade.php",
 			"bookmarks": [
 				{
-					"line": 66,
+					"line": 68,
 					"column": 37,
 					"label": "venatna modal Capability"
 				}

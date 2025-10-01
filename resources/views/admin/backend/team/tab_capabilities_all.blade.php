@@ -44,10 +44,12 @@
 
                                 <!-- Action Buttons -->
                                 <td>
+
                                     <!-- Edit Button -->
-                                    <a href="{{ route('edit.team', $item->id) }}" class="btn btn-success btn-sm" title="{{ __('Edit') }}">
-                                        <span class="mdi mdi-pencil"></span>
-                                    </a>
+                                    <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#editModal" id="{{ $item->id }}" onclick="capabilityEdit(this.id)">
+                                        {{ __('Edit') }}
+                                    </button>
+
                                     <!-- Delete Button -->
                                     <a href="{{ route('delete.team', $item->id) }}" class="btn btn-danger btn-sm" id="delete" title="{{ __('Delete') }}">
                                         <span class="mdi mdi-delete-empty"></span>
@@ -87,9 +89,40 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">{{ __('Save Changes') }}</button>
+                    <button type="submit" class="btn btn-primary">{{ __('Update') }}</button>
                 </div>
 
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<!-- Ventana Modal Editar Capability -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="standard-modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="standard-modalLabel">{{ __('Edit Capability') }}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <form action="{{ route('update.capability') }}" method="post">
+                @csrf
+
+                <input type="hidden" name="cap_id" id="cap_id">
+
+                <div class="modal-body">
+                    <div class="form-group col-md-12">
+                        <label for="input1" class="form-label">{{ __('Description') }}</label>
+                        <input type="text" name="description" class="form-control" id="cap"> 
+                    </div> 
+                </div>
+
+                <div class="modal-footer"> 
+                    <button type="submit" class="btn btn-primary">{{ __('Update') }}</button>
+                </div>
             </form>
 
         </div>

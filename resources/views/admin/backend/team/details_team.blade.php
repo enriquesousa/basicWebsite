@@ -37,8 +37,8 @@
 
                                 <div class="col-md-4 text-center">
                                     <p class="mt-2">
-                                        <strong>{{ __('Name: ') }}</strong>{{ $team->name }}<br>
-                                        <strong>{{ __('Position: ') }}</strong>{{ $team->position }}
+                                        <strong>{{ __('Name') }}:&nbsp;</strong>{{ $team->name }}<br>
+                                        <strong>{{ __('Position') }}:&nbsp;</strong>{{ $team->position }}
                                     </p>
                                 </div>
 
@@ -248,6 +248,23 @@
         })
     </script>
 
+    {{-- script to call edit capability route trough ajax  --}}
+    <script>
+        function capabilityEdit(id){
+            $.ajax({
+                type: 'GET',
+                url: '/edit/capability/'+id,
+                dataType: 'json',
+
+                success:function(data){
+                    //console.log(data);
+                    $('#cap').val(data.description);
+                    $('#cap_id').val(data.id); 
+                    
+                }
+            })
+        }
+    </script>
     
 
 @endsection
