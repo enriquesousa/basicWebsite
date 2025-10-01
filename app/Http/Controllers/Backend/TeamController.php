@@ -265,6 +265,18 @@ class TeamController extends Controller
         return redirect()->back()->with($notification);
     }
 
+    public function DeleteCapability($id){
+
+        Capability::find($id)->delete();
+
+        $notification = array(
+            'message' => __('Capability Deleted Successfully'),
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);   
+    }
+
     
 
 

@@ -44,14 +44,13 @@
 
                                 <!-- Action Buttons -->
                                 <td>
-
                                     <!-- Edit Button -->
                                     <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#editModal" id="{{ $item->id }}" onclick="capabilityEdit(this.id)">
-                                        {{ __('Edit') }}
+                                        <span class="mdi mdi-pencil"></span>
                                     </button>
 
                                     <!-- Delete Button -->
-                                    <a href="{{ route('delete.team', $item->id) }}" class="btn btn-danger btn-sm" id="delete" title="{{ __('Delete') }}">
+                                    <a href="{{ route('delete.capability', $item->id) }}" class="btn btn-danger btn-sm" id="delete" title="{{ __('Delete') }}">
                                         <span class="mdi mdi-delete-empty"></span>
                                     </a>
                                 </td>

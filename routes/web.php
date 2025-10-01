@@ -137,7 +137,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/store/capability', 'StoreCapability')->name('store.capability');
         Route::get('/edit/capability/{id}', 'EditCapability');
         Route::post('/update/capability', 'UpdateCapability')->name('update.capability');
-        // Route::get('/delete/connect/{id}', 'DeleteConnect')->name('delete.connect');
+        Route::get('/delete/capability/{id}', 'DeleteCapability')->name('delete.capability');
 
     });
 
