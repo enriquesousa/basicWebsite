@@ -110,10 +110,14 @@ class TeamController extends Controller
     public function DeleteTeam($id){
 
         $item = Team::find($id);
-
         // If $item->image == null then no image
         if (file_exists(public_path($item->image ))) {
             @unlink(public_path($item->image ));
+        }
+
+        $member_detail = MemberDetail::where('team_id', $id)->first(); // Preparar para borrar la imagen del hd
+        if (file_exists(public_path($member_detail->image ))) {
+            @unlink(public_path($member_detail->image ));
         }
 
         Team::find($id)->delete();
