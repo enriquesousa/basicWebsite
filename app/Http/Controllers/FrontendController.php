@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Capability;
 use App\Models\MemberDetail;
 use App\Models\Team;
 use Illuminate\Http\Request;
@@ -12,10 +13,12 @@ class FrontendController extends Controller
         return view('home.team.our_team');
     }
 
-    public function TeamDetail($id){
+    public function TeamDetail(Request $request){
+        $id = $request->item_id;
         $teamMember = Team::find($id);
         $details = MemberDetail::where('team_id', $teamMember->id)->first();
-        return view('home.team.team_detail', compact('teamMember', 'details'));
+        $capabilities = Capability::where('team_id', $teamMember->id)->get();
+        return view('home.team.team_detail', compact('teamMember', 'details', 'capabilities'));
     }
 
     public function AboutUs(){

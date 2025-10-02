@@ -43,9 +43,13 @@
                                 </a>
                             </div>
                             <div class="lonyo-team-content2">
-                                <a href="{{ route('team.details', $item->id) }}">
-                                    <h6>{{ $item->name }}</h6>
-                                </a>
+                                <!-- Name -->
+                                <form action="{{ route('team.details') }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="item_id" value="{{ $item->id }}">
+                                    <button type="submit" class="lonyo-default-btn">{{ $item->name }}</button>
+                                </form>
+                                <!-- Position -->
                                 <p>{{ $item->position }}</p>
                             </div>
                         </div>

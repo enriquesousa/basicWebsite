@@ -115,13 +115,11 @@
                 <!-- Qualifications -->
                 <div class="col-xl-4 col-lg-6">
                     <div class="lonyo-team-d-content" data-aos="fade-up" data-aos-duration="500">
-                        <h4>Qualifications:</h4>
+                        <h4>{{ __('Capabilities') }}:</h4>
                         <ul>
-                            <li><span>Bachelor's Degree in Economics</span> – Strong foundation in economic principles.</li>
-                            <li><span>MBA in Finance and Business Strategy</span>– Graduated from a top-tier university with
-                                a specialization in financial management and corporate strategy.</li>
-                            <li><span>Executive Leadership Training</span> – Completed advanced leadership programs from
-                                globally recognized institutions.</li>
+                            @foreach ($capabilities as $capability)
+                                <li>{{ $capability->description }}</li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

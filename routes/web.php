@@ -187,7 +187,7 @@ Route::middleware('auth')->group(function () {
 // Routes general users
 // ********************
 Route::get('/team', [FrontendController::class, 'OurTeam'])->name('our.team');
-Route::get('/team/detail/{id}', [FrontendController::class, 'TeamDetail'])->name('team.details');
+Route::post('/team/detail/frontend', [FrontendController::class, 'TeamDetail'])->name('team.details');
 
 Route::get('/about', [FrontendController::class, 'AboutUs'])->name('about.us');
 Route::get('/services', [FrontendController::class, 'Services'])->name('services.page');
