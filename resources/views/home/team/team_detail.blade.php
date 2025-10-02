@@ -127,15 +127,11 @@
                 <!-- Attributes -->
                 <div class="col-xl-4 col-lg-6">
                     <div class="lonyo-team-d-content" data-aos="fade-up" data-aos-duration="700">
-                        <h4>Attributes:</h4>
+                        <h4>{{ __('Attributes') }}:</h4>
                         <ul>
-                            <li><span>Visionary Leader</span> – Drives innovation long term success with strategic
-                                foresight.</li>
-                            <li><span>Results-Oriented</span>– Focuses on achieving measurable outcomes & fostering growth.
-                            </li>
-                            <li><span>Executive Leadership Training</span> – Thrives under pressure and leads challenges.
-                            </li>
-                            <li><span>Collaborative</span> – Encourages teamwork and cross-functional communication.</li>
+                            @foreach ($attributes as $attribute)
+                                <li>{{ $attribute->description }}</li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

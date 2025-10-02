@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Attribute;
 use App\Models\Capability;
 use App\Models\MemberDetail;
 use App\Models\Team;
@@ -18,7 +19,8 @@ class FrontendController extends Controller
         $teamMember = Team::find($id);
         $details = MemberDetail::where('team_id', $teamMember->id)->first();
         $capabilities = Capability::where('team_id', $teamMember->id)->get();
-        return view('home.team.team_detail', compact('teamMember', 'details', 'capabilities'));
+        $attributes = Attribute::where('team_id', $teamMember->id)->get();
+        return view('home.team.team_detail', compact('teamMember', 'details', 'capabilities', 'attributes'));
     }
 
     public function AboutUs(){
