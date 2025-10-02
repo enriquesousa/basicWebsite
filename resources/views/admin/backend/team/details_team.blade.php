@@ -108,14 +108,7 @@
 
                                 <!-- Attributes Tab -->
                                 <div class="tab-pane" id="attributes" role="tabpanel">
-                                    <p class="mb-0">
-                                        Atributos, ethical wes anderson tofu before they
-                                        sold out mcsweeney's organic lomo retro fanny pack lo-fi
-                                        farm-to-table readymade. Messenger bag gentrify pitchfork
-                                        tattooed craft beer, iphone skateboard locavore carles etsy
-                                        salvia banksy hoodie helvetica. skateboard locavore carles etsy
-                                        salvia banksy hoodie helvetica craving a hearty.
-                                    </p>
+                                    @include('admin.backend.team.tab_attributes_all')
                                 </div>
 
                                 <!-- Professional Skills Tab -->
@@ -260,6 +253,24 @@
                     //console.log(data);
                     $('#cap').val(data.description);
                     $('#cap_id').val(data.id); 
+                    
+                }
+            })
+        }
+    </script>
+
+    {{-- script to call edit attribute route trough ajax  --}}
+    <script>
+        function attributeEdit(id){
+            $.ajax({
+                type: 'GET',
+                url: '/edit/attribute/'+id,
+                dataType: 'json',
+
+                success:function(data){
+                    //console.log(data);
+                    $('#attribute_description').val(data.description);
+                    $('#attribute_id').val(data.id); 
                     
                 }
             })

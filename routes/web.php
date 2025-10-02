@@ -139,6 +139,12 @@ Route::middleware('auth')->group(function () {
         Route::post('/update/capability', 'UpdateCapability')->name('update.capability');
         Route::get('/delete/capability/{id}', 'DeleteCapability')->name('delete.capability');
 
+        // Handle Attributes CRUD
+        Route::post('/store/attribute', 'StoreAttribute')->name('store.attribute');
+        Route::get('/edit/attribute/{id}', 'EditAttribute');
+        Route::post('/update/attribute', 'UpdateAttribute')->name('update.attribute');
+        Route::get('/delete/attribute/{id}', 'DeleteAttribute')->name('delete.attribute');
+
     });
 
     // Section Page About

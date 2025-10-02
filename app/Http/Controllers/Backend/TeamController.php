@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Attribute;
 use App\Models\Capability;
 use App\Models\MemberDetail;
 use App\Models\Team;
@@ -225,11 +226,11 @@ class TeamController extends Controller
         return redirect()->back()->with($notification); 
     }
 
+
+
+    // ******************************** //
     // *** Handle Capabilities CRUD *** //
-    // public function AllCapabilities($id){
-    //     $capabilities = Capability::latest()->get();
-    //     return view('admin.backend.team.all_capabilities', compact('capabilities'));
-    // }
+    // ******************************** //
 
     public function StoreCapability(Request $request){
         
@@ -275,6 +276,60 @@ class TeamController extends Controller
 
         $notification = array(
             'message' => __('Capability Deleted Successfully'),
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);   
+    }
+
+    // ****************************** //
+    // *** Handle Attributes CRUD *** //
+    // ****************************** //
+
+    public function StoreAttribute(Request $request){
+        
+        // dd($request->all());
+
+        Attribute::insert([
+            'team_id' => $request->id,
+            'description' => $request->description, 
+        ]);
+
+        $notification = array(
+            'message' => __('Attribute Inserted Successfully'),
+            'alert-type' => 'success'
+         ); 
+         return redirect()->back()->with($notification);
+    }
+
+    public function EditAttribute($id){
+        $attribute = Attribute::find($id);
+        return response()->json($attribute);
+    }
+
+    public function UpdateAttribute(Request $request){
+
+        // dd($request->all());
+
+        $id = $request->attribute_id;
+
+        Attribute::find($id)->update([
+            'description' => $request->description,
+        ]);
+
+        $notification = array(
+            'message' => __('Attribute Updated Successfully'),
+            'alert-type' => 'success'
+        ); 
+        return redirect()->back()->with($notification);
+    }
+
+    public function DeleteAttribute($id){
+
+        Attribute::find($id)->delete();
+
+        $notification = array(
+            'message' => __('Attribute Deleted Successfully'),
             'alert-type' => 'success'
         );
 
