@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Attribute;
 use App\Models\Capability;
 use App\Models\MemberDetail;
+use App\Models\Skill;
 use App\Models\Team;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,8 @@ class FrontendController extends Controller
         $details = MemberDetail::where('team_id', $teamMember->id)->first();
         $capabilities = Capability::where('team_id', $teamMember->id)->get();
         $attributes = Attribute::where('team_id', $teamMember->id)->get();
-        return view('home.team.team_detail', compact('teamMember', 'details', 'capabilities', 'attributes'));
+        $skills = Skill::where('team_id', $teamMember->id)->get();
+        return view('home.team.team_detail', compact('teamMember', 'details', 'capabilities', 'attributes', 'skills'));
     }
 
     public function AboutUs(){

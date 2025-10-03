@@ -140,38 +140,19 @@
                 <div class="col-xl-4 col-lg-6">
                     <div class="lonyo-team-d-content pl-30" data-aos="fade-up" data-aos-duration="900">
                         <h4>{{ __('Professional Skills') }}:</h4>
-                        <div class="lonyo-skill-item">
-                            <div class="lonyo-skill-title">
-                                <h6>Problem solving</h6>
+
+                        @foreach ($skills as $skill)
+                            <div class="lonyo-skill-item">
+                                <div class="lonyo-skill-title">
+                                    <h6 style="display: inline">{{ $skill->name }}</h6>&nbsp <span style="font-size: 15px; color: blue">({{ $skill->percentage }}%)</span>
+                                </div>
+                                <div class="lonyo-skill-line">
+                                    {{-- <div class="lonyo-skill-bar bar-one" style="width: {{ $skill->percentage }}%"></div> --}}
+                                    <div class="lonyo-skill-bar" style="width: {{ $skill->percentage }}%"></div>
+                                </div>
                             </div>
-                            <div class="lonyo-skill-line">
-                                <div class="lonyo-skill-bar bar-one"></div>
-                            </div>
-                        </div>
-                        <div class="lonyo-skill-item">
-                            <div class="lonyo-skill-title">
-                                <h6>Networking Skills:</h6>
-                            </div>
-                            <div class="lonyo-skill-line2">
-                                <div class="lonyo-skill-bar2 bar-two"></div>
-                            </div>
-                        </div>
-                        <div class="lonyo-skill-item">
-                            <div class="lonyo-skill-title">
-                                <h6>Leadership Skills:</h6>
-                            </div>
-                            <div class="lonyo-skill-line2">
-                                <div class="lonyo-skill-bar2 bar-three"></div>
-                            </div>
-                        </div>
-                        <div class="lonyo-skill-item">
-                            <div class="lonyo-skill-title">
-                                <h6>Leadership Skills:</h6>
-                            </div>
-                            <div class="lonyo-skill-line2">
-                                <div class="lonyo-skill-bar2 bar-four"></div>
-                            </div>
-                        </div>
+                        @endforeach
+
                     </div>
                 </div>
                 
