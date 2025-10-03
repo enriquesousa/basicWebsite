@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Attribute;
 use App\Models\Capability;
 use App\Models\MemberDetail;
+use App\Models\Skill;
 use App\Models\Team;
 use Illuminate\Http\Request;
 
@@ -330,6 +331,62 @@ class TeamController extends Controller
 
         $notification = array(
             'message' => __('Attribute Deleted Successfully'),
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);   
+    }
+
+    // ************************** //
+    // *** Handle Skills CRUD *** //
+    // ************************** //
+
+    public function StoreSkill(Request $request){
+        
+        // dd($request->all());
+
+        Skill::insert([
+            'team_id' => $request->id,
+            'name' => $request->name,
+            'percentage' => $request->percentage,
+        ]);
+
+        $notification = array(
+            'message' => __('Skill Inserted Successfully'),
+            'alert-type' => 'success'
+         ); 
+         return redirect()->back()->with($notification);
+    }
+
+    public function EditSkill($id){
+        $skill = Skill::find($id);
+        return response()->json($skill);
+    }
+
+    public function UpdateSkill(Request $request){
+
+        // dd($request->all());
+
+        $id = $request->skill_id;
+
+        Skill::find($id)->update([
+            'name' => $request->name,
+            'percentage' => $request->percentage,
+        ]);
+
+        $notification = array(
+            'message' => __('Skill Updated Successfully'),
+            'alert-type' => 'success'
+        ); 
+        return redirect()->back()->with($notification);
+    }
+
+    public function DeleteSkill($id){
+
+        Skill::find($id)->delete();
+
+        $notification = array(
+            'message' => __('Skill Deleted Successfully'),
             'alert-type' => 'success'
         );
 

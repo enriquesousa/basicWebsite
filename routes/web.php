@@ -145,6 +145,12 @@ Route::middleware('auth')->group(function () {
         Route::post('/update/attribute', 'UpdateAttribute')->name('update.attribute');
         Route::get('/delete/attribute/{id}', 'DeleteAttribute')->name('delete.attribute');
 
+        // Handle Skills CRUD
+        Route::post('/store/skill', 'StoreSkill')->name('store.skill');
+        Route::get('/edit/skill/{id}', 'EditSkill');
+        Route::post('/update/skill', 'UpdateSkill')->name('update.skill');
+        Route::get('/delete/skill/{id}', 'DeleteSkill')->name('delete.skill');
+
     });
 
     // Section Page About

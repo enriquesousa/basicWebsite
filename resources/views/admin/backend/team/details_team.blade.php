@@ -113,14 +113,7 @@
 
                                 <!-- Professional Skills Tab -->
                                 <div class="tab-pane" id="professional_skills" role="tabpanel">
-                                    <p class="mb-0">
-                                        professional_skills, ethical wes anderson tofu before they
-                                        sold out mcsweeney's organic lomo retro fanny pack lo-fi
-                                        farm-to-table readymade. Messenger bag gentrify pitchfork
-                                        tattooed craft beer, iphone skateboard locavore carles etsy
-                                        salvia banksy hoodie helvetica. skateboard locavore carles etsy
-                                        salvia banksy hoodie helvetica craving a hearty.
-                                    </p>
+                                    @include('admin.backend.team.tab_skill_all')
                                 </div>
 
                             </div>
@@ -271,6 +264,25 @@
                     //console.log(data);
                     $('#attribute_description').val(data.description);
                     $('#attribute_id').val(data.id); 
+                    
+                }
+            })
+        }
+    </script>
+
+    {{-- script to call edit skill route trough ajax  --}}
+    <script>
+        function skillEdit(id){
+            $.ajax({
+                type: 'GET',
+                url: '/edit/skill/'+id,
+                dataType: 'json',
+
+                success:function(data){
+                    //console.log(data);
+                    $('#skill_name').val(data.name);
+                    $('#skill_percentage').val(data.percentage);
+                    $('#skill_id').val(data.id); 
                     
                 }
             })

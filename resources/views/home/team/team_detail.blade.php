@@ -139,7 +139,7 @@
                 <!-- Professional Skills -->
                 <div class="col-xl-4 col-lg-6">
                     <div class="lonyo-team-d-content pl-30" data-aos="fade-up" data-aos-duration="900">
-                        <h4>Professional Skills:</h4>
+                        <h4>{{ __('Professional Skills') }}:</h4>
                         <div class="lonyo-skill-item">
                             <div class="lonyo-skill-title">
                                 <h6>Problem solving</h6>
