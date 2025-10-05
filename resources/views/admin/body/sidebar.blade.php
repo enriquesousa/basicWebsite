@@ -270,7 +270,27 @@
                     </div>
                 </li>
 
-
+                <!-- Portfolio -->
+                <li>
+                    <a href="#portfolio" data-bs-toggle="collapse">
+                        <iconify-icon icon="bytesize:portfolio" width="15" height="15"  style="color: #000"></iconify-icon>
+                        <span> {{ __('Portfolio') }} </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="portfolio">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{ route('all.portfolio.categories') }}" class="tp-link">{{ __('Categories') }}</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('all.connect') }}" class="tp-link">{{ __('Portfolio') }}</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add.connect') }}" class="tp-link">{{ __('Add Portfolio') }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
 
 
 

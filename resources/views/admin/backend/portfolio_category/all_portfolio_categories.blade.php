@@ -11,24 +11,20 @@
 
                         <div class="card-header">
 
-                            {{-- <h5 class="card-title mb-0">{{ __('All Faqs') }}</h5> --}}
-
                             <div class="row">
                                 <div class="col-md-4">
-                                    <h5 class="card-title mb-0">{{ __('All Faqs') }}</h5>
+                                    <h5 class="card-title mb-0">{{ __('All Portfolio Categories') }}</h5>
                                 </div>
                                 <div class="col-md-4">
 
                                 </div>
                                 <div class="col-md-4 text-end">
-                                    <a href="{{ route('add.faqs') }}" type="button" class="btn btn-secondary">
+                                    <a href="{{ route('add.portfolio.category') }}" type="button" class="btn btn-secondary">
                                         <span class="mdi mdi-plus-circle-outline"></span>
-                                        {{ __('Add FAQ') }} 
+                                        {{ __('Add Portfolio Category') }} 
                                     </a>
                                 </div>
                             </div>
-
-
 
                         </div><!-- end card header -->
 
@@ -37,26 +33,26 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>{{ __('Title') }}</th>
-                                        <th>{{ __('Description') }}</th>
+                                        <th>{{ __('Category Name') }}</th>
+                                        <th>{{ __('Slug') }}</th>
                                         <th style="width: 120px">{{ __('Action') }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($features as $key => $item)
+                                    @foreach ($categories as $key => $item)
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
-                                            <td>{{ $item->title }}</td>
-                                            <td>{{ Str::limit($item->description, 70) }}</td>                                            
+                                            <td>{{ $item->name }}</td>
+                                            <td>{{ $item->slug }}</td>                                            
 
                                             <td>
                                                 <!-- Edit Button -->
-                                                <a href="{{ route('edit.faq', $item->id) }}" class="btn btn-success btn-sm" title="{{ __('Edit') }}">
+                                                <a href="{{ route('edit.portfolio.category', $item->id) }}" class="btn btn-success btn-sm" title="{{ __('Edit') }}">
                                                     <span class="mdi mdi-pencil"></span>
                                                 </a>
 
                                                 <!-- Delete Button -->
-                                                <a href="{{ route('delete.faq', $item->id) }}" class="btn btn-danger btn-sm" id="delete" title="{{ __('Delete') }}">
+                                                <a href="{{ route('delete.portfolio.category', $item->id) }}" class="btn btn-danger btn-sm" id="delete" title="{{ __('Delete') }}">
                                                     <span class="mdi mdi-delete-empty"></span>
                                                 </a>
                                             </td>

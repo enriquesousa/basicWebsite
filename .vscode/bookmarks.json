@@ -219,6 +219,11 @@
 			"path": "resources/views/admin/backend/team/tab_capabilities_all.blade.php",
 			"bookmarks": [
 				{
+					"line": 21,
+					"column": 24,
+					"label": "agregar boton a la derecha en header card"
+				},
+				{
 					"line": 67,
 					"column": 37,
 					"label": "venatna modal Capability"
@@ -232,6 +237,16 @@
 					"line": 45,
 					"column": 131,
 					"label": "display none"
+				}
+			]
+		},
+		{
+			"path": "resources/views/admin/backend/faqs/all_faqs.blade.php",
+			"bookmarks": [
+				{
+					"line": 23,
+					"column": 36,
+					"label": "boton agregar a la derecha en header"
 				}
 			]
 		}

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\HomeController;
+use App\Http\Controllers\Backend\PortfolioCategoryController;
 use App\Http\Controllers\Backend\ReviewController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\TeamController;
@@ -189,6 +190,16 @@ Route::middleware('auth')->group(function () {
         Route::post('/update/page/services', 'UpdatePageServices')->name('update.page.services');
         Route::get('/get/page/services/mobile', 'GetPageServicesMobile')->name('get.page.services.mobile');
         Route::post('/update/page/services/mobile', 'UpdatePageServicesMobile')->name('update.page.services.mobile');
+    });
+
+    // Portfolio Categories CRUD
+    Route::controller(PortfolioCategoryController::class)->group(function(){
+        Route::get('/all/portfolio/categories', 'AllPortfolioCategories')->name('all.portfolio.categories');
+        Route::get('/add/portfolio/category', 'AddPortfolioCategory')->name('add.portfolio.category');
+        Route::post('/store/portfolio/category', 'StorePortfolioCategory')->name('store.portfolio.category');
+        Route::get('/edit/portfolio/category/{id}', 'EditPortfolioCategory')->name('edit.portfolio.category');
+        Route::post('/update/portfolio/category', 'UpdatePortfolioCategory')->name('update.portfolio.category');
+        Route::get('/delete/portfolio/category/{id}', 'DeletePortfolioCategory')->name('delete.portfolio.category');
     });
    
     
