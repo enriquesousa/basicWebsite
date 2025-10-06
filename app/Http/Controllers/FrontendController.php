@@ -33,6 +33,10 @@ class FrontendController extends Controller
         return view('home.services.services_page');
     }
 
+    public function Portfolio(){
+        return view('home.portfolio.portfolio_page');
+    }
+
 
 
 }

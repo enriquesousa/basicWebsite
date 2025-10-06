@@ -38,7 +38,7 @@
                                     </li>
                                     
                                     <li>
-                                        <a href="">{{ __('Portfolio') }}</a>
+                                        <a href="{{ route('portfolio.page') }}">{{ __('Portfolio') }}</a>
                                     </li>
 
                                     <li>
