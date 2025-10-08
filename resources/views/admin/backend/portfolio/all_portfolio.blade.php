@@ -10,7 +10,20 @@
                     <div class="card">
 
                         <div class="card-header">
-                            <h5 class="card-title mb-0">{{ __('All Portfolio') }}</h5>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h5 class="card-title mb-0">{{ __('All Portfolio') }}</h5>
+                                </div>
+                                <div class="col-md-4">
+
+                                </div>
+                                <div class="col-md-4 text-end">
+                                    <a href="{{ route('add.portfolio') }}" type="button" class="btn btn-secondary">
+                                        <span class="mdi mdi-plus-circle-outline"></span>
+                                        {{ __('Add Portfolio') }} 
+                                    </a>
+                                </div>
+                            </div>
                         </div><!-- end card header -->
 
                         <div class="card-body">

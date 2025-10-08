@@ -285,9 +285,6 @@
                             <li>
                                 <a href="{{ route('all.portfolio') }}" class="tp-link">{{ __('Portfolio') }}</a>
                             </li>
-                            <li>
-                                <a href="{{ route('add.connect') }}" class="tp-link">{{ __('Add Portfolio') }}</a>
-                            </li>
                         </ul>
                     </div>
                 </li>

@@ -79,7 +79,12 @@
 			"path": "app/Http/Controllers/Backend/ReviewController.php",
 			"bookmarks": [
 				{
-					"line": 35,
+					"line": 9,
+					"column": 0,
+					"label": "Image Manager"
+				},
+				{
+					"line": 37,
 					"column": 12,
 					"label": "usar image intervention para resize image"
 				}
@@ -247,6 +252,21 @@
 					"line": 23,
 					"column": 36,
 					"label": "boton agregar a la derecha en header"
+				}
+			]
+		},
+		{
+			"path": "resources/views/admin/backend/portfolio/add_portfolio.blade.php",
+			"bookmarks": [
+				{
+					"line": 79,
+					"column": 64,
+					"label": "display image a un tamaña fijo"
+				},
+				{
+					"line": 108,
+					"column": 4,
+					"label": "JS Script Editor Quill para manejar dos editores Quill de texto y mandar el campo description al request"
 				}
 			]
 		}
