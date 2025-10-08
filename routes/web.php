@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\PortfolioCategoryController;
+use App\Http\Controllers\Backend\PortfolioController;
 use App\Http\Controllers\Backend\ReviewController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\TeamController;
@@ -201,7 +202,16 @@ Route::middleware('auth')->group(function () {
         Route::post('/update/portfolio/category', 'UpdatePortfolioCategory')->name('update.portfolio.category');
         Route::get('/delete/portfolio/category/{id}', 'DeletePortfolioCategory')->name('delete.portfolio.category');
     });
-   
+
+    // Portafolio CRUD Routes
+    Route::controller(PortfolioController::class)->group(function(){
+        Route::get('/all/portfolio', 'AllPortfolio')->name('all.portfolio');
+        // Route::get('/add/review', 'AddReview')->name('add.review');
+        // Route::post('/store/review', 'StoreReview')->name('store.review');
+        // Route::get('/edit/review/{id}', 'EditReview')->name('edit.review');
+        // Route::post('/update/review', 'UpdateReview')->name('update.review');
+        // Route::get('/delete/review/{id}', 'DeleteReview')->name('delete.review');
+    });
     
     
 });
