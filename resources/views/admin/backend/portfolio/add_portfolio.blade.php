@@ -27,11 +27,27 @@
                                             <div class="card border mb-0">
 
                                                 <div class="card-header">
-                                                    <div class="row align-items-center">
+                                                    {{-- <div class="row align-items-center">
                                                         <div class="col">
                                                             <h4 class="card-title mb-0">{{ __('Add Portfolio') }}</h4>
                                                         </div><!--end col-->
+                                                    </div> --}}
+
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <h5 class="card-title mb-0">{{ __('All Portfolio') }}</h5>
+                                                        </div>
+                                                        <div class="col-md-4">
+
+                                                        </div>
+                                                        <div class="col-md-4 text-end">
+                                                            <a href="{{ route('all.portfolio') }}" type="button" class="btn btn-secondary">
+                                                                <span class="mdi mdi-arrow-left"></span>
+                                                                {{ __('Back') }} 
+                                                            </a>
+                                                        </div>
                                                     </div>
+
                                                 </div>
 
                                                 <form action="{{ route('store.portfolio') }}" method="post" enctype="multipart/form-data">
@@ -50,15 +66,16 @@
                                                             </div>
                                                         </div>
 
+                                                        <!-- Seleccionar Categoría and Client -->
                                                         <div class="row">
                                                             <!-- Seleccionar Categoría -->
                                                             <div class="col-md-6 mb-3">
                                                                 <div class="form-group w-100">
                                                                     <label class="form-label" for="formBasic">{{ __('Select Category') }}: &nbsp;<span class="text-danger">*</span></label>
                                                                     <select name="category_id" class="form-control form-select @error('category_id') is-invalid @enderror">
-                                                                        <option value="">{{ __('Select Category') }}</option>
+                                                                        <option value="{{ old('category_id') }}">{{ __('Select Category') }}</option>
                                                                         @foreach ($categories as $item)
-                                                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                                                            <option @selected(old('category_id') == $item->id) value="{{ $item->id }}">{{ $item->name }}</option>
                                                                         @endforeach
                                                                     </select>
                                                                     @error('category_id')
@@ -80,6 +97,7 @@
                                                         </div>
                                                         
 
+                                                        <!-- Services and Website -->
                                                         <div class="row">
                                                             <!-- Services -->
                                                             <div class="col-md-6 mb-3">
@@ -104,25 +122,67 @@
                                                             </div>
                                                         </div>
 
-                                                        <!-- Description Spanish -->
-                                                        <div class="form-group mb-3 row">
-                                                            <label class="form-label">{{ __('Description Spanish') }}</label>
-                                                            <div class="col-lg-12 col-xl-12">
-                                                                <textarea name="description_es" id="description_es" style="display: none;"></textarea>
-                                                                <div name="description_es" id="quill-editor" style="height: 200px;">
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <!-- Description Spanish and English Accordion -->
+                                                        <div class="card">
 
-                                                        <!-- Description English -->
-                                                        <div class="form-group mb-3 row">
-                                                            <label class="form-label">{{ __('Description English') }}</label>
-                                                            <div class="col-lg-12 col-xl-12">
-                                                                <textarea name="description_en" id="description_en" style="display: none;">{{ old('description_en') }}</textarea>
-                                                                <div name="description_en" id="quill-editor2" style="height: 200px;">
+                                                            <div class="card-header">
+                                                                <h5 class="card-title mb-0">{{ __('Description') }}</h5>
+                                                            </div><!-- end card header -->
+
+                                                            <div class="card-body">
+                                                                <div class="accordion accordion-flush" id="accordionFlushExample">
+                                                                    <div class="accordion-item">
+                                                                        <h2 class="accordion-header">
+                                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                                                                {{ __('Description Spanish') }}
+                                                                            </button>
+                                                                        </h2>
+                                                                        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                                                            <div class="accordion-body">
+
+                                                                                <!-- Description Spanish -->
+                                                                                <div class="form-group mb-3 row">
+                                                                                    <label class="form-label">{{ __('Description Spanish') }}</label>
+                                                                                    <div class="col-lg-12 col-xl-12">
+                                                                                        <textarea name="description_es" id="description_es" style="display: none;"></textarea>
+                                                                                        <div name="description_es" id="quill-editor" style="height: 600px;">
+                                                                                            <p>{!! old('description_es') !!}</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="accordion-item">
+                                                                        <h2 class="accordion-header">
+                                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                                                                {{ __('Description English') }}
+                                                                            </button>
+                                                                        </h2>
+                                                                        <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                                                            <div class="accordion-body">
+
+                                                                                <!-- Description English -->
+                                                                                <div class="form-group mb-3 row">
+                                                                                    <label class="form-label">{{ __('Description English') }}</label>
+                                                                                    <div class="col-lg-12 col-xl-12">
+                                                                                        <textarea name="description_en" id="description_en" style="display: none;"></textarea>
+                                                                                        <div name="description_en" id="quill-editor2" style="height: 600px;">
+                                                                                            <p>{!! old('description_en') !!}</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
                                                                 </div>
-                                                            </div>
-                                                        </div>
+
+                                                            </div> <!-- end card body -->
+
+                                                        </div><!-- end card -->
 
                                                         <!-- Image and show image -->
                                                         <div class="form-group mb-3 row">
@@ -137,9 +197,10 @@
                                                         <div class="form-group mb-3 row">
                                                             <label class="form-label"> </label>
                                                             <div class="col-lg-12 col-xl-12">
-                                                                <img id="showImage" src="{{ url('upload/no_image.jpg') }}" class="avatar-xxl img-thumbnail float-start" alt="image profile" style="height: 225px; width: 373px;">
+                                                                <img id="showImage" src="{{ old('image') ? asset(old('image')) : url('upload/no_image.jpg') }}" class="avatar-xxl img-thumbnail float-start" alt="image profile" style="height: 225px; width: 373px;">
                                                             </div>
                                                         </div>
+                                                        
 
                                                         <button type="submit" class="btn btn-primary">{{ __('Save Changes') }}</button>
 

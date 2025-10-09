@@ -31,12 +31,12 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>{{ __('Image') }}</th>
-                                        <th>{{ __('Title') }}</th>
-                                        <th>{{ __('Category') }}</th>
-                                        <th>{{ __('Description') }}</th>
-                                        <th>{{ __('Updated At') }}</th>
-                                        <th style="width: 120px">{{ __('Action') }}</th>
+                                        <th style="text-align: center; vertical-align: middle;">{{ __('Image') }}</th>
+                                        <th style="text-align: center; vertical-align: middle;">{{ __('Title') }}</th>
+                                        <th style="text-align: center; vertical-align: middle;">{{ __('Category') }}</th>
+                                        <th style="text-align: center; vertical-align: middle;">{{ __('Description') }}</th>
+                                        <th style="text-align: center; vertical-align: middle;">{{ __('Updated At') }}</th>
+                                        <th style="width: 120px; text-align: center; vertical-align: middle;">{{ __('Action') }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -52,24 +52,24 @@
                                             </td>
 
                                             <!-- Title -->
-                                            <td>{{ $item->title }}</td>
+                                            <td style="text-align: center; vertical-align: middle;">{{ $item->title }}</td>
 
                                             <!-- Category -->
-                                            <td>{{ $item->category->name }}</td>
+                                            <td style="text-align: center; vertical-align: middle;">{{ $item->category->name }}</td>
 
                                             <!-- Description es (Esto es solo en backend, en frontend voy a desplegar la description es o en dependencia del idioma ) -->
-                                            <td>{!! Str::limit($item->description_es, 70)  !!}</td>
+                                            <td style="text-align: center; vertical-align: middle;">{!! Str::limit($item->description_es, 70)  !!}</td>
 
                                             <!-- Updated At -->
-                                            <td>{{ $item->updated_at->diffForHumans() }}</td>
+                                            <td style="text-align: center; vertical-align: middle;">{{ $item->updated_at->diffForHumans() }}</td>
 
-                                            <td>
+                                            <td style="text-align: center; vertical-align: middle;">
                                                 <!-- Edit Button -->
                                                 <a href="{{ route('edit.portfolio', $item->id) }}" class="btn btn-success btn-sm" title="{{ __('Edit') }}">
                                                     <span class="mdi mdi-pencil"></span>
                                                 </a>
                                                 <!-- Delete Button -->
-                                                <a href="{{ route('delete.review', $item->id) }}" class="btn btn-danger btn-sm" id="delete" title="{{ __('Delete') }}">
+                                                <a href="{{ route('delete.portfolio', $item->id) }}" class="btn btn-danger btn-sm" id="delete" title="{{ __('Delete') }}">
                                                     <span class="mdi mdi-delete-empty"></span>
                                                 </a>
                                             </td>

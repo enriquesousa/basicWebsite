@@ -264,12 +264,17 @@
 			"path": "resources/views/admin/backend/portfolio/add_portfolio.blade.php",
 			"bookmarks": [
 				{
-					"line": 139,
+					"line": 74,
+					"column": 68,
+					"label": "select recordar opcion en add profile"
+				},
+				{
+					"line": 199,
 					"column": 64,
 					"label": "display image a un tamaña fijo"
 				},
 				{
-					"line": 168,
+					"line": 229,
 					"column": 4,
 					"label": "JS Script Editor Quill para manejar dos editores Quill de texto y mandar el campo description al request"
 				}
@@ -282,6 +287,11 @@
 					"line": 102,
 					"column": 12,
 					"label": "eliminar image anterior"
+				},
+				{
+					"line": 148,
+					"column": 41,
+					"label": "If profile image exists delete eliminar"
 				}
 			]
 		},
@@ -297,6 +307,16 @@
 					"line": 55,
 					"column": 52,
 					"label": "delete icon mdi"
+				}
+			]
+		},
+		{
+			"path": "resources/views/admin/backend/portfolio/all_portfolio.blade.php",
+			"bookmarks": [
+				{
+					"line": 33,
+					"column": 40,
+					"label": "centrar y middle en table css"
 				}
 			]
 		}

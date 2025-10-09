@@ -52,6 +52,7 @@
                                                             </div>
                                                         </div>
 
+                                                        <!-- Seleccionar Categoría y Client -->
                                                         <div class="row">
                                                             <!-- Seleccionar Categoría -->
                                                             <div class="col-md-6 mb-3">
@@ -80,8 +81,8 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        
 
+                                                        <!-- Services and Website -->
                                                         <div class="row">
                                                             <!-- Services -->
                                                             <div class="col-md-6 mb-3">
@@ -106,6 +107,7 @@
                                                             </div>
                                                         </div>
 
+                                                        <!-- Description Spanish and English Accordion -->
                                                         <div class="card">
 
                                                             <div class="card-header">
@@ -161,26 +163,11 @@
                                                                         </div>
                                                                     </div>
 
-                                                                    {{-- <div class="accordion-item">
-                                                                        <h2 class="accordion-header">
-                                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                                                                Accordion Item #3
-                                                                            </button>
-                                                                        </h2>
-                                                                        <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                                                            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
-                                                                        </div>
-                                                                    </div> --}}
-
                                                                 </div>
 
                                                             </div> <!-- end card body -->
 
                                                         </div><!-- end card -->
-
-                                                        
-
-                                                        
 
                                                         <!-- Image and show image -->
                                                         <div class="form-group mb-3 row">

@@ -210,7 +210,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/store/portfolio', 'StorePortfolio')->name('store.portfolio');
         Route::get('/edit/portfolio/{id}', 'EditPortfolio')->name('edit.portfolio');
         Route::post('/update/portfolio', 'UpdatePortfolio')->name('update.portfolio');
-        // Route::get('/delete/review/{id}', 'DeleteReview')->name('delete.review');
+        Route::get('/delete/portfolio/{id}', 'DeletePortfolio')->name('delete.portfolio');
     });
     
     
