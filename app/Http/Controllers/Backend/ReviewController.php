@@ -71,8 +71,10 @@ class ReviewController extends Controller
     public function UpdateReview(Request $request){
 
         $rev_id = $request->id;
+        $review = Review::find($rev_id);
 
         if ($request->file('image')) {
+
             $image = $request->file('image');
             $manager = new ImageManager(new Driver());
             $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
@@ -80,6 +82,10 @@ class ReviewController extends Controller
             $img->resize(60,60)->save(public_path('upload/review/'.$name_gen));
             $save_url = 'upload/review/'.$name_gen;
             
+            if (file_exists(public_path($review->image))) {
+                @unlink(public_path($review->image));
+            }
+
             Review::find($rev_id)->update([
                 'name' => $request->name,
                 'position' => $request->position,

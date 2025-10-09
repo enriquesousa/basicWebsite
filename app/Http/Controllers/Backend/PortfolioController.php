@@ -59,12 +59,90 @@ class PortfolioController extends Controller
         
 
         $notification = array(
-            'message' => __('portfolio Inserted Successfully'),
+            'message' => __('Portfolio Inserted Successfully'),
             'alert-type' => 'success'
         );
 
         return redirect()->route('all.portfolio')->with($notification); 
     }
+
+    public function EditPortfolio($id){
+        $portfolio = Portfolio::find($id);
+        $categories = PortfolioCategory::latest()->get();
+        return view('admin.backend.portfolio.edit_portfolio',compact('portfolio','categories'));
+    }
+
+    public function UpdatePortfolio(Request $request){
+
+        // dd($request->all());
+
+        $validate = $request->validate([
+            'title' => 'required|string|max:200',
+            'description_es' => 'nullable',
+            'description_en' => 'nullable',
+            // 'image' => 'required|image|mimes:jpg,jpeg,png,svg|max:3000',
+            'category_id' => 'required|exists:portfolio_categories,id',
+            'client' => 'required|string|max:200',
+            'services' => 'required|string|max:200',
+            'website' => 'required|url',
+        ]);
+
+        $portfolio_id = $request->id;
+        $portfolio = Portfolio::find($portfolio_id);
+
+        // Si hubo cambio en la imagen
+        if ($request->file('image')) {
+
+            $image = $request->file('image');
+            $manager = new ImageManager(new Driver());
+            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $img = $manager->read($image);
+            $img->resize(746,550)->save(public_path('upload/portfolio/'.$name_gen));
+            $save_url = 'upload/portfolio/'.$name_gen;
+            
+            if (file_exists(public_path($portfolio->image))) {
+                @unlink(public_path($portfolio->image));
+            }
+
+            Portfolio::find($portfolio_id)->update([
+                'title' => $request->title,
+                'description_es' => $request->description_es ?? '',
+                'description_en' => $request->description_en ?? '',
+                'category_id' => $request->category_id,
+                'client' => $request->client,
+                'services' => $request->services,
+                'website' => $request->website,
+                'image' => $save_url,
+            ]);
+            
+
+            $notification = array(
+                'message' => __('Portfolio Updated With image Successfully'),
+                'alert-type' => 'success'
+            );
+
+        }else{
+
+            Portfolio::find($portfolio_id)->update([
+                'title' => $request->title,
+                'description_es' => $request->description_es ?? '',
+                'description_en' => $request->description_en ?? '',
+                'category_id' => $request->category_id,
+                'client' => $request->client,
+                'services' => $request->services,
+                'website' => $request->website,
+            ]);
+            
+            $notification = array(
+                'message' => __('Portfolio Updated Successfully'),
+                'alert-type' => 'success'
+            );
+        }
+
+        return redirect()->route('all.portfolio')->with($notification); 
+    }
+
+
 
 
 }

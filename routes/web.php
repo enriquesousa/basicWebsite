@@ -208,8 +208,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/all/portfolio', 'AllPortfolio')->name('all.portfolio');
         Route::get('/add/portfolio', 'AddPortfolio')->name('add.portfolio');
         Route::post('/store/portfolio', 'StorePortfolio')->name('store.portfolio');
-        // Route::get('/edit/review/{id}', 'EditReview')->name('edit.review');
-        // Route::post('/update/review', 'UpdateReview')->name('update.review');
+        Route::get('/edit/portfolio/{id}', 'EditPortfolio')->name('edit.portfolio');
+        Route::post('/update/portfolio', 'UpdatePortfolio')->name('update.portfolio');
         // Route::get('/delete/review/{id}', 'DeleteReview')->name('delete.review');
     });
     

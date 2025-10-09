@@ -87,6 +87,11 @@
 					"line": 37,
 					"column": 12,
 					"label": "usar image intervention para resize image"
+				},
+				{
+					"line": 84,
+					"column": 12,
+					"label": "eliminar image anterior"
 				}
 			]
 		},
@@ -267,6 +272,16 @@
 					"line": 168,
 					"column": 4,
 					"label": "JS Script Editor Quill para manejar dos editores Quill de texto y mandar el campo description al request"
+				}
+			]
+		},
+		{
+			"path": "app/Http/Controllers/Backend/PortfolioController.php",
+			"bookmarks": [
+				{
+					"line": 102,
+					"column": 12,
+					"label": "eliminar image anterior"
 				}
 			]
 		},
