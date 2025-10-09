@@ -41,9 +41,66 @@
 
                                                         <!-- Title -->
                                                         <div class="form-group mb-3 row">
-                                                            <label class="form-label">{{ __('Title') }}</label>
+                                                            <label class="form-label">{{ __('Title') }}&nbsp;<span class="text-danger">*</span></label>
                                                             <div class="col-lg-12 col-xl-12">
-                                                                <input class="form-control" type="text" name="title">
+                                                                <input class="form-control @error('title') is-invalid @enderror" type="text" name="title" value="{{ old('title') }}">
+                                                                @error('title')
+                                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <!-- Seleccionar Categoría -->
+                                                            <div class="col-md-6 mb-3">
+                                                                <div class="form-group w-100">
+                                                                    <label class="form-label" for="formBasic">{{ __('Select Category') }}: &nbsp;<span class="text-danger">*</span></label>
+                                                                    <select name="category_id" class="form-control form-select @error('category_id') is-invalid @enderror">
+                                                                        <option value="">{{ __('Select Category') }}</option>
+                                                                        @foreach ($categories as $item)
+                                                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                    @error('category_id')
+                                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- Client -->
+                                                            <div class="col-md-6 mb-3">
+                                                                <div class="form-group w-100">
+                                                                    <label class="form-label" for="formBasic">{{ __('Client') }}: &nbsp;<span class="text-danger">*</span></label>
+                                                                    <input type="text" name="client" class="form-control @error('client') is-invalid @enderror" value="{{ old('client') }}">
+                                                                    @error('client')
+                                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+
+                                                        <div class="row">
+                                                            <!-- Services -->
+                                                            <div class="col-md-6 mb-3">
+                                                                <div class="form-group w-100">
+                                                                    <label class="form-label" for="formBasic">{{ __('Services') }}: &nbsp;<span class="text-danger">*</span></label>
+                                                                    <input type="text" name="services" class="form-control @error('services') is-invalid @enderror" value="{{ old('services') }}">
+                                                                    @error('services')
+                                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+    
+                                                            <!-- Website -->
+                                                            <div class="col-md-6 mb-3">
+                                                                <div class="form-group w-100">
+                                                                    <label class="form-label" for="formBasic">{{ __('Website') }}: &nbsp;<span class="text-danger">*</span></label>
+                                                                    <input type="text" name="website" class="form-control @error('website') is-invalid @enderror" value="{{ old('website') }}">
+                                                                    @error('website')
+                                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                                    @enderror
+                                                                </div>
                                                             </div>
                                                         </div>
 
@@ -61,7 +118,7 @@
                                                         <div class="form-group mb-3 row">
                                                             <label class="form-label">{{ __('Description English') }}</label>
                                                             <div class="col-lg-12 col-xl-12">
-                                                                <textarea name="description_en" id="description_en" style="display: none;"></textarea>
+                                                                <textarea name="description_en" id="description_en" style="display: none;">{{ old('description_en') }}</textarea>
                                                                 <div name="description_en" id="quill-editor2" style="height: 200px;">
                                                                 </div>
                                                             </div>
@@ -71,7 +128,10 @@
                                                         <div class="form-group mb-3 row">
                                                             <label class="form-label">{{ __('Image') }}&nbsp;(746x550)</label>
                                                             <div class="col-lg-12 col-xl-12">
-                                                                <input class="form-control" type="file" name="image" id="image">
+                                                                <input class="form-control @error('image') is-invalid @enderror" type="file" name="image" id="image" value="{{ old('image') }}">
+                                                                @error('image')
+                                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                                @enderror
                                                             </div>
                                                         </div>
                                                         <div class="form-group mb-3 row">

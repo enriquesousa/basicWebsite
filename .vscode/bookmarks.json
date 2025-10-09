@@ -259,14 +259,29 @@
 			"path": "resources/views/admin/backend/portfolio/add_portfolio.blade.php",
 			"bookmarks": [
 				{
-					"line": 79,
+					"line": 139,
 					"column": 64,
 					"label": "display image a un tamaña fijo"
 				},
 				{
-					"line": 108,
+					"line": 168,
 					"column": 4,
 					"label": "JS Script Editor Quill para manejar dos editores Quill de texto y mandar el campo description al request"
+				}
+			]
+		},
+		{
+			"path": "resources/views/admin/backend/portfolio_category/all_portfolio_categories.blade.php",
+			"bookmarks": [
+				{
+					"line": 50,
+					"column": 52,
+					"label": "edit icon mdi"
+				},
+				{
+					"line": 55,
+					"column": 52,
+					"label": "delete icon mdi"
 				}
 			]
 		}

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Portfolio;
+use App\Models\PortfolioCategory;
 use Illuminate\Http\Request;
 
 // Image Intervention Package
@@ -18,38 +19,44 @@ class PortfolioController extends Controller
     }
 
     public function AddPortfolio(){
-        return view('admin.backend.portfolio.add_portfolio');
+        $categories = PortfolioCategory::latest()->get();
+        return view('admin.backend.portfolio.add_portfolio', compact('categories'));
     }
 
     public function StorePortfolio(Request $request){
 
-        dd($request->all());
+        // dd($request->all());
 
         $validate = $request->validate([
-            'title' => 'required',
-            'description_es' => 'required',
-            'image' => 'nullable|mimes:jpg,jpeg,png',
+            'title' => 'required|string|max:200',
+            'description_es' => 'nullable',
+            'description_en' => 'nullable',
+            'image' => 'required|image|mimes:jpg,jpeg,png,svg|max:3000',
+            'category_id' => 'required|exists:portfolio_categories,id',
+            'client' => 'required|string|max:200',
+            'services' => 'required|string|max:200',
+            'website' => 'required|url',
         ]);
 
-        if ($request->file('image')) {
-            $image = $request->file('image');
-            $manager = new ImageManager(new Driver());
-            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-            $img = $manager->read($image);
-            $img->resize(746,550)->save(public_path('upload/portfolio/'.$name_gen));
-            $save_url = 'upload/portfolio/'.$name_gen;
-            
-            Portfolio::create([
-                'title' => $request->title,
-                'description_es' => $request->description_es,
-                'image' => $save_url,
-            ]);
-        }else{
-            Portfolio::create([
-                'title' => $request->title,
-                'description_es' => $request->description_es,
-            ]);
-        }
+        // La imagen es requerida
+        $image = $request->file('image');
+        $manager = new ImageManager(new Driver());
+        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        $img = $manager->read($image);
+        $img->resize(746,550)->save(public_path('upload/portfolio/'.$name_gen));
+        $save_url = 'upload/portfolio/'.$name_gen;
+        
+        Portfolio::create([
+            'title' => $request->title,
+            'description_es' => $request->description_es ?? '',
+            'description_en' => $request->description_en ?? '',
+            'category_id' => $request->category_id,
+            'client' => $request->client,
+            'services' => $request->services,
+            'website' => $request->website,
+            'image' => $save_url,
+        ]);
+        
 
         $notification = array(
             'message' => __('portfolio Inserted Successfully'),

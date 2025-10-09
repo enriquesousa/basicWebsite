@@ -58,14 +58,20 @@
                                             <td>{{ $item->category->name }}</td>
 
                                             <!-- Description es (Esto es solo en backend, en frontend voy a desplegar la description es o en dependencia del idioma ) -->
-                                            <td>{{ Str::limit($item->description_es, 70)  }}</td>
+                                            <td>{!! Str::limit($item->description_es, 70)  !!}</td>
 
                                             <!-- Updated At -->
                                             <td>{{ $item->updated_at->diffForHumans() }}</td>
 
                                             <td>
-                                                <a href="{{ route('edit.review', $item->id) }}" class="btn btn-success btn-sm" title="{{ __('Edit') }}">{{ __('Edit') }}</a>
-                                                <a href="{{ route('delete.review', $item->id) }}" class="btn btn-danger btn-sm" id="delete" title="{{ __('Delete') }}">{{ __('Delete') }}</a>
+                                                <!-- Edit Button -->
+                                                <a href="{{ route('edit.review', $item->id) }}" class="btn btn-success btn-sm" title="{{ __('Edit') }}">
+                                                    <span class="mdi mdi-pencil"></span>
+                                                </a>
+                                                <!-- Delete Button -->
+                                                <a href="{{ route('delete.review', $item->id) }}" class="btn btn-danger btn-sm" id="delete" title="{{ __('Delete') }}">
+                                                    <span class="mdi mdi-delete-empty"></span>
+                                                </a>
                                             </td>
                                         </tr>
                                     @endforeach
