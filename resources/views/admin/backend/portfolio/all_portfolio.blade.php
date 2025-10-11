@@ -58,7 +58,9 @@
                                             <td style="text-align: center; vertical-align: middle;">{{ $item->category->name }}</td>
 
                                             <!-- Description es (Esto es solo en backend, en frontend voy a desplegar la description es o en dependencia del idioma ) -->
-                                            <td style="text-align: center; vertical-align: middle;">{!! Str::limit($item->description_es, 70)  !!}</td>
+                                            <td style="text-align: center; vertical-align: middle;">
+                                                {{ Str::limit(strip_tags($item->description_es), 35, '...') }}
+                                            </td>
 
                                             <!-- Updated At -->
                                             <td style="text-align: center; vertical-align: middle;">{{ $item->updated_at->diffForHumans() }}</td>

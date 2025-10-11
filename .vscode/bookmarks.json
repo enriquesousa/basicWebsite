@@ -269,12 +269,12 @@
 					"label": "select recordar opcion en add profile"
 				},
 				{
-					"line": 199,
+					"line": 203,
 					"column": 64,
 					"label": "display image a un tamaña fijo"
 				},
 				{
-					"line": 229,
+					"line": 260,
 					"column": 4,
 					"label": "JS Script Editor Quill para manejar dos editores Quill de texto y mandar el campo description al request"
 				}
@@ -284,12 +284,12 @@
 			"path": "app/Http/Controllers/Backend/PortfolioController.php",
 			"bookmarks": [
 				{
-					"line": 102,
+					"line": 115,
 					"column": 12,
 					"label": "eliminar image anterior"
 				},
 				{
-					"line": 148,
+					"line": 183,
 					"column": 41,
 					"label": "If profile image exists delete eliminar"
 				}
@@ -317,6 +317,56 @@
 					"line": 33,
 					"column": 40,
 					"label": "centrar y middle en table css"
+				},
+				{
+					"line": 61,
+					"column": 99,
+					"label": "strip html tags"
+				}
+			]
+		},
+		{
+			"path": "app/Http/Controllers/FrontendController.php",
+			"bookmarks": [
+				{
+					"line": 48,
+					"column": 8,
+					"label": "take id anterior y posterior al actual en la coleccion"
+				}
+			]
+		},
+		{
+			"path": "resources/views/home/portfolio/portfolio_page.blade.php",
+			"bookmarks": [
+				{
+					"line": 59,
+					"column": 44,
+					"label": "esconder el id del portfolio con post en el front end"
+				},
+				{
+					"line": 70,
+					"column": 40,
+					"label": "mandar id por post en frontend"
+				}
+			]
+		},
+		{
+			"path": "resources/views/home/portfolio/portfolio_details.blade.php",
+			"bookmarks": [
+				{
+					"line": 119,
+					"column": 40,
+					"label": "dd en blade"
+				}
+			]
+		},
+		{
+			"path": "resources/views/home/team/our_team.blade.php",
+			"bookmarks": [
+				{
+					"line": 48,
+					"column": 36,
+					"label": "mandar id por post en frontend"
 				}
 			]
 		}

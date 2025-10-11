@@ -32,6 +32,7 @@ class PortfolioController extends Controller
             'description_es' => 'nullable',
             'description_en' => 'nullable',
             'image' => 'required|image|mimes:jpg,jpeg,png,svg|max:3000',
+            'foto1' => 'required|image|mimes:jpg,jpeg,png,svg|max:3000',
             'category_id' => 'required|exists:portfolio_categories,id',
             'client' => 'required|string|max:200',
             'services' => 'required|string|max:200',
@@ -45,6 +46,14 @@ class PortfolioController extends Controller
         $img = $manager->read($image);
         $img->resize(746,550)->save(public_path('upload/portfolio/'.$name_gen));
         $save_url = 'upload/portfolio/'.$name_gen;
+
+        // La imagen para pagina de detalles es requerida
+        $image2 = $request->file('foto1');
+        $manager2 = new ImageManager(new Driver());
+        $name_gen2 = hexdec(uniqid()).'.'.$image2->getClientOriginalExtension();
+        $img2 = $manager2->read($image2);
+        $img2->resize(1076,550)->save(public_path('upload/portfolio/'.$name_gen2));
+        $save_url2 = 'upload/portfolio/'.$name_gen2;
         
         Portfolio::create([
             'title' => $request->title,
@@ -55,6 +64,7 @@ class PortfolioController extends Controller
             'services' => $request->services,
             'website' => $request->website,
             'image' => $save_url,
+            'foto1' => $save_url2
         ]);
         
 
@@ -75,6 +85,7 @@ class PortfolioController extends Controller
     public function UpdatePortfolio(Request $request){
 
         // dd($request->all());
+        // Si no le hacemos modificación a la imagen nos llega image=null
 
         $validate = $request->validate([
             'title' => 'required|string|max:200',
@@ -91,17 +102,40 @@ class PortfolioController extends Controller
         $portfolio = Portfolio::find($portfolio_id);
 
         // Si hubo cambio en la imagen
-        if ($request->file('image')) {
+        if ($request->file('image') or $request->file('foto1')){ 
 
-            $image = $request->file('image');
-            $manager = new ImageManager(new Driver());
-            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-            $img = $manager->read($image);
-            $img->resize(746,550)->save(public_path('upload/portfolio/'.$name_gen));
-            $save_url = 'upload/portfolio/'.$name_gen;
+            if ( $request->file('image') != null) {
             
-            if (file_exists(public_path($portfolio->image))) {
-                @unlink(public_path($portfolio->image));
+                $image = $request->file('image');
+                $manager = new ImageManager(new Driver());
+                $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+                $img = $manager->read($image);
+                $img->resize(746,550)->save(public_path('upload/portfolio/'.$name_gen));
+                $save_url = 'upload/portfolio/'.$name_gen;
+                
+                if (file_exists(public_path($portfolio->image))) {
+                    @unlink(public_path($portfolio->image));
+                }
+
+            }else{
+                $save_url = $portfolio->image;
+            }
+
+            if ( $request->file('foto1') != null) {
+
+                $image2 = $request->file('foto1');
+                $manager2 = new ImageManager(new Driver());
+                $name_gen2 = hexdec(uniqid()).'.'.$image2->getClientOriginalExtension();
+                $img2 = $manager2->read($image2);
+                $img2->resize(1076,550)->save(public_path('upload/portfolio/'.$name_gen2));
+                $save_url2 = 'upload/portfolio/'.$name_gen2;
+                
+                if (file_exists(public_path($portfolio->foto1))) {
+                    @unlink(public_path($portfolio->foto1));
+                }
+                
+            }else{
+                $save_url2 = $portfolio->foto1;
             }
 
             Portfolio::find($portfolio_id)->update([
@@ -113,6 +147,7 @@ class PortfolioController extends Controller
                 'services' => $request->services,
                 'website' => $request->website,
                 'image' => $save_url,
+                'foto1' => $save_url2
             ]);
             
 
@@ -149,6 +184,11 @@ class PortfolioController extends Controller
         // If profile image exists delete
         if (file_exists(public_path($item->image ))) {
             @unlink(public_path($item->image ));
+        }
+
+        // If profile foto1 exists delete
+        if (file_exists(public_path($item->foto1 ))) {
+            @unlink(public_path($item->foto1 ));
         }
 
         Portfolio::find($id)->delete();

@@ -170,21 +170,54 @@
                                                         </div><!-- end card -->
 
                                                         <!-- Image and show image -->
-                                                        <div class="form-group mb-3 row">
-                                                            <label class="form-label">{{ __('Image') }}&nbsp;(746x550)</label>
-                                                            <div class="col-lg-12 col-xl-12">
-                                                                <input class="form-control @error('image') is-invalid @enderror" type="file" name="image" id="image" value="{{ $portfolio->image }}">
-                                                                @error('image')
-                                                                    <div class="invalid-feedback">{{ $message }}</div>
-                                                                @enderror
+                                                        <div class="row mb-3">
+                                                            <div class="col">
+                                                                <div class="form-group">
+                                                                    <label class="form-label">{{ __('Image') }}&nbsp;(746x550)</label>
+                                                                    <p>{{ __('For the list of Portfolios') }}</p>
+                                                                    <div class="col-lg-12 col-xl-12">
+                                                                        <input class="form-control @error('image') is-invalid @enderror" type="file" name="image" id="image" value="{{ $portfolio->image }}">
+                                                                        @error('image')
+                                                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                                        @enderror
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="form-group">
+                                                                    <label class="form-label"> </label>
+                                                                    <div class="col-lg-12 col-xl-12">
+                                                                        <img id="showImage" src="{{ asset($portfolio->image) }}" class="avatar-xxl img-thumbnail float-start" alt="image profile" style="width: 30%; height: 30%;">
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="form-group mb-3 row">
-                                                            <label class="form-label"> </label>
-                                                            <div class="col-lg-12 col-xl-12">
-                                                                <img id="showImage" src="{{ asset($portfolio->image) }}" class="avatar-xxl img-thumbnail float-start" alt="image profile" style="height: 225px; width: 373px;">
+
+                                                        <!-- Image2 Foto 1 for Details and show image -->
+                                                        <div class="row mb-3">
+                                                            <div class="col">
+                                                                <div class="form-group">
+                                                                    <label class="form-label">{{ __('Image for Details Page') }}&nbsp;(746x550)</label>
+                                                                    <p>{{ __('For the Portfolio Details Page') }}</p>
+                                                                    <div class="col-lg-12 col-xl-12">
+                                                                        <input class="form-control @error('foto1') is-invalid @enderror" type="file" name="foto1" id="image2" value="{{ $portfolio->foto1 }}">
+                                                                        @error('foto1')
+                                                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                                        @enderror
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="form-group">
+                                                                    <label class="form-label"> </label>
+                                                                    <div class="col-lg-12 col-xl-12">
+                                                                        <img id="showImage2" src="{{ asset($portfolio->foto1) }}" class="avatar-xxl img-thumbnail float-start" alt="image profile" style="width: 50%; height: 50%;">
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
+
+                                                        
 
                                                         <button type="submit" class="btn btn-primary">{{ __('Update') }}</button>
 
@@ -226,6 +259,7 @@
     <!-- Scrip para manejar la imagen -->
     <script type="text/javascript">
         $(document).ready(function() {
+
             $('#image').change(function(e) {
                 var reader = new FileReader();
                 reader.onload = function(e) {
@@ -233,6 +267,15 @@
                 }
                 reader.readAsDataURL(e.target.files['0']);
             })
+
+            $('#image2').change(function(e) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#showImage2').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(e.target.files['0']);
+            })
+
         })
     </script>
 
