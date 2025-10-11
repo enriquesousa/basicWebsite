@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AboutController;
+use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\PortfolioCategoryController;
 use App\Http\Controllers\Backend\PortfolioController;
@@ -211,6 +212,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/edit/portfolio/{id}', 'EditPortfolio')->name('edit.portfolio');
         Route::post('/update/portfolio', 'UpdatePortfolio')->name('update.portfolio');
         Route::get('/delete/portfolio/{id}', 'DeletePortfolio')->name('delete.portfolio');
+    });
+
+    // Blog Categories CRUD Routes
+    Route::controller(BlogController::class)->group(function(){
+        Route::get('/all/blog/categories', 'AllBlogCategories')->name('all.blog.categories');
+        
     });
     
     
