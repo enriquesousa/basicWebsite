@@ -369,6 +369,31 @@
 					"label": "mandar id por post en frontend"
 				}
 			]
+		},
+		{
+			"path": "resources/views/admin/backend/blog_category/blog_category.blade.php",
+			"bookmarks": [
+				{
+					"line": 20,
+					"column": 36,
+					"label": "abrir ventana modal blog category"
+				},
+				{
+					"line": 80,
+					"column": 22,
+					"label": "modal para agregar category del Blog"
+				}
+			]
+		},
+		{
+			"path": "app/Http/Controllers/Backend/BlogController.php",
+			"bookmarks": [
+				{
+					"line": 23,
+					"column": 12,
+					"label": "slug"
+				}
+			]
 		}
 	]
 }

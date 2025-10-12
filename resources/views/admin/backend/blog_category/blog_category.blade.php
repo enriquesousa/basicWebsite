@@ -81,7 +81,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
-                <form action="{{ route('store.capability') }}" method="post">
+                <form action="{{ route('store.blog.category') }}" method="post">
                     @csrf
 
                     {{-- <input type="hidden" name="id" value="{{ $team->id }}"> --}}
@@ -94,7 +94,7 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">{{ __('Create') }}</button>
+                        <button type="submit" class="btn btn-primary">{{ __('Add') }}</button>
                     </div>
 
                 </form>
