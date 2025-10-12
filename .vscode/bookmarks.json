@@ -379,6 +379,11 @@
 					"label": "abrir ventana modal blog category"
 				},
 				{
+					"line": 53,
+					"column": 48,
+					"label": "category edit modal"
+				},
+				{
 					"line": 80,
 					"column": 22,
 					"label": "modal para agregar category del Blog"
