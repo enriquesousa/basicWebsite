@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\BlogCategory;
+use App\Models\BlogPost;
 use Illuminate\Http\Request;
 
 // Image Intervention Package
@@ -12,6 +13,10 @@ use Intervention\Image\Drivers\Gd\Driver;
 
 class BlogController extends Controller
 {
+    // *************** //
+    // Blog Categories //
+    // *************** //
+
     public function AllBlogCategories(){
         $category = BlogCategory::latest()->get();
         return view('admin.backend.blog_category.blog_category', compact('category'));
@@ -68,5 +73,17 @@ class BlogController extends Controller
         return redirect()->back()->with($notification);
     }
 
+
+    // ********** //
+    // Blog Posts //
+    // ********** //
+
+    public function AllBlogPosts(){
+        $blogPosts = BlogPost::latest()->get();
+        return view('admin.backend.blog_post.all_blog_post', compact('blogPosts'));
+    }
+
+
+    
     
 }

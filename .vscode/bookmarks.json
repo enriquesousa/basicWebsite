@@ -394,9 +394,29 @@
 			"path": "app/Http/Controllers/Backend/BlogController.php",
 			"bookmarks": [
 				{
-					"line": 23,
+					"line": 28,
 					"column": 12,
 					"label": "slug"
+				}
+			]
+		},
+		{
+			"path": "app/Models/BlogPost.php",
+			"bookmarks": [
+				{
+					"line": 12,
+					"column": 51,
+					"label": "blog posts relacio con blog category"
+				}
+			]
+		},
+		{
+			"path": "app/Models/Portfolio.php",
+			"bookmarks": [
+				{
+					"line": 10,
+					"column": 4,
+					"label": "portfolio relacion con categoria"
 				}
 			]
 		}

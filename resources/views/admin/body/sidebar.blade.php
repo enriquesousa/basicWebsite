@@ -293,13 +293,16 @@
                 <li>
                     <a href="#blog_categories" data-bs-toggle="collapse">
                         <iconify-icon icon="mdi:list-box-outline" width="15" height="15"  style="color: #000"></iconify-icon>
-                        <span> {{ __('Blog Categories') }} </span>
+                        <span> {{ __('Blog') }} </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="blog_categories">
                         <ul class="nav-second-level">
                             <li>
                                 <a href="{{ route('all.blog.categories') }}" class="tp-link">{{ __('Blog Categories') }}</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('all.blog.posts') }}" class="tp-link">{{ __('Blog Posts') }}</a>
                             </li>
                         </ul>
                     </div>
