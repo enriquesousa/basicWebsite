@@ -264,17 +264,17 @@
 			"path": "resources/views/admin/backend/portfolio/add_portfolio.blade.php",
 			"bookmarks": [
 				{
-					"line": 74,
+					"line": 67,
 					"column": 68,
 					"label": "select recordar opcion en add profile"
 				},
 				{
-					"line": 203,
+					"line": 196,
 					"column": 64,
 					"label": "display image a un tamaña fijo"
 				},
 				{
-					"line": 260,
+					"line": 253,
 					"column": 4,
 					"label": "JS Script Editor Quill para manejar dos editores Quill de texto y mandar el campo description al request"
 				}
@@ -417,6 +417,16 @@
 					"line": 10,
 					"column": 4,
 					"label": "portfolio relacion con categoria"
+				}
+			]
+		},
+		{
+			"path": "resources/views/admin/backend/blog_post/all_blog_post.blade.php",
+			"bookmarks": [
+				{
+					"line": 61,
+					"column": 48,
+					"label": "quitar html tags"
 				}
 			]
 		}

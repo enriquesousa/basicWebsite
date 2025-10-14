@@ -83,6 +83,46 @@ class BlogController extends Controller
         return view('admin.backend.blog_post.all_blog_post', compact('blogPosts'));
     }
 
+    public function AddBlogPost(){
+        $blog_categories = BlogCategory::latest()->get();
+        return view('admin.backend.blog_post.add_blog_post', compact('blog_categories'));
+    }
+
+    public function StoreBlogPost(Request $request){
+
+        // dd($request->all());
+
+        $validate = $request->validate([
+            'blog_category_id' => 'required|exists:blog_categories,id',
+            'post_title' => 'required|string|max:200',
+            'long_description' => 'required|string',
+            'image' => 'required|image|mimes:jpg,jpeg,png,svg|max:3000',
+        ]);
+
+        if ($request->file('image')) {
+            $image = $request->file('image');
+            $manager = new ImageManager(new Driver());
+            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $img = $manager->read($image);
+            $img->resize(746,500)->save(public_path('upload/post/'.$name_gen));
+            $save_url = 'upload/post/'.$name_gen;
+            
+            BlogPost::create([
+                'blog_category_id' => $request->blog_category_id,
+                'post_title' => $request->post_title,
+                'post_slug' => strtolower(str_replace(' ', '-',$request->post_title)),
+                'long_description' => $request->long_description,
+                'image' => $save_url,
+            ]);
+        }
+
+        $notification = array(
+            'message' => __('Blog Post Inserted Successfully'),
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.blog.posts')->with($notification); 
+    }
 
     
     

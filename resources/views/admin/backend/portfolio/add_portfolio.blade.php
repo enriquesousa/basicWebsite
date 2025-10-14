@@ -27,15 +27,9 @@
                                             <div class="card border mb-0">
 
                                                 <div class="card-header">
-                                                    {{-- <div class="row align-items-center">
-                                                        <div class="col">
-                                                            <h4 class="card-title mb-0">{{ __('Add Portfolio') }}</h4>
-                                                        </div><!--end col-->
-                                                    </div> --}}
-
                                                     <div class="row">
                                                         <div class="col-md-4">
-                                                            <h5 class="card-title mb-0">{{ __('All Portfolio') }}</h5>
+                                                            <h5 class="card-title mb-0">{{ __('Add Portfolio') }}</h5>
                                                         </div>
                                                         <div class="col-md-4">
 
@@ -47,7 +41,6 @@
                                                             </a>
                                                         </div>
                                                     </div>
-
                                                 </div>
 
                                                 <form action="{{ route('store.portfolio') }}" method="post" enctype="multipart/form-data">

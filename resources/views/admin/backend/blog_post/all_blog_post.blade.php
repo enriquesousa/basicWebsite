@@ -18,7 +18,7 @@
 
                                 </div>
                                 <div class="col-md-4 text-end">
-                                    <a href="{{ route('add.portfolio') }}" type="button" class="btn btn-secondary">
+                                    <a href="{{ route('add.blog.post') }}" type="button" class="btn btn-secondary">
                                         <span class="mdi mdi-plus-circle-outline"></span>
                                         {{ __('Add Blog Post') }} 
                                     </a>
