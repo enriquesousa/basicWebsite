@@ -404,7 +404,7 @@
 			"path": "app/Models/BlogPost.php",
 			"bookmarks": [
 				{
-					"line": 12,
+					"line": 13,
 					"column": 51,
 					"label": "blog posts relacio con blog category"
 				}

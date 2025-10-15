@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class BlogPost extends Model
 {
     protected $guarded = [];
-    
+
+    // Relation belongsTo BlogCategory
     public function category()
     {
         return $this->belongsTo(BlogCategory::class, 'blog_category_id', 'id');
