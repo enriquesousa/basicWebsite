@@ -71,7 +71,7 @@
                                                     <span class="mdi mdi-pencil"></span>
                                                 </a>
                                                 <!-- Delete Button -->
-                                                <a href="{{ route('delete.portfolio', $item->id) }}" class="btn btn-danger btn-sm" id="delete" title="{{ __('Delete') }}">
+                                                <a href="{{ route('delete.blog.post', $item->id) }}" class="btn btn-danger btn-sm" id="delete" title="{{ __('Delete') }}">
                                                     <span class="mdi mdi-delete-empty"></span>
                                                 </a>
                                             </td>
