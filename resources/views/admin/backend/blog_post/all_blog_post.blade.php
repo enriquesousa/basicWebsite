@@ -67,7 +67,7 @@
 
                                             <td style="text-align: center; vertical-align: middle;">
                                                 <!-- Edit Button -->
-                                                <a href="{{ route('edit.portfolio', $item->id) }}" class="btn btn-success btn-sm" title="{{ __('Edit') }}">
+                                                <a href="{{ route('edit.blog.post', $item->id) }}" class="btn btn-success btn-sm" title="{{ __('Edit') }}">
                                                     <span class="mdi mdi-pencil"></span>
                                                 </a>
                                                 <!-- Delete Button -->
