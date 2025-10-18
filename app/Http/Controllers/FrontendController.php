@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Attribute;
+use App\Models\BlogCategory;
+use App\Models\BlogPost;
 use App\Models\Capability;
 use App\Models\MemberDetail;
 use App\Models\Portfolio;
@@ -76,6 +78,12 @@ class FrontendController extends Controller
 
         // dd($portfolio);
         return view('home.portfolio.portfolio_details', compact('portfolio', 'allPortfolios'));
+    }
+
+    public function BlogPage(){
+        $blogCategories = BlogCategory::latest()->withCount('posts')->get();
+        $posts = BlogPost::latest()->limit(5)->get();
+        return view('home.blog.list_blog', compact('blogCategories','posts'));
     }
 
 

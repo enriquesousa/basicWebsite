@@ -47,11 +47,10 @@
                                     
                                 </ul>
                             </li>
-                            
 
                             <!-- Blog -->
                             <li>
-                                <a href="contact-us.html">{{ __('Blog') }}</a>
+                                <a href="{{ route('blog.page') }}">{{ __('Blog') }}</a>
                             </li>
 
                             <!-- Contact -->

@@ -329,7 +329,7 @@
 			"path": "app/Http/Controllers/FrontendController.php",
 			"bookmarks": [
 				{
-					"line": 48,
+					"line": 50,
 					"column": 8,
 					"label": "take id anterior y posterior al actual en la coleccion"
 				}
@@ -427,6 +427,16 @@
 					"line": 61,
 					"column": 48,
 					"label": "quitar html tags"
+				}
+			]
+		},
+		{
+			"path": "resources/views/home/blog/list_blog.blade.php",
+			"bookmarks": [
+				{
+					"line": 44,
+					"column": 79,
+					"label": "fecha formato"
 				}
 			]
 		}

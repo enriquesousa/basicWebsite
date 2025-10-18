@@ -247,6 +247,6 @@ Route::get('/about', [FrontendController::class, 'AboutUs'])->name('about.us');
 Route::get('/services', [FrontendController::class, 'Services'])->name('services.page');
 Route::get('/portfolio', [FrontendController::class, 'Portfolio'])->name('portfolio.page');
 Route::post('/portfolio-details', [FrontendController::class, 'showPortfolio'])->name('show.portfolio');
-
+Route::get('/blog', [FrontendController::class, 'BlogPage'])->name('blog.page');
 
 
