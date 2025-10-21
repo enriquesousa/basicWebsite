@@ -37,6 +37,7 @@
                                 <img src="{{ asset($item->image) }}" alt="">
                             </div>
 
+                            <!-- Blog Date -->
                             <div class="lonyo-blog-meta">
                                 <ul>
                                     <li>
@@ -48,18 +49,21 @@
                                 </ul>
                             </div>
 
+                            <!-- Blog Title & Content -->
                             <div class="lonyo-blog-content">
-                                <h2><a href="single-blog.html">{{ $item->post_title }}</a></h2>
+                                <h2><a href="{{ url('blog/details/'.$item->post_slug) }}">{{ $item->post_title }}</a></h2>
                                 <p>{!! Str::limit($item->long_description, 150, '...') !!}</p>
                             </div>
 
+                            <!-- Blog Button Details -->
                             <div class="lonyo-blog-btn">
-                                <a href="single-blog.html" class="lonyo-default-btn blog-btn">{{ __('continue reading') }}...</a>
+                                <a href="{{ url('blog/details/'.$item->post_slug) }}" class="lonyo-default-btn blog-btn">{{ __('continue reading') }}...</a>
                             </div>
 
                         </div>
                     @endforeach
 
+                    <!-- Pagination -->
                     <div class="lonyo-pagination center">
                         <a class="pagi-btn btn2" href="single-blog.html">
                             <svg width="7" height="12" viewBox="0 0 7 12" fill="none"
@@ -109,51 +113,29 @@
                             </div>
                         </div>
 
+                        <!-- Recent Posts -->
                         <div class="lonyo-blog-widgets">
-                            <h4>Recent Posts</h4>
-                            <a class="lonyo-blog-recent-post-item" href="single-blog.html">
-                                <div class="lonyo-blog-recent-post-thumb">
-                                    <img src="assets/images/blog/b4.png" alt="">
-                                </div>
-                                <div class="lonyo-blog-recent-post-data">
-                                    <ul>
-                                        <li><img src="assets/images/blog/date.svg" alt="">June 15, 2025</li>
-                                    </ul>
-                                    <div>
-                                        <h4>7 businesses for easy money</h4>
+                            <h4>{{ __('Recent Posts') }}</h4>
+                            @foreach ($recentPosts as $item)
+                                <a class="lonyo-blog-recent-post-item" href="single-blog.html">
+                                    <div class="lonyo-blog-recent-post-thumb">
+                                        <img src="{{ asset($item->image) }}" alt="" style="width: 150px; height: 120px;">
                                     </div>
-                                </div>
-                            </a>
-                            <a class="lonyo-blog-recent-post-item" href="single-blog.html">
-                                <div class="lonyo-blog-recent-post-thumb">
-                                    <img src="assets/images/blog/b5.png" alt="">
-                                </div>
-                                <div class="lonyo-blog-recent-post-data">
-                                    <ul>
-                                        <li><img src="assets/images/blog/date.svg" alt="">June 12, 2025</li>
-                                    </ul>
-                                    <div>
-                                        <h4>10 Finance apps for you to use</h4>
+                                    <div class="lonyo-blog-recent-post-data">
+                                        <ul>
+                                            <li><img src="{{ asset('frontend/assets/images/blog/date.svg') }}" alt="">{{ $item->created_at->format('d M Y') }}</li>
+                                        </ul>
+                                        <div>
+                                            <h4>{{ Str::limit($item->post_title, 20, '...') }}</h4>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                            <a class="lonyo-blog-recent-post-item" href="single-blog.html">
-                                <div class="lonyo-blog-recent-post-thumb">
-                                    <img src="assets/images/blog/b6.png" alt="">
-                                </div>
-                                <div class="lonyo-blog-recent-post-data">
-                                    <ul>
-                                        <li><img src="assets/images/blog/date.svg" alt="">June 08, 2025</li>
-                                    </ul>
-                                    <div>
-                                        <h4>How to create a stock market</h4>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
+                            @endforeach
                         </div>
 
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
