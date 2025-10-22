@@ -85,7 +85,7 @@
                                                             <div class="col-lg-12 col-xl-12">
                                                                 <textarea name="long_description" id="description" style="display: none;">
                                                                 </textarea>
-                                                                <div id="quill-editor" style="height: 200px;">
+                                                                <div id="quill-editor" style="height: 600px;">
                                                                     <p>{!! $blogPost->long_description !!}</p>
                                                                 </div>
                                                             </div>

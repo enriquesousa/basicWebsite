@@ -146,7 +146,7 @@
         <img src="{{ asset('frontend/assets/images/shape/shape2.svg') }}" alt="">
     </div>
 
-    <-- App Celular -->
+    <!-- App Celular -->
     @include('home.home_layout.mobile')
 
 @endsection

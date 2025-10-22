@@ -4,7 +4,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <div class="content">
-
         <!-- Start Content-->
         <div class="container-xxl">
 
@@ -21,11 +20,9 @@
 
                             <div class="tab-pane pt-4" id="profile_setting" role="tabpanel" aria-labelledby="setting_tab">
                                 <div class="row">
-
                                     <div class="row">
                                         <div class="col-lg-12 col-xl-12">
                                             <div class="card border mb-0">
-
                                                 <div class="card-header">
                                                     <div class="row">
                                                         <div class="col-md-4">
@@ -84,7 +81,7 @@
                                                                 <textarea name="long_description" id="description" style="display: none;">
                                                                     {{ old('long_description') }}
                                                                 </textarea>
-                                                                <div id="quill-editor" style="height: 200px;">
+                                                                <div id="quill-editor" style="height: 600px;">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -118,16 +115,11 @@
 
                                                     </div><!--end card-body-->
                                                 </form>
-
-
                                             </div>
                                         </div>
-
-
                                     </div>
                                 </div>
                             </div> <!-- end education -->
-
 
                         </div>
                     </div>
