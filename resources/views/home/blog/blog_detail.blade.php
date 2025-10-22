@@ -5,7 +5,7 @@
     <div class="breadcrumb-wrapper light-bg">
         <div class="container">
             <div class="breadcrumb-content">
-                <h1 class="breadcrumb-title pb-0">{{ __('Blog Details') }}</h1>
+                <h1 class="breadcrumb-title pb-0">{{ $blogPost->post_title }}</h1>
                 <div class="breadcrumb-menu-wrapper">
                     <div class="breadcrumb-menu-wrap">
                         <div class="breadcrumb-menu">
@@ -50,7 +50,7 @@
 
                         <!-- Contenido -->
                         <div class="lonyo-blog-d-content">
-                            <h2><a href="single-blog.html">{{ $blogPost->title }}</a></h2>
+                            <h2><a href="single-blog.html">{{ $blogPost->post_title }}</a></h2>
                             <p>
                                 {!! $blogPost->long_description !!}
                             </p>
@@ -206,7 +206,7 @@
                         <div class="lonyo-blog-widgets">
                             <form action="#">
                                 <div class="lonyo-search-box">
-                                    <input type="search" placeholder="{{ __('Type keyword here') }}">
+                                    <input type="search" placeholder="{{ __('Search here') }}">
                                     <button id="lonyo-search-btn" type="button"><i class="ri-search-line"></i></button>
                                 </div>
                             </form>

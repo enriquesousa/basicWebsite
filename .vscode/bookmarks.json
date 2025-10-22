@@ -434,12 +434,12 @@
 			"path": "resources/views/home/blog/list_blog.blade.php",
 			"bookmarks": [
 				{
-					"line": 45,
+					"line": 341,
 					"column": 79,
 					"label": "fecha formato"
 				},
 				{
-					"line": 53,
+					"line": 349,
 					"column": 32,
 					"label": "url post slug"
 				}
