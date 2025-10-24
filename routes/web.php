@@ -250,5 +250,6 @@ Route::post('/portfolio-details', [FrontendController::class, 'showPortfolio'])-
 Route::get('/blog', [FrontendController::class, 'BlogPage'])->name('blog.page');
 Route::get('/blog/details/{slug}', [FrontendController::class, 'BlogPageDetails']);
 Route::get('/blog/category/{id}', [FrontendController::class, 'BlogCategory']);
+Route::get('/contact', [FrontendController::class, 'ContactUs'])->name('contact.us');
 
 

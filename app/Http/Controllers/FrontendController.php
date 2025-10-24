@@ -103,6 +103,10 @@ class FrontendController extends Controller
         return view('home.blog.blog_category',compact('blogPost','blogCategories','recentPosts', 'categoryName'));
     }
 
+    public function ContactUs(){
+        return view('home.contact.contact_us');
+    }
+
 
 
 

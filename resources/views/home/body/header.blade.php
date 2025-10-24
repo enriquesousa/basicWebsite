@@ -55,7 +55,7 @@
 
                             <!-- Contact -->
                             <li>
-                                <a href="contact-us.html">{{ __('Contact') }}</a>
+                                <a href="{{ route('contact.us') }}">{{ __('Contact') }}</a>
                             </li>
 
                         </ul>
