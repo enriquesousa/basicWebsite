@@ -431,17 +431,12 @@
 			]
 		},
 		{
-			"path": "resources/views/home/blog/list_blog.blade.php",
+			"path": "resources/views/home/blog/blog_detail.blade.php",
 			"bookmarks": [
 				{
-					"line": 341,
-					"column": 79,
-					"label": "fecha formato"
-				},
-				{
-					"line": 349,
-					"column": 32,
-					"label": "url post slug"
+					"line": 52,
+					"column": 41,
+					"label": "javascript void"
 				}
 			]
 		}

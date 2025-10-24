@@ -50,7 +50,7 @@
 
                         <!-- Contenido -->
                         <div class="lonyo-blog-d-content">
-                            <h2><a href="single-blog.html">{{ $blogPost->post_title }}</a></h2>
+                            <h2><a href="javascript:void(0);">{{ $blogPost->post_title }}</a></h2>
                             <p>
                                 {!! $blogPost->long_description !!}
                             </p>
@@ -219,7 +219,7 @@
                                 <ul>
                                     @foreach ($blogCategories as $item)
                                         <li>
-                                            <a href="single-blog.html">
+                                            <a href="{{ url('blog/category/'.$item->id) }}">
                                                 {{ $item->category_name }}<span>({{ $item->posts_count }})</span>
                                             </a>
                                         </li>
@@ -232,7 +232,7 @@
                         <div class="lonyo-blog-widgets">
                             <h4>{{ __('Recent Posts') }}</h4>
                             @foreach ($recentPosts as $item)
-                                <a class="lonyo-blog-recent-post-item" href="single-blog.html">
+                                <a class="lonyo-blog-recent-post-item" href="{{ url('blog/details/' . $item->post_slug) }}">
                                     <div class="lonyo-blog-recent-post-thumb">
                                         {{-- <img src="assets/images/blog/b4.png" alt=""> --}}
                                         <img src="{{ asset($item->image) }}" alt="" style="width: 150px; height: 120px;">

@@ -1,10 +1,11 @@
 @extends('home.home_master')
 @section('home_content')
+
     <!-- breadcrumb -->
     <div class="breadcrumb-wrapper light-bg">
         <div class="container">
             <div class="breadcrumb-content">
-                <h1 class="breadcrumb-title pb-0">{{ __('Blog') }}</h1>
+                <h1 class="breadcrumb-title pb-0">{{ $categoryName->category_name }}</h1>
                 <div class="breadcrumb-menu-wrapper">
                     <div class="breadcrumb-menu-wrap">
                         <div class="breadcrumb-menu">
@@ -23,14 +24,14 @@
     <!-- End breadcrumb -->
 
 
-    <!-- Blog Main Content Temporal -->
+    <!-- Blog Main Content -->
     <div class="lonyo-section-padding9 overflow-hidden">
         <div class="container">
             <div class="row">
 
                 <div class="col-lg-8">
 
-                    @foreach ($posts as $item)
+                    @foreach ($blogPost as $item)
                         <div class="lonyo-blog-wrap" data-aos="fade-up" data-aos-duration="500">
 
                             <!-- Blog Image -->
@@ -60,17 +61,15 @@
                                 <p>{{ Str::limit(strip_tags($item->long_description), 150, '...') }}</p>
                             </div>
 
-                            <!-- Blog Button Details Continue Reading -->
+                            <!-- Continue Reading Button -->
                             <div class="lonyo-blog-btn">
-                                <a href="{{ url('blog/details/' . $item->post_slug) }}"
-                                    class="lonyo-default-btn blog-btn">
+                                <a href="{{ url('blog/details/' . $item->post_slug) }}" class="lonyo-default-btn blog-btn">
                                     {{ __('continue reading') }}...
                                 </a>
                             </div>
 
                         </div>
                     @endforeach
-
 
                     <!-- Pagination -->
                     <div class="lonyo-pagination center">
@@ -132,14 +131,13 @@
                             @foreach ($recentPosts as $item)
                                 <a class="lonyo-blog-recent-post-item" href="{{ url('blog/details/' . $item->post_slug) }}">
                                     <div class="lonyo-blog-recent-post-thumb">
-                                        <img src="{{ asset($item->image) }}" alt="" style="width: 150px; height: 120px;">
+                                        <img src="{{ asset($item->image) }}" alt=""
+                                            style="width: 150px; height: 120px;">
                                     </div>
                                     <div class="lonyo-blog-recent-post-data">
                                         <ul>
-                                            <li>
-                                                <img src="{{ asset('frontend/assets/images/blog/date.svg') }}" alt="">
-                                                {{ $item->created_at->format('d M Y') }}
-                                            </li>
+                                            <li><img src="{{ asset('frontend/assets/images/blog/date.svg') }}"
+                                                    alt="">{{ $item->created_at->format('d M Y') }}</li>
                                         </ul>
                                         <div>
                                             <h4>{{ Str::limit($item->post_title, 20, '...') }}</h4>
@@ -155,6 +153,9 @@
             </div>
         </div>
     </div>
+
+
+
     
 
     <!-- Separador -->
