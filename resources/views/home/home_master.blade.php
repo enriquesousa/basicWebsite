@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,6 +35,9 @@
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/app.min.css') }}">
     {{-- <link rel="stylesheet" href="{{ asset('frontend/assets/css/app.css') }}"> --}}
+
+    <!-- Toastr -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
 
 </head>
 
@@ -106,8 +110,37 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3&key="></script>
     <script src="{{ asset('frontend/assets/js/slick.js') }}"></script>
 
-    <script src="{{ asset('frontend/assets/js/app.js') }}"></script>
+    <!-- Toastr js -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>
+        @if(Session::has('message'))
+            var type = "{{ Session::get('alert-type','info') }}";
 
+            switch(type){
+                case 'info':
+                toastr.info(" {{ Session::get('message') }} ");
+                break;
+
+                case 'success':
+                toastr.success(" {{ Session::get('message') }} ");
+                break;
+
+                case 'warning':
+                toastr.warning(" {{ Session::get('message') }} ");
+                break;
+
+                case 'error':
+                toastr.error(" {{ Session::get('message') }} ");
+                break; 
+            }
+
+        @endif 
+    </script>
+
+
+
+
+    <script src="{{ asset('frontend/assets/js/app.js') }}"></script>
 
     <!-- Iconify para usar iconos de https://icon-sets.iconify.design -->
     <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>

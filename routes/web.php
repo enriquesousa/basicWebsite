@@ -251,5 +251,6 @@ Route::get('/blog', [FrontendController::class, 'BlogPage'])->name('blog.page');
 Route::get('/blog/details/{slug}', [FrontendController::class, 'BlogPageDetails']);
 Route::get('/blog/category/{id}', [FrontendController::class, 'BlogCategory']);
 Route::get('/contact', [FrontendController::class, 'ContactUs'])->name('contact.us');
+Route::post('/contact/message', [FrontendController::class, 'ContactMessage'])->name('contact.message');
 
 

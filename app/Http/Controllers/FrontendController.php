@@ -6,6 +6,7 @@ use App\Models\Attribute;
 use App\Models\BlogCategory;
 use App\Models\BlogPost;
 use App\Models\Capability;
+use App\Models\Contact;
 use App\Models\MemberDetail;
 use App\Models\Portfolio;
 use App\Models\Skill;
@@ -107,6 +108,22 @@ class FrontendController extends Controller
         return view('home.contact.contact_us');
     }
 
+    public function ContactMessage(Request $request){ 
+
+        Contact::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'message' => $request->message, 
+        ]); 
+
+        $notification = array(
+            'message' => __('Your Message Sent Successfully'),
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+    }
+        
 
 
 

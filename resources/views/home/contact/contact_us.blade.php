@@ -70,21 +70,24 @@
                 </div>
                 <div class="col-lg-5">
                     <div class="lonyo-contact-box box2" data-aos="fade-up" data-aos-duration="700">
-                        <h4>Fill the form below</h4>
-                        <form action="#">
+                        <h4>{{ __('Fill the form below') }}</h4>
+                        <form action="{{ route('contact.message') }}" method="post">
+                            @csrf
+
                             <div class="lonyo-main-field">
-                                <p>Full name*</p>
-                                <input type="text" placeholder="Enter your name">
+                                <p>{{ __('Full name') }}*</p>
+                                <input type="text" name="name" placeholder="{{ __('Enter your name') }}">
                             </div>
                             <div class="lonyo-main-field">
-                                <p>Email address*</p>
-                                <input type="email" placeholder="Your email address">
+                                <p>{{ __('Email address') }}*</p>
+                                <input type="email" name="email" placeholder="{{ __('Your email address') }}">
                             </div>
-                            <p>Message</p>
+                            <p>{{ __('Message') }}</p>
                             <div class="lonyo-main-field-textarea">
-                                <textarea class="button-text" name="textarea" placeholder="Write your message here..."></textarea>
+                                <textarea class="button-text" name="message" placeholder="{{ __('Write your message here...') }}"></textarea>
                             </div>
-                            <button class="lonyo-default-btn extra-btn d-block" type="button">Send your message</button>
+
+                            <button class="lonyo-default-btn extra-btn d-block" type="submit">{{ __('Send your message') }}</button>
                         </form>
                     </div>
                 </div>
