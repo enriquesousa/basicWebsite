@@ -308,6 +308,14 @@
                     </div>
                 </li>
 
+                <!-- Blog Categories -->
+                <li>
+                    <a class="tp-link" href="{{ route('contact.all.message') }}">
+                        <iconify-icon icon="streamline-stickies-color:mail" width="15" height="15" style="color: yellow"></iconify-icon>
+                        <span> {{ __('User Messages') }} </span>
+                    </a>
+                </li>
+
 
 
                 {{-- <li class="menu-title">General</li> --}}

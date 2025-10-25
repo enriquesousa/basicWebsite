@@ -233,6 +233,13 @@ Route::middleware('auth')->group(function () {
         Route::post('/update/blog/post', 'UpdateBlogPost')->name('update.blog.post');
         Route::get('/delete/blog/post/{id}', 'DeleteBlogPost')->name('delete.blog.post');
     });
+
+    // User Messages
+    Route::controller(FrontendController::class)->group(function(){
+        Route::get('/contact/all/messages', 'ContactAllMessages')->name('contact.all.message');
+        Route::get('/contact/details/message/{id}', 'ContactDetailsMessage')->name('contact.details.message');
+        Route::get('/contact/delete/message/{id}', 'ContactDeleteMessage')->name('contact.delete.message');
+    });
     
     
 });

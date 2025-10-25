@@ -123,6 +123,26 @@ class FrontendController extends Controller
 
         return redirect()->back()->with($notification); 
     }
+
+    public function ContactAllMessages() {
+        $messages = Contact::latest()->get();
+        return view('admin.backend.contact.all_messages', compact('messages'));
+    }
+
+    public function ContactDetailsMessage($id) {
+        $message = Contact::findOrFail($id);
+        return view('admin.backend.contact.details_message', compact('message'));
+    }
+
+    public function ContactDeleteMessage($id) {
+        $message = Contact::findOrFail($id);
+        $message->delete();
+        $notification = array(
+            'message' => __('Message Deleted Successfully'),
+            'alert-type' => 'success'
+        );
+        return redirect()->route('contact.all.message')->with($notification);
+    }
         
 
 
