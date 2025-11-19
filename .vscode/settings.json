@@ -32,8 +32,8 @@
     "editor.fontFamily": "Fira Code",
 
     // Editor Font Size
-    "editor.fontSize": 16,
-    
+    "editor.fontSize": 14,
+
     // Editor Line Height
     "editor.lineHeight": 1.3,
 
@@ -43,6 +43,6 @@
     // Intelephense, para que no se muestre el error de undefinedMethods
     // En el caso de hasPermissionTo que no esta definida en el User Model pero si esta en el Trait con usando HasRoles de Spatie
     "intelephense.diagnostics.undefinedMethods": false,
-    
+
 
 }
