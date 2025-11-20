@@ -17,7 +17,7 @@
                         <img src="" alt="logo-light" height="24">
                     </span>
                 </a>
-                <a href="{{ route('home') }}" class="logo logo-dark">
+                <a href="{{ route('home') }}" class="logo logo-dark" target="_blank" rel="noopener noreferrer">
                     <span class="logo-sm">
                         {{-- <img src="{{ asset('backend/assets/images/logo-sm.png') }}" alt="logo-smdark" height="22"> --}}
                         <img src="" alt="logo-smdark" height="22">
