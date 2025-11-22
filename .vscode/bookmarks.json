@@ -374,7 +374,7 @@
 			"path": "resources/views/home/team/our_team.blade.php",
 			"bookmarks": [
 				{
-					"line": 48,
+					"line": 55,
 					"column": 36,
 					"label": "mandar id por post en frontend"
 				}

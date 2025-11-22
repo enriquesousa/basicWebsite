@@ -24,7 +24,7 @@
                                 <a href="{{ route('home') }}">{{ __('Home') }}</a>
                             </li>
 
-                            <!-- About -->
+                            <!-- About Dropdown Menu -->
                             <li class="menu-item-has-children">
                                 <a href="{{ route('about.us') }}">{{ __('About Us') }}</a>
                                 <ul class="sub-menu">
@@ -36,7 +36,7 @@
                                     <li>
                                         <a href="{{ route('our.team') }}">{{ __('Team') }}</a>
                                     </li>
-                                    
+
                                     <li>
                                         <a href="{{ route('portfolio.page') }}">{{ __('Portfolio') }}</a>
                                     </li>
@@ -44,7 +44,7 @@
                                     <li>
                                         <a href="{{ route('services.page') }}">{{ __('Services') }}</a>
                                     </li>
-                                    
+
                                 </ul>
                             </li>
 

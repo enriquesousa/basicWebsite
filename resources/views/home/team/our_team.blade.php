@@ -38,9 +38,16 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="lonyo-team-wrap" data-aos="fade-up" data-aos-duration="500">
                             <div class="lonyo-team-thumb">
-                                <a href="single-team.html">
+                                <form action="{{ route('team.details') }}" method="POST" class="image-post-form">
+                                    @csrf
+                                    <input type="hidden" name="item_id" value="{{ $item->id }}">
+                                    <button type="submit" style="background:none;border:0;padding:0;cursor:pointer;">
+                                        <img src="{{ asset($item->image) }}" alt="{{ $item->name }}">
+                                    </button>
+                                </form>
+                                {{-- <a href="{{ route('team.details') }}">
                                     <img src="{{ asset($item->image) }}" alt="">
-                                </a>
+                                </a> --}}
                             </div>
                             <div class="lonyo-team-content2">
                                 <!-- Name -->
@@ -73,6 +80,6 @@
 
     {{-- section de mobile en la pagina --}}
     @include('home.home_layout.mobile')
-    
+
 
 @endsection
