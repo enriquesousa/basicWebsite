@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             CentricsSeeder::class,
             ClarifiesSeeder::class,
             ThreeFeaturesSeeder::class,
+            ConnectsSeeder::class,
         ]);
 
     }
