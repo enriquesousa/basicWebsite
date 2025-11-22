@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
             ThreeFeaturesSeeder::class,
             ConnectsSeeder::class,
             ContactsSeeder::class,
+            CoresSeeder::class,
         ]);
 
     }
