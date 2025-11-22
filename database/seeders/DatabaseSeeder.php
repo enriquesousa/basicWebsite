@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
             ConnectsSeeder::class,
             ContactsSeeder::class,
             CoresSeeder::class,
+            FaqsSeeder::class,
         ]);
 
     }
