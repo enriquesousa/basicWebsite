@@ -35,6 +35,7 @@ class DatabaseSeeder extends Seeder
             CoresSeeder::class,
             FaqsSeeder::class,
             FeaturesSeeder::class,
+            FinancialsSeeder::class,
         ]);
 
     }
