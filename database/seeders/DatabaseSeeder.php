@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
             BlogPostsSeeder::class,
             CapabilitiesSeeder::class,
             CentricsSeeder::class,
+            ClarifiesSeeder::class,
         ]);
 
     }
