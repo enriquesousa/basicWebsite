@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             CapabilitiesSeeder::class,
             CentricsSeeder::class,
             ClarifiesSeeder::class,
+            ThreeFeaturesSeeder::class,
         ]);
 
     }
