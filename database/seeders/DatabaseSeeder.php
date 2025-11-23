@@ -43,6 +43,7 @@ class DatabaseSeeder extends Seeder
             Reviews_Seeder::class,
             Services_Seeder::class,
             Skills_Seeder::class,
+            Sliders_Seeder::class,
         ]);
 
     }
