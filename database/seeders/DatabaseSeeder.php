@@ -41,6 +41,7 @@ class DatabaseSeeder extends Seeder
             Portfolio_Categories_Seeder::class,
             Portfolios_Seeder::class,
             Reviews_Seeder::class,
+            Services_Seeder::class,
         ]);
 
     }
