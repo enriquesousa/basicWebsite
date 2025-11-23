@@ -44,6 +44,7 @@ class DatabaseSeeder extends Seeder
             Services_Seeder::class,
             Skills_Seeder::class,
             Sliders_Seeder::class,
+            Teams_Seeder::class,
         ]);
 
     }
