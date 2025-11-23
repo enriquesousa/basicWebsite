@@ -40,6 +40,7 @@ class DatabaseSeeder extends Seeder
             Mobile_Services_Seeder::class,
             Portfolio_Categories_Seeder::class,
             Portfolios_Seeder::class,
+            Reviews_Seeder::class,
         ]);
 
     }
