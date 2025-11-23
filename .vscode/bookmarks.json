@@ -424,7 +424,7 @@
 			"path": "app/Models/Portfolio.php",
 			"bookmarks": [
 				{
-					"line": 10,
+					"line": 11,
 					"column": 4,
 					"label": "portfolio relacion con categoria"
 				}

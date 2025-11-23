@@ -39,6 +39,7 @@ class DatabaseSeeder extends Seeder
             Member_Details_Seeder::class,
             Mobile_Services_Seeder::class,
             Portfolio_Categories_Seeder::class,
+            Portfolios_Seeder::class,
         ]);
 
     }
