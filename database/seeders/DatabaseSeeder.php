@@ -37,6 +37,7 @@ class DatabaseSeeder extends Seeder
             FeaturesSeeder::class,
             FinancialsSeeder::class,
             Member_Details_Seeder::class,
+            Mobile_Services_Seeder::class,
         ]);
 
     }
